@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chendrayudu Online Services</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+
+header{
+    background:white;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    border-bottom:4px solid #002b7f;
+}
+
+.logo h1{
+    color:#002b7f;
+    font-size:50px;
+}
+
+.logo h2{
+    color:#d40000;
+    font-size:35px;
+}
+
+.logo p{
+    color:green;
+    font-size:22px;
+    font-style:italic;
+}
+
+.contact p{
+    padding:8px;
+    font-size:18px;
+}
+
+/* Navigation */
+
+nav{
+    background:#002b7f;
+    padding:18px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+/* Hero */
+
+.hero{
+    background:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    color:#002b7f;
+    font-size:70px;
+}
+
+.hero h2{
+    color:#d40000;
+    font-size:45px;
+}
+
+.hero p{
+    font-size:28px;
+    margin-top:20px;
+}
+
+.features{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.feature{
+    background:#002b7f;
+    color:white;
+    padding:15px 25px;
+    border-radius:40px;
+    font-size:18px;
+}
+
+/* Services */
+
+.services{
+    padding:50px 20px;
+    text-align:center;
+}
+
+.services h2{
+    color:#002b7f;
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-decoration:none;
+    color:black;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card i{
+    font-size:50px;
+    color:#002b7f;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+    background:#002b7f;
+    color:white;
+    padding:40px 20px;
+    margin-top:50px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* WhatsApp */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:65px;
+    height:65px;
+    background:#25d366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:35px;
+    text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<h1>CHENDRAYUDU</h1>
+
+<h2>ONLINE SERVICES</h2>
+
+<p>Your Trusted Online Service Center</p>
+
+</div>
+
+<div class="contact">
+
+<p><i class="fa-solid fa-phone"></i> 9390511455</p>
+
+<p><i class="fa-solid fa-id-card"></i> CSC ID : 724413640010</p>
+
+<p><i class="fa-solid fa-envelope"></i> cherishvivaan@gmail.com</p>
+
+</div>
+
+</header>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#services">Services</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>CHENDRAYUDU</h1>
+
+<h2>ONLINE SERVICES</h2>
+
+<p>All Online Services Under One Roof</p>
+
+<div class="features">
+
+<div class="feature">⚡ Fast Service</div>
+
+<div class="feature">✅ Reliable</div>
+
+<div class="feature">🛡 Trusted</div>
+
+<div class="feature">😊 Customer Friendly</div>
+
+</div>
+
+</section>
+
+<section class="services" id="services">
+
+<h2>OUR SERVICES</h2>
+
+<div class="service-grid">
+
+<a class="card" href="https://utiitsl.com/" target="_blank">
+<i class="fa-solid fa-address-card"></i>
+<h3>PAN CARD</h3>
+<p>Apply, Correction, Update</p>
+</a>
+
+<a class="card" href="https://myaadhaar.uidai.gov.in/" target="_blank">
+<i class="fa-solid fa-fingerprint"></i>
+<h3>AADHAAR SERVICES</h3>
+<p>Update, Print, Download</p>
+</a>
+
+<a class="card" href="https://udyamregistration.gov.in/" target="_blank">
+<i class="fa-solid fa-building"></i>
+<h3>UDYAM CERTIFICATE</h3>
+<p>Registration & Certificate</p>
+</a>
+
+<a class="card" href="https://payments.billdesk.com/MercOnline/SPDCLController/" target="_blank">
+<i class="fa-solid fa-bolt"></i>
+<h3>BILL PAYMENTS</h3>
+<p>Electricity, Water, DTH, Mobile</p>
+</a>
+
+<a class="card" href="https://parivahan.gov.in/" target="_blank">
+<i class="fa-solid fa-car"></i>
+<h3>DRIVING LICENCE</h3>
+<p>Apply & Renewal</p>
+</a>
+
+<a class="card" href="https://voters.eci.gov.in/" target="_blank">
+<i class="fa-solid fa-id-badge"></i>
+<h3>VOTER ID</h3>
+<p>Apply & Correction</p>
+</a>
+
+<a class="card" href="https://www.passportindia.gov.in/" target="_blank">
+<i class="fa-solid fa-passport"></i>
+<h3>PASSPORT</h3>
+<p>Apply & Renewal</p>
+</a>
+
+<a class="card" href="https://eshram.gov.in/" target="_blank">
+<i class="fa-solid fa-users"></i>
+<h3>E-SHRAM CARD</h3>
+<p>Registration & Update</p>
+</a>
+
+<a class="card" href="https://cardsadda.in/ap_newricecard/" target="_blank">
+<i class="fa-solid fa-book"></i>
+<h3>RATION CARD</h3>
+<p>New & Correction</p>
+</a>
+
+<a class="card" href="https://www.irctc.co.in/" target="_blank">
+<i class="fa-solid fa-train"></i>
+<h3>TRAIN TICKETS</h3>
+<p>Online Booking</p>
+</a>
+
+
+<a class="card" href="https://psc.ap.gov.in/" target="_blank">
+    <i class="fa-solid fa-building-columns"></i>
+    <h3>APPSC</h3>
+</a>
+
+<a class="card" href="https://upsc.gov.in/" target="_blank">
+    <i class="fa-solid fa-user-tie"></i>
+    <h3>UPSC</h3>
+</a>
+
+<a class="card" href="https://ssc.gov.in/" target="_blank">
+    <i class="fa-solid fa-users"></i>
+    <h3>SSC</h3>
+</a>
+
+<a class="card" href="https://www.rrbapply.gov.in/" target="_blank">
+    <i class="fa-solid fa-train"></i>
+    <h3>RAILWAY JOBS</h3>
+</a>
+
+<a class="card" href="https://citizen.appolice.gov.in/?method=getHomePageElements/" target="_blank">
+
+    <i class="fa-solid fa-receipt"></i>
+
+    <h3>E-CHALLAN</h3>
+
+    <p>Check & Pay Traffic Challans</p>
+</a>
+<a class="card" href="https://cap.apcfss.in/" target="_blank">
+
+    <i class="fa-solid fa-laptop-file"></i>
+
+    <h3>CAP SERVICES</h3>
+
+    <p>APCFSS Citizen Services</p>
+
+</a>
+<a class="card" href="https://www.ilovepdf.com/" target="_blank">
+
+    <i class="fa-solid fa-file-pdf"></i>
+
+    <h3>PDF TOOLS</h3>
+
+    <p>Merge, Split, Compress and Convert PDF Files</p>
+
+</a>
+<a class="card" href="https://apseva.ap.gov.in/#/home" target="_blank">
+
+    <i class="fa-solid fa-landmark"></i>
+
+    <h3>AP SEVA</h3>
+
+    <p>Andhra Pradesh Online Citizen Services</p>
+
+</a>
+<a class="card" href="https://www.sejda.com/" target="_blank">
+
+    <i class="fa-solid fa-file-pen"></i>
+
+    <h3>SEJDA PDF EDITOR</h3>
+
+    <p>Edit, Merge, Compress and Convert PDF Files</p>
+
+</a>
+<a class="card"
+   href="https://jsonlineservices.in/portallogin/croptool"
+   target="_blank">
+
+    <i class="fa-solid fa-crop"></i>
+
+    <h3>CROP TOOL</h3>
+
+    <p>Online Photo Crop and Editing Tool</p>
+
+</a>
+<a class="card"
+   href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/"
+   target="_blank">
+
+    <i class="fa-solid fa-piggy-bank"></i>
+
+    <h3>EPFO SERVICES</h3>
+
+    <p>PF Balance, Passbook, Claims and Member Services</p>
+
+</a>
+</div>
+
+</section>
+
+<footer id="contact">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>📍 ADDRESS</h3>
+
+<p>Jamal Palle</p>
+
+<p>Chinthakommadinne</p>
+
+<p>Pincode : 516003</p>
+
+</div>
+
+<div>
+
+<h3>🕒 WORKING HOURS</h3>
+
+<p>09:00 AM - 08:00 PM</p>
+
+<p>Monday - Sunday</p>
+
+</div>
+
+<div>
+
+<h3>☎ CONTACT</h3>
+
+<p>9390511455</p>
+
+<p>cherishvivaan@gmail.com</p>
+
+<p>CSC ID : 724413640010</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/919390511455"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+</body>
+
+</html>
