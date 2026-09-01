@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -21,15 +20,10 @@ body{
     color:#222;
 }
 
-.login-container,
-.accounts-container{
-    width:100%;
-    min-height:100vh;
-}
-
 /* LOGIN */
 
 .login-container{
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -45,14 +39,17 @@ body{
     box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
-.login-box h1{
+.login-box h1,
+.login-box p{
     text-align:center;
+}
+
+.login-box h1{
     color:#002b7f;
     margin-bottom:10px;
 }
 
 .login-box p{
-    text-align:center;
     color:#666;
     margin-bottom:25px;
 }
@@ -68,10 +65,9 @@ select{
 }
 
 button{
-    width:100%;
-    padding:14px;
     border:none;
     border-radius:8px;
+    padding:14px;
     background:#002b7f;
     color:white;
     font-size:16px;
@@ -79,16 +75,10 @@ button{
     cursor:pointer;
 }
 
-button:hover{
-    opacity:.9;
-}
-
 .error{
-    color:red;
-    text-align:center;
+    color:red !important;
     margin-top:15px;
 }
-
 
 /* ACCOUNTS */
 
@@ -99,28 +89,33 @@ button:hover{
 header{
     background:#002b7f;
     color:white;
-    padding:20px;
     text-align:center;
+    padding:20px;
 }
 
 header h1{
-    font-size:28px;
+    margin-bottom:8px;
 }
 
 .logout-btn{
-    width:auto;
+    margin-top:15px;
     background:#d40000;
     padding:10px 20px;
-    margin-top:15px;
 }
-
 
 /* SUMMARY */
 
+.summary-title{
+    max-width:1200px;
+    margin:25px auto 0;
+    padding:0 20px;
+    color:#002b7f;
+}
+
 .summary{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
     padding:20px;
     max-width:1200px;
     margin:auto;
@@ -128,14 +123,14 @@ header h1{
 
 .summary-card{
     background:white;
-    padding:25px;
-    border-radius:12px;
+    padding:22px;
     text-align:center;
+    border-radius:12px;
     box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 .summary-card h3{
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .income{
@@ -149,7 +144,6 @@ header h1{
 .profit{
     color:#002b7f;
 }
-
 
 /* FORM */
 
@@ -172,18 +166,52 @@ header h1{
     margin-bottom:20px;
 }
 
+.form-box button{
+    width:100%;
+}
+
+/* FILTER */
+
+.filter-container{
+    max-width:1200px;
+    margin:20px auto;
+    padding:20px;
+}
+
+.filter-box{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.filter-box h2{
+    color:#002b7f;
+    margin-bottom:15px;
+}
+
+.filter-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.filter-grid input,
+.filter-grid select{
+    margin-bottom:0;
+}
 
 /* TABLE */
 
 .records-container{
     max-width:1200px;
-    margin:30px auto;
+    margin:20px auto 40px;
     padding:20px;
 }
 
 .records-container h2{
     color:#002b7f;
-    margin-bottom:20px;
+    margin-bottom:15px;
 }
 
 .table-wrapper{
@@ -194,6 +222,7 @@ table{
     width:100%;
     border-collapse:collapse;
     background:white;
+    min-width:800px;
 }
 
 th{
@@ -203,23 +232,15 @@ th{
 
 th,
 td{
-    padding:14px;
-    text-align:center;
     border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
 }
 
 .delete-btn{
-    background:red;
-    width:auto;
+    background:#d40000;
     padding:8px 12px;
 }
-
-.no-data{
-    text-align:center;
-    padding:20px;
-    color:#777;
-}
-
 
 /* MOBILE */
 
@@ -229,118 +250,111 @@ td{
         font-size:22px;
     }
 
-    .summary{
+    .summary,
+    .form-container,
+    .filter-container,
+    .records-container{
         padding:15px;
     }
 
-    .form-container,
-    .records-container{
-        padding:15px;
+    .login-box{
+        padding:25px;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
 
-<!-- LOGIN PAGE -->
+<!-- LOGIN -->
 
 <div class="login-container" id="loginContainer">
 
-<div class="login-box">
+    <div class="login-box">
 
-<h1>🔐 Private Login</h1>
+        <h1>🔐 Private Login</h1>
 
-<p>Chendrayudu Online Services</p>
+        <p>Chendrayudu Online Services</p>
 
-<input
-type="email"
-id="email"
-placeholder="Enter Email"
->
+        <input type="email" id="email" placeholder="Enter Email">
 
-<input
-type="password"
-id="password"
-placeholder="Enter Password"
->
+        <input type="password" id="password" placeholder="Enter Password">
 
-<button onclick="login()">
-Login
-</button>
+        <button onclick="login()">Login</button>
 
-<p class="error" id="errorMessage"></p>
+        <p class="error" id="errorMessage"></p>
 
-</div>
+    </div>
 
 </div>
 
 
-
-<!-- ACCOUNTS PAGE -->
+<!-- ACCOUNTS -->
 
 <div class="accounts-container" id="accountsContainer">
 
 <header>
 
-<h1>📊 Daily Accounts</h1>
+    <h1>📊 Daily Accounts</h1>
 
-<p>Chendrayudu Online Services</p>
+    <p>Chendrayudu Online Services</p>
 
-<button
-class="logout-btn"
-onclick="logout()"
->
-Logout
-</button>
+    <button class="logout-btn" onclick="logout()">
+        Logout
+    </button>
 
 </header>
 
 
+<!-- TODAY SUMMARY -->
 
-<!-- SUMMARY -->
+<h2 class="summary-title">📅 Today's Summary</h2>
 
 <div class="summary">
 
-<div class="summary-card">
+    <div class="summary-card">
+        <h3>Today Income</h3>
+        <h2 class="income">₹ <span id="todayIncome">0</span></h2>
+    </div>
 
-<h3>Total Income</h3>
+    <div class="summary-card">
+        <h3>Today Expense</h3>
+        <h2 class="expense">₹ <span id="todayExpense">0</span></h2>
+    </div>
 
-<h2 class="income">
-₹ <span id="totalIncome">0</span>
-</h2>
-
-</div>
-
-
-<div class="summary-card">
-
-<h3>Total Expense</h3>
-
-<h2 class="expense">
-₹ <span id="totalExpense">0</span>
-</h2>
+    <div class="summary-card">
+        <h3>Today Profit / Loss</h3>
+        <h2 class="profit">₹ <span id="todayProfit">0</span></h2>
+    </div>
 
 </div>
 
 
-<div class="summary-card">
+<!-- TOTAL SUMMARY -->
 
-<h3>Profit / Loss</h3>
+<h2 class="summary-title">📊 Overall Summary</h2>
 
-<h2 class="profit">
-₹ <span id="totalProfit">0</span>
-</h2>
+<div class="summary">
+
+    <div class="summary-card">
+        <h3>Total Income</h3>
+        <h2 class="income">₹ <span id="totalIncome">0</span></h2>
+    </div>
+
+    <div class="summary-card">
+        <h3>Total Expense</h3>
+        <h2 class="expense">₹ <span id="totalExpense">0</span></h2>
+    </div>
+
+    <div class="summary-card">
+        <h3>Total Profit / Loss</h3>
+        <h2 class="profit">₹ <span id="totalProfit">0</span></h2>
+    </div>
 
 </div>
-
-</div>
-
 
 
 <!-- ADD RECORD -->
@@ -349,85 +363,45 @@ Logout
 
 <div class="form-box">
 
-<h2>Add Daily Record</h2>
-
+<h2>➕ Add Daily Record</h2>
 
 <select id="service">
 
 <option value="">Select Service</option>
 
 <option>PAN Card</option>
-
 <option>Aadhaar Services</option>
-
 <option>Udyam Certificate</option>
-
 <option>Bill Payments</option>
-
 <option>Driving Licence</option>
-
 <option>Voter ID</option>
-
 <option>Passport</option>
-
 <option>E-Shram Card</option>
-
 <option>Ration Card</option>
-
 <option>Train Tickets</option>
-
 <option>APPSC</option>
-
 <option>UPSC</option>
-
 <option>SSC</option>
-
 <option>Railway Jobs</option>
-
 <option>E-Challan</option>
-
 <option>CAP Services</option>
-
 <option>PDF Tools</option>
-
 <option>AP Seva</option>
-
 <option>Sejda PDF Editor</option>
-
 <option>Crop Tool</option>
-
 <option>EPFO Services</option>
-
 <option>Other Service</option>
 
 </select>
 
+<input type="number" id="income" placeholder="Customer Amount / Income ₹">
 
-<input
-type="number"
-id="income"
-placeholder="Customer Amount (Income ₹)"
->
+<input type="number" id="expense" placeholder="Your Expense ₹">
 
-
-<input
-type="number"
-id="expense"
-placeholder="Your Expense ₹"
->
-
-
-<input
-type="text"
-id="description"
-placeholder="Description (Optional)"
->
-
+<input type="text" id="description" placeholder="Description (Optional)">
 
 <button onclick="addRecord()">
-
 ➕ Add Record
-
 </button>
 
 </div>
@@ -435,12 +409,65 @@ placeholder="Description (Optional)"
 </div>
 
 
+<!-- FILTER -->
+
+<div class="filter-container">
+
+<div class="filter-box">
+
+<h2>🔎 Search & Filter</h2>
+
+<div class="filter-grid">
+
+<input
+type="text"
+id="searchService"
+placeholder="Search Service"
+oninput="applyFilters()"
+>
+
+<input
+type="date"
+id="dateFilter"
+onchange="applyFilters()"
+>
+
+<input
+type="month"
+id="monthFilter"
+onchange="applyFilters()"
+>
+
+<select
+id="serviceFilter"
+onchange="applyFilters()"
+>
+
+<option value="">All Services</option>
+
+<option>PAN Card</option>
+<option>Aadhaar Services</option>
+<option>Bill Payments</option>
+<option>Driving Licence</option>
+<option>Voter ID</option>
+<option>Passport</option>
+<option>EPFO Services</option>
+<option>Other Service</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
 
 <!-- RECORDS -->
 
 <div class="records-container">
 
-<h2>📋 Daily Records</h2>
+<h2>📋 Records</h2>
 
 <div class="table-wrapper">
 
@@ -449,28 +476,18 @@ placeholder="Description (Optional)"
 <thead>
 
 <tr>
-
 <th>Date</th>
-
 <th>Service</th>
-
 <th>Income</th>
-
 <th>Expense</th>
-
 <th>Profit</th>
-
 <th>Description</th>
-
 <th>Action</th>
-
 </tr>
 
 </thead>
 
-<tbody id="recordsTable">
-
-</tbody>
+<tbody id="recordsTable"></tbody>
 
 </table>
 
@@ -478,21 +495,13 @@ placeholder="Description (Optional)"
 
 </div>
 
-
 </div>
-
 
 
 <script type="module">
 
-/* FIREBASE IMPORTS */
-
-import {
-initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 
 import {
 getAuth,
@@ -500,9 +509,7 @@ signInWithEmailAndPassword,
 signOut,
 onAuthStateChanged
 }
-from
-"https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-
+from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
 import {
 getFirestore,
@@ -514,9 +521,7 @@ doc,
 query,
 orderBy
 }
-from
-"https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-
+from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 
 /* FIREBASE CONFIG */
@@ -525,63 +530,46 @@ const firebaseConfig = {
 
 apiKey: "AIzaSyB_AUh6P-Xa2JFhLeNtgQ3Ibk-kd0OwSvc",
 
-authDomain:
-"chendrayudu-online-services.firebaseapp.com",
+authDomain: "chendrayudu-online-services.firebaseapp.com",
 
-projectId:
-"chendrayudu-online-services",
+projectId: "chendrayudu-online-services",
 
-storageBucket:
-"chendrayudu-online-services.firebasestorage.app",
+storageBucket: "chendrayudu-online-services.firebasestorage.app",
 
-messagingSenderId:
-"619882558498",
+messagingSenderId: "619882558498",
 
-appId:
-"1:619882558498:web:5da004bc90f27b211e067b",
+appId: "1:619882558498:web:5da004bc90f27b211e067b",
 
-measurementId:
-"G-HXPJ015KJ0"
+measurementId: "G-HXPJ015KJ0"
 
 };
 
 
-
 /* INITIALIZE */
 
-const app =
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
 
 
-const auth =
-getAuth(app);
+/* RECORDS ARRAY */
 
-
-const db =
-getFirestore(app);
-
+let allRecords = [];
 
 
 /* LOGIN */
 
-window.login =
-async function(){
+window.login = async function(){
 
-const email =
-document.getElementById("email").value;
+const email = document.getElementById("email").value.trim();
 
+const password = document.getElementById("password").value;
 
-const password =
-document.getElementById("password").value;
+const errorMessage = document.getElementById("errorMessage");
 
-
-const errorMessage =
-document.getElementById("errorMessage");
-
-
-errorMessage.innerText =
-"";
-
+errorMessage.innerText = "";
 
 if(!email || !password){
 
@@ -592,22 +580,15 @@ return;
 
 }
 
-
 try{
 
 await signInWithEmailAndPassword(
-
 auth,
-
 email,
-
 password
-
 );
 
-}
-
-catch(error){
+}catch(error){
 
 errorMessage.innerText =
 "Invalid email or password";
@@ -617,197 +598,147 @@ errorMessage.innerText =
 };
 
 
-
 /* LOGOUT */
 
-window.logout =
-async function(){
+window.logout = async function(){
 
 await signOut(auth);
 
 };
 
 
+/* AUTH */
 
-/* AUTH CHECK */
-
-onAuthStateChanged(
-
-auth,
-
-(user)=>{
+onAuthStateChanged(auth,(user)=>{
 
 if(user){
 
-document
-.getElementById("loginContainer")
-.style.display =
-"none";
+document.getElementById("loginContainer")
+.style.display = "none";
 
-
-document
-.getElementById("accountsContainer")
-.style.display =
-"block";
-
+document.getElementById("accountsContainer")
+.style.display = "block";
 
 loadRecords();
 
-}
+}else{
 
-else{
+document.getElementById("loginContainer")
+.style.display = "flex";
 
-document
-.getElementById("loginContainer")
-.style.display =
-"flex";
-
-
-document
-.getElementById("accountsContainer")
-.style.display =
-"none";
+document.getElementById("accountsContainer")
+.style.display = "none";
 
 }
 
+});
+
+
+/* DATE FORMAT */
+
+function getToday(){
+
+const now = new Date();
+
+const year = now.getFullYear();
+
+const month = String(now.getMonth()+1).padStart(2,"0");
+
+const day = String(now.getDate()).padStart(2,"0");
+
+return `${year}-${month}-${day}`;
+
 }
-
-);
-
 
 
 /* ADD RECORD */
 
-window.addRecord =
-async function(){
-
+window.addRecord = async function(){
 
 const service =
 document.getElementById("service").value;
 
+const incomeInput =
+document.getElementById("income").value;
 
-const income =
-Number(
-document.getElementById("income").value
-);
-
-
-const expense =
-Number(
-document.getElementById("expense").value
-);
-
+const expenseInput =
+document.getElementById("expense").value;
 
 const description =
-document.getElementById("description").value;
+document.getElementById("description").value.trim();
 
 
 if(!service){
 
-alert(
-"Please select a service"
-);
+alert("Please select a service");
 
 return;
 
 }
 
 
-if(
-document.getElementById("income").value === ""
-){
+if(incomeInput === ""){
 
-alert(
-"Please enter income amount"
-);
+alert("Please enter income amount");
 
 return;
 
 }
+
+
+const income = Number(incomeInput);
+
+const expense =
+expenseInput === ""
+? 0
+: Number(expenseInput);
 
 
 const profit =
 income - expense;
 
 
-const today =
-new Date()
-.toLocaleDateString(
-"en-IN"
-);
+const date =
+getToday();
 
 
 try{
 
 await addDoc(
-
-collection(
-db,
-"accounts"
-),
-
+collection(db,"accounts"),
 {
 
-service:service,
-
-income:income,
-
-expense:expense,
-
-profit:profit,
-
-description:description,
-
-date:today,
-
-createdAt:
-Date.now()
+service,
+income,
+expense,
+profit,
+description,
+date,
+createdAt: Date.now()
 
 }
-
 );
 
 
-alert(
-"Record Added Successfully ✅"
-);
+alert("Record Added Successfully ✅");
 
 
-/* CLEAR FORM */
+document.getElementById("service").value = "";
 
-document
-.getElementById("service")
-.value =
-"";
+document.getElementById("income").value = "";
 
+document.getElementById("expense").value = "";
 
-document
-.getElementById("income")
-.value =
-"";
-
-
-document
-.getElementById("expense")
-.value =
-"";
-
-
-document
-.getElementById("description")
-.value =
-"";
+document.getElementById("description").value = "";
 
 
 loadRecords();
 
 }
-
 catch(error){
 
 alert(
-"Error saving record: "
-+
+"Error saving record: " +
 error.message
 );
 
@@ -816,11 +747,228 @@ error.message
 };
 
 
-
 /* LOAD RECORDS */
 
 async function loadRecords(){
 
+try{
+
+const q = query(
+
+collection(db,"accounts"),
+
+orderBy("createdAt","desc")
+
+);
+
+
+const snapshot =
+await getDocs(q);
+
+
+allRecords = [];
+
+
+snapshot.forEach((documentSnapshot)=>{
+
+allRecords.push({
+
+id: documentSnapshot.id,
+
+...documentSnapshot.data()
+
+});
+
+});
+
+
+calculateSummary();
+
+applyFilters();
+
+}
+catch(error){
+
+console.error(error);
+
+alert(
+"Unable to load records: " +
+error.message
+);
+
+}
+
+}
+
+
+/* CALCULATE SUMMARY */
+
+function calculateSummary(){
+
+let totalIncome = 0;
+
+let totalExpense = 0;
+
+let totalProfit = 0;
+
+let todayIncome = 0;
+
+let todayExpense = 0;
+
+let todayProfit = 0;
+
+const today =
+getToday();
+
+
+allRecords.forEach(record=>{
+
+const income =
+Number(record.income || 0);
+
+const expense =
+Number(record.expense || 0);
+
+const profit =
+Number(record.profit || 0);
+
+
+totalIncome += income;
+
+totalExpense += expense;
+
+totalProfit += profit;
+
+
+if(record.date === today){
+
+todayIncome += income;
+
+todayExpense += expense;
+
+todayProfit += profit;
+
+}
+
+});
+
+
+document.getElementById("totalIncome")
+.innerText = totalIncome;
+
+
+document.getElementById("totalExpense")
+.innerText = totalExpense;
+
+
+document.getElementById("totalProfit")
+.innerText = totalProfit;
+
+
+document.getElementById("todayIncome")
+.innerText = todayIncome;
+
+
+document.getElementById("todayExpense")
+.innerText = todayExpense;
+
+
+document.getElementById("todayProfit")
+.innerText = todayProfit;
+
+}
+
+
+/* APPLY FILTERS */
+
+window.applyFilters = function(){
+
+const search =
+document.getElementById("searchService")
+.value
+.toLowerCase()
+.trim();
+
+
+const selectedDate =
+document.getElementById("dateFilter")
+.value;
+
+
+const selectedMonth =
+document.getElementById("monthFilter")
+.value;
+
+
+const selectedService =
+document.getElementById("serviceFilter")
+.value;
+
+
+let filteredRecords =
+allRecords.filter(record=>{
+
+
+const service =
+(record.service || "")
+.toLowerCase();
+
+
+if(
+search &&
+!service.includes(search)
+){
+
+return false;
+
+}
+
+
+if(
+selectedDate &&
+record.date !== selectedDate
+){
+
+return false;
+
+}
+
+
+if(
+selectedMonth &&
+!record.date.startsWith(selectedMonth)
+){
+
+return false;
+
+}
+
+
+if(
+selectedService &&
+record.service !== selectedService
+){
+
+return false;
+
+}
+
+
+return true;
+
+});
+
+
+displayRecords(
+filteredRecords
+);
+
+};
+
+
+/* DISPLAY RECORDS */
+
+function displayRecords(records){
 
 const recordsTable =
 document.getElementById(
@@ -828,96 +976,55 @@ document.getElementById(
 );
 
 
+recordsTable.innerHTML = "";
+
+
+if(records.length === 0){
+
 recordsTable.innerHTML =
-"";
+
+`
+<tr>
+
+<td colspan="7">
+No records found
+</td>
+
+</tr>
+`;
+
+return;
+
+}
 
 
-let totalIncome =
-0;
-
-
-let totalExpense =
-0;
-
-
-let totalProfit =
-0;
-
-
-try{
-
-
-const q =
-query(
-
-collection(
-db,
-"accounts"
-),
-
-orderBy(
-"createdAt",
-"desc"
-)
-
-);
-
-
-const querySnapshot =
-await getDocs(q);
-
-
-
-querySnapshot.forEach(
-
-(documentSnapshot)=>{
-
-
-const data =
-documentSnapshot.data();
-
-
-totalIncome +=
-data.income || 0;
-
-
-totalExpense +=
-data.expense || 0;
-
-
-totalProfit +=
-data.profit || 0;
-
-
+records.forEach(record=>{
 
 const row =
-document.createElement(
-"tr"
-);
-
+document.createElement("tr");
 
 
 row.innerHTML =
 
 `
 
-<td>${data.date}</td>
+<td>${record.date || ""}</td>
 
-<td>${data.service}</td>
+<td>${record.service || ""}</td>
 
-<td>₹${data.income}</td>
+<td>₹${record.income || 0}</td>
 
-<td>₹${data.expense}</td>
+<td>₹${record.expense || 0}</td>
 
-<td>₹${data.profit}</td>
+<td>₹${record.profit || 0}</td>
 
-<td>${data.description || ""}</td>
+<td>${record.description || ""}</td>
 
 <td>
 
 <button
 class="delete-btn"
-onclick="deleteRecord('${documentSnapshot.id}')"
+onclick="deleteRecord('${record.id}')"
 >
 
 Delete
@@ -933,58 +1040,19 @@ recordsTable.appendChild(
 row
 );
 
-
-}
-
-);
-
-
-
-document
-.getElementById("totalIncome")
-.innerText =
-totalIncome;
-
-
-document
-.getElementById("totalExpense")
-.innerText =
-totalExpense;
-
-
-document
-.getElementById("totalProfit")
-.innerText =
-totalProfit;
-
-
-}
-
-catch(error){
-
-console.error(error);
-
-alert(
-"Unable to load records: "
-+
-error.message
-);
-
-}
+});
 
 }
 
 
-
-/* DELETE RECORD */
+/* DELETE */
 
 window.deleteRecord =
 async function(id){
 
-
 const confirmDelete =
 confirm(
-"Delete this record?"
+"Are you sure you want to delete this record?"
 );
 
 
@@ -997,36 +1065,26 @@ return;
 
 try{
 
-
 await deleteDoc(
-
-doc(
-db,
-"accounts",
-id
-)
-
+doc(db,"accounts",id)
 );
 
 
 loadRecords();
 
-
 }
-
 catch(error){
 
 alert(
-"Error deleting record"
+"Error deleting record: " +
+error.message
 );
 
 }
 
 };
 
-
 </script>
 
 </body>
-
 </html>
