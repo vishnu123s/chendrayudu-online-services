@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,28 @@
 <title>Private Daily Accounts | Chendrayudu Online Services</title>
 
 <style>
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial,sans-serif;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    background:#f3f5f9;
+    background:#f2f4f8;
     color:#222;
+}
+
+.login-container,
+.accounts-container{
+    width:100%;
+    min-height:100vh;
 }
 
 /* LOGIN */
 
-.login-page{
-    min-height:100vh;
+.login-container{
     display:flex;
     justify-content:center;
     align-items:center;
@@ -30,12 +37,12 @@ body{
 }
 
 .login-box{
-    background:white;
     width:100%;
     max-width:420px;
-    padding:35px 30px;
+    background:white;
+    padding:35px;
     border-radius:15px;
-    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
 .login-box h1{
@@ -46,52 +53,46 @@ body{
 
 .login-box p{
     text-align:center;
-    margin-bottom:25px;
     color:#666;
+    margin-bottom:25px;
 }
 
-input, select{
+input,
+select{
     width:100%;
-    padding:13px;
+    padding:14px;
+    margin-bottom:15px;
     border:1px solid #ccc;
     border-radius:8px;
-    margin-top:8px;
-    margin-bottom:18px;
     font-size:16px;
-}
-
-label{
-    font-weight:bold;
 }
 
 button{
-    border:none;
-    padding:13px 20px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
-}
-
-.login-btn{
     width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
     background:#002b7f;
     color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.login-btn:hover{
+button:hover{
     opacity:.9;
 }
 
 .error{
-    color:#d40000;
+    color:red;
     text-align:center;
     margin-top:15px;
 }
 
+
 /* ACCOUNTS */
 
-#accountsPage{
+.accounts-container{
     display:none;
 }
 
@@ -103,88 +104,96 @@ header{
 }
 
 header h1{
-    margin-bottom:8px;
+    font-size:28px;
 }
 
-.container{
+.logout-btn{
+    width:auto;
+    background:#d40000;
+    padding:10px 20px;
+    margin-top:15px;
+}
+
+
+/* SUMMARY */
+
+.summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
     max-width:1200px;
     margin:auto;
-    padding:25px 15px;
 }
 
-.form-box,
-.summary-box,
-.table-box{
+.summary-card{
     background:white;
     padding:25px;
     border-radius:12px;
-    margin-bottom:25px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
-.form-box h2,
-.summary-box h2,
-.table-box h2{
+.summary-card h3{
+    margin-bottom:10px;
+}
+
+.income{
+    color:green;
+}
+
+.expense{
+    color:red;
+}
+
+.profit{
+    color:#002b7f;
+}
+
+
+/* FORM */
+
+.form-container{
+    max-width:700px;
+    margin:20px auto;
+    padding:20px;
+}
+
+.form-box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.form-box h2{
+    text-align:center;
     color:#002b7f;
     margin-bottom:20px;
 }
 
-.form-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-}
 
-.form-grid input,
-.form-grid select{
-    margin-bottom:0;
-}
+/* TABLE */
 
-.add-btn{
-    background:#008000;
-    color:white;
-    margin-top:20px;
-}
-
-.summary-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-}
-
-.summary-card{
+.records-container{
+    max-width:1200px;
+    margin:30px auto;
     padding:20px;
-    border-radius:10px;
-    background:#f5f5f5;
-    text-align:center;
 }
 
-.summary-card h3{
+.records-container h2{
     color:#002b7f;
-    margin-bottom:10px;
+    margin-bottom:20px;
 }
 
-.summary-card p{
-    font-size:24px;
-    font-weight:bold;
-}
-
-.profit{
-    color:green;
-}
-
-.loss{
-    color:#d40000;
+.table-wrapper{
+    overflow-x:auto;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:850px;
-}
-
-.table-scroll{
-    overflow-x:auto;
+    background:white;
 }
 
 th{
@@ -192,98 +201,82 @@ th{
     color:white;
 }
 
-th,td{
-    padding:12px;
-    border:1px solid #ddd;
+th,
+td{
+    padding:14px;
     text-align:center;
+    border:1px solid #ddd;
 }
 
 .delete-btn{
-    background:#d40000;
-    color:white;
+    background:red;
+    width:auto;
     padding:8px 12px;
 }
 
-.logout-btn{
-    background:#d40000;
-    color:white;
-    margin-top:10px;
+.no-data{
+    text-align:center;
+    padding:20px;
+    color:#777;
 }
 
-.clear-btn{
-    background:#555;
-    color:white;
-    margin-left:10px;
-}
 
-.date-filter{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:20px;
-}
-
-.date-filter input{
-    width:auto;
-    margin:0;
-}
+/* MOBILE */
 
 @media(max-width:600px){
 
     header h1{
-        font-size:23px;
+        font-size:22px;
     }
 
-    .form-box,
-    .summary-box,
-    .table-box{
-        padding:18px;
+    .summary{
+        padding:15px;
     }
 
-    .summary-card p{
-        font-size:20px;
+    .form-container,
+    .records-container{
+        padding:15px;
     }
 
 }
+
 </style>
+
 </head>
+
 
 <body>
 
 
 <!-- LOGIN PAGE -->
 
-<div class="login-page" id="loginPage">
+<div class="login-container" id="loginContainer">
 
-    <div class="login-box">
+<div class="login-box">
 
-        <h1>🔐 Private Login</h1>
+<h1>🔐 Private Login</h1>
 
-        <p>Chendrayudu Online Services</p>
+<p>Chendrayudu Online Services</p>
 
-        <label>Username</label>
+<input
+type="email"
+id="email"
+placeholder="Enter Email"
+>
 
-        <input
-            type="text"
-            id="username"
-            placeholder="Enter Username"
-        >
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+>
 
-        <label>Password</label>
+<button onclick="login()">
+Login
+</button>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter Password"
-        >
+<p class="error" id="errorMessage"></p>
 
-        <button class="login-btn" onclick="login()">
-            Login
-        </button>
-
-        <p class="error" id="loginError"></p>
-
-    </div>
+</div>
 
 </div>
 
@@ -291,219 +284,58 @@ th,td{
 
 <!-- ACCOUNTS PAGE -->
 
-<div id="accountsPage">
+<div class="accounts-container" id="accountsContainer">
 
 <header>
 
-    <h1>📊 Daily Accounts</h1>
+<h1>📊 Daily Accounts</h1>
 
-    <p>Chendrayudu Online Services - Private Account System</p>
+<p>Chendrayudu Online Services</p>
 
-    <button class="logout-btn" onclick="logout()">
-        Logout
-    </button>
+<button
+class="logout-btn"
+onclick="logout()"
+>
+Logout
+</button>
 
 </header>
 
 
-<div class="container">
 
+<!-- SUMMARY -->
 
-    <!-- ADD ENTRY -->
+<div class="summary">
 
-    <div class="form-box">
+<div class="summary-card">
 
-        <h2>➕ Add Daily Service Entry</h2>
+<h3>Total Income</h3>
 
-        <div class="form-grid">
+<h2 class="income">
+₹ <span id="totalIncome">0</span>
+</h2>
 
-            <div>
+</div>
 
-                <label>Date</label>
 
-                <input type="date" id="date">
+<div class="summary-card">
 
-            </div>
+<h3>Total Expense</h3>
 
+<h2 class="expense">
+₹ <span id="totalExpense">0</span>
+</h2>
 
-            <div>
+</div>
 
-                <label>Service Name</label>
 
-                <input
-                    type="text"
-                    id="service"
-                    placeholder="Example: PAN Card"
-                >
+<div class="summary-card">
 
-            </div>
+<h3>Profit / Loss</h3>
 
-
-            <div>
-
-                <label>Customer Amount ₹</label>
-
-                <input
-                    type="number"
-                    id="income"
-                    placeholder="Amount received"
-                    min="0"
-                >
-
-            </div>
-
-
-            <div>
-
-                <label>Your Cost ₹</label>
-
-                <input
-                    type="number"
-                    id="expense"
-                    placeholder="Service cost"
-                    min="0"
-                >
-
-            </div>
-
-        </div>
-
-
-        <button class="add-btn" onclick="addEntry()">
-            Add Entry
-        </button>
-
-    </div>
-
-
-
-    <!-- DATE FILTER -->
-
-    <div class="form-box">
-
-        <h2>📅 View Daily Accounts</h2>
-
-        <div class="date-filter">
-
-            <input type="date" id="filterDate">
-
-            <button class="add-btn" onclick="filterEntries()">
-                Show Date
-            </button>
-
-            <button class="clear-btn" onclick="showAllEntries()">
-                Show All
-            </button>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- SUMMARY -->
-
-    <div class="summary-box">
-
-        <h2>💰 Summary</h2>
-
-        <div class="summary-grid">
-
-            <div class="summary-card">
-
-                <h3>Total Collection</h3>
-
-                <p id="totalIncome">₹0</p>
-
-            </div>
-
-
-            <div class="summary-card">
-
-                <h3>Total Expense</h3>
-
-                <p id="totalExpense">₹0</p>
-
-            </div>
-
-
-            <div class="summary-card">
-
-                <h3>Net Profit / Loss</h3>
-
-                <p id="netProfit">₹0</p>
-
-            </div>
-
-
-            <div class="summary-card">
-
-                <h3>Total Services</h3>
-
-                <p id="totalServices">0</p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- TABLE -->
-
-    <div class="table-box">
-
-        <h2>📋 Service Records</h2>
-
-        <div class="table-scroll">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Date</th>
-
-                        <th>Service</th>
-
-                        <th>Customer Amount</th>
-
-                        <th>Cost</th>
-
-                        <th>Profit / Loss</th>
-
-                        <th>Action</th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody id="tableBody">
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-
-    <!-- CLEAR ALL -->
-
-    <div class="form-box">
-
-        <h2>⚠️ Data Control</h2>
-
-        <button class="clear-btn" onclick="clearAllData()">
-            Delete All Records
-        </button>
-
-    </div>
-
+<h2 class="profit">
+₹ <span id="totalProfit">0</span>
+</h2>
 
 </div>
 
@@ -511,495 +343,690 @@ th,td{
 
 
 
-<script>
+<!-- ADD RECORD -->
 
-/* =========================
-   LOGIN DETAILS
-   CHANGE THESE
-========================= */
+<div class="form-container">
 
-const ADMIN_USERNAME = "Chendrayudu";
+<div class="form-box">
 
-const ADMIN_PASSWORD = "Cherish@2025";
+<h2>Add Daily Record</h2>
 
 
-/* =========================
-   LOGIN
-========================= */
+<select id="service">
 
-function login(){
+<option value="">Select Service</option>
 
-    const username =
-        document.getElementById("username").value.trim();
+<option>PAN Card</option>
 
-    const password =
-        document.getElementById("password").value;
+<option>Aadhaar Services</option>
+
+<option>Udyam Certificate</option>
+
+<option>Bill Payments</option>
+
+<option>Driving Licence</option>
+
+<option>Voter ID</option>
+
+<option>Passport</option>
+
+<option>E-Shram Card</option>
+
+<option>Ration Card</option>
+
+<option>Train Tickets</option>
+
+<option>APPSC</option>
+
+<option>UPSC</option>
+
+<option>SSC</option>
+
+<option>Railway Jobs</option>
+
+<option>E-Challan</option>
+
+<option>CAP Services</option>
+
+<option>PDF Tools</option>
+
+<option>AP Seva</option>
+
+<option>Sejda PDF Editor</option>
+
+<option>Crop Tool</option>
+
+<option>EPFO Services</option>
+
+<option>Other Service</option>
+
+</select>
 
 
-    if(
-        username === ADMIN_USERNAME &&
-        password === ADMIN_PASSWORD
-    ){
+<input
+type="number"
+id="income"
+placeholder="Customer Amount (Income ₹)"
+>
 
-        sessionStorage.setItem(
-            "chendrayuduLoggedIn",
-            "true"
-        );
 
-        showAccounts();
+<input
+type="number"
+id="expense"
+placeholder="Your Expense ₹"
+>
 
-    }
-    else{
 
-        document.getElementById("loginError").innerText =
-            "Invalid Username or Password";
+<input
+type="text"
+id="description"
+placeholder="Description (Optional)"
+>
 
-    }
+
+<button onclick="addRecord()">
+
+➕ Add Record
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- RECORDS -->
+
+<div class="records-container">
+
+<h2>📋 Daily Records</h2>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Service</th>
+
+<th>Income</th>
+
+<th>Expense</th>
+
+<th>Profit</th>
+
+<th>Description</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="recordsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<script type="module">
+
+/* FIREBASE IMPORTS */
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+
+
+import {
+getAuth,
+signInWithEmailAndPassword,
+signOut,
+onAuthStateChanged
+}
+from
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+
+import {
+getFirestore,
+collection,
+addDoc,
+getDocs,
+deleteDoc,
+doc,
+query,
+orderBy
+}
+from
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+
+
+/* FIREBASE CONFIG */
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyB_AUh6P-Xa2JFhLeNtgQ3Ibk-kd0OwSvc",
+
+authDomain:
+"chendrayudu-online-services.firebaseapp.com",
+
+projectId:
+"chendrayudu-online-services",
+
+storageBucket:
+"chendrayudu-online-services.firebasestorage.app",
+
+messagingSenderId:
+"619882558498",
+
+appId:
+"1:619882558498:web:5da004bc90f27b211e067b",
+
+measurementId:
+"G-HXPJ015KJ0"
+
+};
+
+
+
+/* INITIALIZE */
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const auth =
+getAuth(app);
+
+
+const db =
+getFirestore(app);
+
+
+
+/* LOGIN */
+
+window.login =
+async function(){
+
+const email =
+document.getElementById("email").value;
+
+
+const password =
+document.getElementById("password").value;
+
+
+const errorMessage =
+document.getElementById("errorMessage");
+
+
+errorMessage.innerText =
+"";
+
+
+if(!email || !password){
+
+errorMessage.innerText =
+"Please enter email and password";
+
+return;
 
 }
 
 
-/* =========================
-   SHOW ACCOUNTS
-========================= */
+try{
 
-function showAccounts(){
+await signInWithEmailAndPassword(
 
-    document.getElementById("loginPage").style.display =
-        "none";
+auth,
 
-    document.getElementById("accountsPage").style.display =
-        "block";
+email,
 
-    loadEntries();
+password
+
+);
+
+}
+
+catch(error){
+
+errorMessage.innerText =
+"Invalid email or password";
+
+}
+
+};
+
+
+
+/* LOGOUT */
+
+window.logout =
+async function(){
+
+await signOut(auth);
+
+};
+
+
+
+/* AUTH CHECK */
+
+onAuthStateChanged(
+
+auth,
+
+(user)=>{
+
+if(user){
+
+document
+.getElementById("loginContainer")
+.style.display =
+"none";
+
+
+document
+.getElementById("accountsContainer")
+.style.display =
+"block";
+
+
+loadRecords();
+
+}
+
+else{
+
+document
+.getElementById("loginContainer")
+.style.display =
+"flex";
+
+
+document
+.getElementById("accountsContainer")
+.style.display =
+"none";
+
+}
+
+}
+
+);
+
+
+
+/* ADD RECORD */
+
+window.addRecord =
+async function(){
+
+
+const service =
+document.getElementById("service").value;
+
+
+const income =
+Number(
+document.getElementById("income").value
+);
+
+
+const expense =
+Number(
+document.getElementById("expense").value
+);
+
+
+const description =
+document.getElementById("description").value;
+
+
+if(!service){
+
+alert(
+"Please select a service"
+);
+
+return;
 
 }
 
 
-/* =========================
-   CHECK LOGIN
-========================= */
+if(
+document.getElementById("income").value === ""
+){
 
-function checkLogin(){
+alert(
+"Please enter income amount"
+);
 
-    const loggedIn =
-        sessionStorage.getItem(
-            "chendrayuduLoggedIn"
-        );
-
-    if(loggedIn === "true"){
-
-        showAccounts();
-
-    }
+return;
 
 }
 
 
-/* =========================
-   LOGOUT
-========================= */
+const profit =
+income - expense;
 
-function logout(){
 
-    sessionStorage.removeItem(
-        "chendrayuduLoggedIn"
-    );
+const today =
+new Date()
+.toLocaleDateString(
+"en-IN"
+);
 
-    document.getElementById("accountsPage").style.display =
-        "none";
 
-    document.getElementById("loginPage").style.display =
-        "flex";
+try{
+
+await addDoc(
+
+collection(
+db,
+"accounts"
+),
+
+{
+
+service:service,
+
+income:income,
+
+expense:expense,
+
+profit:profit,
+
+description:description,
+
+date:today,
+
+createdAt:
+Date.now()
+
+}
+
+);
+
+
+alert(
+"Record Added Successfully ✅"
+);
+
+
+/* CLEAR FORM */
+
+document
+.getElementById("service")
+.value =
+"";
+
+
+document
+.getElementById("income")
+.value =
+"";
+
+
+document
+.getElementById("expense")
+.value =
+"";
+
+
+document
+.getElementById("description")
+.value =
+"";
+
+
+loadRecords();
+
+}
+
+catch(error){
+
+alert(
+"Error saving record: "
++
+error.message
+);
+
+}
+
+};
+
+
+
+/* LOAD RECORDS */
+
+async function loadRecords(){
+
+
+const recordsTable =
+document.getElementById(
+"recordsTable"
+);
+
+
+recordsTable.innerHTML =
+"";
+
+
+let totalIncome =
+0;
+
+
+let totalExpense =
+0;
+
+
+let totalProfit =
+0;
+
+
+try{
+
+
+const q =
+query(
+
+collection(
+db,
+"accounts"
+),
+
+orderBy(
+"createdAt",
+"desc"
+)
+
+);
+
+
+const querySnapshot =
+await getDocs(q);
+
+
+
+querySnapshot.forEach(
+
+(documentSnapshot)=>{
+
+
+const data =
+documentSnapshot.data();
+
+
+totalIncome +=
+data.income || 0;
+
+
+totalExpense +=
+data.expense || 0;
+
+
+totalProfit +=
+data.profit || 0;
+
+
+
+const row =
+document.createElement(
+"tr"
+);
+
+
+
+row.innerHTML =
+
+`
+
+<td>${data.date}</td>
+
+<td>${data.service}</td>
+
+<td>₹${data.income}</td>
+
+<td>₹${data.expense}</td>
+
+<td>₹${data.profit}</td>
+
+<td>${data.description || ""}</td>
+
+<td>
+
+<button
+class="delete-btn"
+onclick="deleteRecord('${documentSnapshot.id}')"
+>
+
+Delete
+
+</button>
+
+</td>
+
+`;
+
+
+recordsTable.appendChild(
+row
+);
+
+
+}
+
+);
+
+
+
+document
+.getElementById("totalIncome")
+.innerText =
+totalIncome;
+
+
+document
+.getElementById("totalExpense")
+.innerText =
+totalExpense;
+
+
+document
+.getElementById("totalProfit")
+.innerText =
+totalProfit;
+
+
+}
+
+catch(error){
+
+console.error(error);
+
+alert(
+"Unable to load records: "
++
+error.message
+);
+
+}
 
 }
 
 
-/* =========================
-   GET RECORDS
-========================= */
 
-function getEntries(){
+/* DELETE RECORD */
 
-    return JSON.parse(
-        localStorage.getItem(
-            "chendrayuduAccounts"
-        )
-    ) || [];
-
-}
+window.deleteRecord =
+async function(id){
 
 
-/* =========================
-   SAVE RECORDS
-========================= */
+const confirmDelete =
+confirm(
+"Delete this record?"
+);
 
-function saveEntries(entries){
 
-    localStorage.setItem(
-        "chendrayuduAccounts",
-        JSON.stringify(entries)
-    );
+if(!confirmDelete){
+
+return;
 
 }
 
 
-/* =========================
-   ADD ENTRY
-========================= */
-
-function addEntry(){
-
-    const date =
-        document.getElementById("date").value;
-
-    const service =
-        document.getElementById("service").value.trim();
-
-    const income =
-        parseFloat(
-            document.getElementById("income").value
-        );
-
-    const expense =
-        parseFloat(
-            document.getElementById("expense").value
-        );
+try{
 
 
-    if(
-        !date ||
-        !service ||
-        isNaN(income) ||
-        isNaN(expense)
-    ){
+await deleteDoc(
 
-        alert(
-            "Please fill all details"
-        );
+doc(
+db,
+"accounts",
+id
+)
 
-        return;
-
-    }
+);
 
 
-    const entry = {
+loadRecords();
 
-        id: Date.now(),
-
-        date: date,
-
-        service: service,
-
-        income: income,
-
-        expense: expense
-
-    };
-
-
-    const entries =
-        getEntries();
-
-
-    entries.push(entry);
-
-
-    saveEntries(entries);
-
-
-    document.getElementById("service").value = "";
-
-    document.getElementById("income").value = "";
-
-    document.getElementById("expense").value = "";
-
-
-    loadEntries();
 
 }
 
+catch(error){
 
-/* =========================
-   LOAD ENTRIES
-========================= */
-
-function loadEntries(entries = null){
-
-    if(entries === null){
-
-        entries =
-            getEntries();
-
-    }
-
-
-    entries.sort(
-        (a,b) =>
-        new Date(b.date) -
-        new Date(a.date)
-    );
-
-
-    const tableBody =
-        document.getElementById("tableBody");
-
-
-    tableBody.innerHTML = "";
-
-
-    let totalIncome = 0;
-
-    let totalExpense = 0;
-
-
-    entries.forEach(entry => {
-
-        const profit =
-            entry.income -
-            entry.expense;
-
-
-        totalIncome +=
-            entry.income;
-
-
-        totalExpense +=
-            entry.expense;
-
-
-        const row =
-            document.createElement("tr");
-
-
-        row.innerHTML = `
-
-            <td>${entry.date}</td>
-
-            <td>${entry.service}</td>
-
-            <td>₹${entry.income.toFixed(2)}</td>
-
-            <td>₹${entry.expense.toFixed(2)}</td>
-
-            <td class="${
-                profit >= 0
-                ? 'profit'
-                : 'loss'
-            }">
-
-                ₹${profit.toFixed(2)}
-
-                ${
-                    profit >= 0
-                    ? ' Profit'
-                    : ' Loss'
-                }
-
-            </td>
-
-            <td>
-
-                <button
-                    class="delete-btn"
-                    onclick="deleteEntry(${entry.id})"
-                >
-
-                    Delete
-
-                </button>
-
-            </td>
-
-        `;
-
-
-        tableBody.appendChild(row);
-
-    });
-
-
-    const netProfit =
-        totalIncome -
-        totalExpense;
-
-
-    document.getElementById(
-        "totalIncome"
-    ).innerText =
-        "₹" +
-        totalIncome.toFixed(2);
-
-
-    document.getElementById(
-        "totalExpense"
-    ).innerText =
-        "₹" +
-        totalExpense.toFixed(2);
-
-
-    const profitElement =
-        document.getElementById(
-            "netProfit"
-        );
-
-
-    profitElement.innerText =
-        "₹" +
-        netProfit.toFixed(2);
-
-
-    profitElement.className =
-        netProfit >= 0
-        ? "profit"
-        : "loss";
-
-
-    document.getElementById(
-        "totalServices"
-    ).innerText =
-        entries.length;
+alert(
+"Error deleting record"
+);
 
 }
 
+};
 
-/* =========================
-   DELETE ENTRY
-========================= */
-
-function deleteEntry(id){
-
-    const entries =
-        getEntries();
-
-
-    const updatedEntries =
-        entries.filter(
-            entry =>
-            entry.id !== id
-        );
-
-
-    saveEntries(
-        updatedEntries
-    );
-
-
-    loadEntries();
-
-}
-
-
-/* =========================
-   FILTER BY DATE
-========================= */
-
-function filterEntries(){
-
-    const filterDate =
-        document.getElementById(
-            "filterDate"
-        ).value;
-
-
-    if(!filterDate){
-
-        alert(
-            "Please select a date"
-        );
-
-        return;
-
-    }
-
-
-    const entries =
-        getEntries();
-
-
-    const filtered =
-        entries.filter(
-            entry =>
-            entry.date === filterDate
-        );
-
-
-    loadEntries(
-        filtered
-    );
-
-}
-
-
-/* =========================
-   SHOW ALL
-========================= */
-
-function showAllEntries(){
-
-    document.getElementById(
-        "filterDate"
-    ).value = "";
-
-
-    loadEntries();
-
-}
-
-
-/* =========================
-   CLEAR ALL
-========================= */
-
-function clearAllData(){
-
-    const confirmDelete =
-        confirm(
-            "Are you sure? All records will be permanently deleted."
-        );
-
-
-    if(confirmDelete){
-
-        localStorage.removeItem(
-            "chendrayuduAccounts"
-        );
-
-
-        loadEntries();
-
-    }
-
-}
-
-
-/* =========================
-   SET TODAY DATE
-========================= */
-
-function setTodayDate(){
-
-    const today =
-        new Date()
-        .toISOString()
-        .split("T")[0];
-
-
-    document.getElementById(
-        "date"
-    ).value =
-        today;
-
-}
-
-
-/* START */
-
-setTodayDate();
-
-checkLogin();
 
 </script>
 
 </body>
+
 </html>
