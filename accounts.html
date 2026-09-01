@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Private Daily Accounts | Chendrayudu Online Services</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f3f5f9;
+    color:#222;
+}
+
+/* LOGIN */
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.login-box{
+    background:white;
+    width:100%;
+    max-width:420px;
+    padding:35px 30px;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.login-box h1{
+    text-align:center;
+    color:#002b7f;
+    margin-bottom:10px;
+}
+
+.login-box p{
+    text-align:center;
+    margin-bottom:25px;
+    color:#666;
+}
+
+input, select{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-top:8px;
+    margin-bottom:18px;
+    font-size:16px;
+}
+
+label{
+    font-weight:bold;
+}
+
+button{
+    border:none;
+    padding:13px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.login-btn{
+    width:100%;
+    background:#002b7f;
+    color:white;
+}
+
+.login-btn:hover{
+    opacity:.9;
+}
+
+.error{
+    color:#d40000;
+    text-align:center;
+    margin-top:15px;
+}
+
+/* ACCOUNTS */
+
+#accountsPage{
+    display:none;
+}
+
+header{
+    background:#002b7f;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    margin-bottom:8px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px 15px;
+}
+
+.form-box,
+.summary-box,
+.table-box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.form-box h2,
+.summary-box h2,
+.table-box h2{
+    color:#002b7f;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.form-grid input,
+.form-grid select{
+    margin-bottom:0;
+}
+
+.add-btn{
+    background:#008000;
+    color:white;
+    margin-top:20px;
+}
+
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.summary-card{
+    padding:20px;
+    border-radius:10px;
+    background:#f5f5f5;
+    text-align:center;
+}
+
+.summary-card h3{
+    color:#002b7f;
+    margin-bottom:10px;
+}
+
+.summary-card p{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.profit{
+    color:green;
+}
+
+.loss{
+    color:#d40000;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:850px;
+}
+
+.table-scroll{
+    overflow-x:auto;
+}
+
+th{
+    background:#002b7f;
+    color:white;
+}
+
+th,td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+.delete-btn{
+    background:#d40000;
+    color:white;
+    padding:8px 12px;
+}
+
+.logout-btn{
+    background:#d40000;
+    color:white;
+    margin-top:10px;
+}
+
+.clear-btn{
+    background:#555;
+    color:white;
+    margin-left:10px;
+}
+
+.date-filter{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.date-filter input{
+    width:auto;
+    margin:0;
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:23px;
+    }
+
+    .form-box,
+    .summary-box,
+    .table-box{
+        padding:18px;
+    }
+
+    .summary-card p{
+        font-size:20px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- LOGIN PAGE -->
+
+<div class="login-page" id="loginPage">
+
+    <div class="login-box">
+
+        <h1>🔐 Private Login</h1>
+
+        <p>Chendrayudu Online Services</p>
+
+        <label>Username</label>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter Username"
+        >
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+        >
+
+        <button class="login-btn" onclick="login()">
+            Login
+        </button>
+
+        <p class="error" id="loginError"></p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ACCOUNTS PAGE -->
+
+<div id="accountsPage">
+
+<header>
+
+    <h1>📊 Daily Accounts</h1>
+
+    <p>Chendrayudu Online Services - Private Account System</p>
+
+    <button class="logout-btn" onclick="logout()">
+        Logout
+    </button>
+
+</header>
+
+
+<div class="container">
+
+
+    <!-- ADD ENTRY -->
+
+    <div class="form-box">
+
+        <h2>➕ Add Daily Service Entry</h2>
+
+        <div class="form-grid">
+
+            <div>
+
+                <label>Date</label>
+
+                <input type="date" id="date">
+
+            </div>
+
+
+            <div>
+
+                <label>Service Name</label>
+
+                <input
+                    type="text"
+                    id="service"
+                    placeholder="Example: PAN Card"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Customer Amount ₹</label>
+
+                <input
+                    type="number"
+                    id="income"
+                    placeholder="Amount received"
+                    min="0"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Your Cost ₹</label>
+
+                <input
+                    type="number"
+                    id="expense"
+                    placeholder="Service cost"
+                    min="0"
+                >
+
+            </div>
+
+        </div>
+
+
+        <button class="add-btn" onclick="addEntry()">
+            Add Entry
+        </button>
+
+    </div>
+
+
+
+    <!-- DATE FILTER -->
+
+    <div class="form-box">
+
+        <h2>📅 View Daily Accounts</h2>
+
+        <div class="date-filter">
+
+            <input type="date" id="filterDate">
+
+            <button class="add-btn" onclick="filterEntries()">
+                Show Date
+            </button>
+
+            <button class="clear-btn" onclick="showAllEntries()">
+                Show All
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SUMMARY -->
+
+    <div class="summary-box">
+
+        <h2>💰 Summary</h2>
+
+        <div class="summary-grid">
+
+            <div class="summary-card">
+
+                <h3>Total Collection</h3>
+
+                <p id="totalIncome">₹0</p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Total Expense</h3>
+
+                <p id="totalExpense">₹0</p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Net Profit / Loss</h3>
+
+                <p id="netProfit">₹0</p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Total Services</h3>
+
+                <p id="totalServices">0</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TABLE -->
+
+    <div class="table-box">
+
+        <h2>📋 Service Records</h2>
+
+        <div class="table-scroll">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Service</th>
+
+                        <th>Customer Amount</th>
+
+                        <th>Cost</th>
+
+                        <th>Profit / Loss</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- CLEAR ALL -->
+
+    <div class="form-box">
+
+        <h2>⚠️ Data Control</h2>
+
+        <button class="clear-btn" onclick="clearAllData()">
+            Delete All Records
+        </button>
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   LOGIN DETAILS
+   CHANGE THESE
+========================= */
+
+const ADMIN_USERNAME = "Chendrayudu";
+
+const ADMIN_PASSWORD = "Cherish@2025";
+
+
+/* =========================
+   LOGIN
+========================= */
+
+function login(){
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+
+    if(
+        username === ADMIN_USERNAME &&
+        password === ADMIN_PASSWORD
+    ){
+
+        sessionStorage.setItem(
+            "chendrayuduLoggedIn",
+            "true"
+        );
+
+        showAccounts();
+
+    }
+    else{
+
+        document.getElementById("loginError").innerText =
+            "Invalid Username or Password";
+
+    }
+
+}
+
+
+/* =========================
+   SHOW ACCOUNTS
+========================= */
+
+function showAccounts(){
+
+    document.getElementById("loginPage").style.display =
+        "none";
+
+    document.getElementById("accountsPage").style.display =
+        "block";
+
+    loadEntries();
+
+}
+
+
+/* =========================
+   CHECK LOGIN
+========================= */
+
+function checkLogin(){
+
+    const loggedIn =
+        sessionStorage.getItem(
+            "chendrayuduLoggedIn"
+        );
+
+    if(loggedIn === "true"){
+
+        showAccounts();
+
+    }
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+function logout(){
+
+    sessionStorage.removeItem(
+        "chendrayuduLoggedIn"
+    );
+
+    document.getElementById("accountsPage").style.display =
+        "none";
+
+    document.getElementById("loginPage").style.display =
+        "flex";
+
+}
+
+
+/* =========================
+   GET RECORDS
+========================= */
+
+function getEntries(){
+
+    return JSON.parse(
+        localStorage.getItem(
+            "chendrayuduAccounts"
+        )
+    ) || [];
+
+}
+
+
+/* =========================
+   SAVE RECORDS
+========================= */
+
+function saveEntries(entries){
+
+    localStorage.setItem(
+        "chendrayuduAccounts",
+        JSON.stringify(entries)
+    );
+
+}
+
+
+/* =========================
+   ADD ENTRY
+========================= */
+
+function addEntry(){
+
+    const date =
+        document.getElementById("date").value;
+
+    const service =
+        document.getElementById("service").value.trim();
+
+    const income =
+        parseFloat(
+            document.getElementById("income").value
+        );
+
+    const expense =
+        parseFloat(
+            document.getElementById("expense").value
+        );
+
+
+    if(
+        !date ||
+        !service ||
+        isNaN(income) ||
+        isNaN(expense)
+    ){
+
+        alert(
+            "Please fill all details"
+        );
+
+        return;
+
+    }
+
+
+    const entry = {
+
+        id: Date.now(),
+
+        date: date,
+
+        service: service,
+
+        income: income,
+
+        expense: expense
+
+    };
+
+
+    const entries =
+        getEntries();
+
+
+    entries.push(entry);
+
+
+    saveEntries(entries);
+
+
+    document.getElementById("service").value = "";
+
+    document.getElementById("income").value = "";
+
+    document.getElementById("expense").value = "";
+
+
+    loadEntries();
+
+}
+
+
+/* =========================
+   LOAD ENTRIES
+========================= */
+
+function loadEntries(entries = null){
+
+    if(entries === null){
+
+        entries =
+            getEntries();
+
+    }
+
+
+    entries.sort(
+        (a,b) =>
+        new Date(b.date) -
+        new Date(a.date)
+    );
+
+
+    const tableBody =
+        document.getElementById("tableBody");
+
+
+    tableBody.innerHTML = "";
+
+
+    let totalIncome = 0;
+
+    let totalExpense = 0;
+
+
+    entries.forEach(entry => {
+
+        const profit =
+            entry.income -
+            entry.expense;
+
+
+        totalIncome +=
+            entry.income;
+
+
+        totalExpense +=
+            entry.expense;
+
+
+        const row =
+            document.createElement("tr");
+
+
+        row.innerHTML = `
+
+            <td>${entry.date}</td>
+
+            <td>${entry.service}</td>
+
+            <td>₹${entry.income.toFixed(2)}</td>
+
+            <td>₹${entry.expense.toFixed(2)}</td>
+
+            <td class="${
+                profit >= 0
+                ? 'profit'
+                : 'loss'
+            }">
+
+                ₹${profit.toFixed(2)}
+
+                ${
+                    profit >= 0
+                    ? ' Profit'
+                    : ' Loss'
+                }
+
+            </td>
+
+            <td>
+
+                <button
+                    class="delete-btn"
+                    onclick="deleteEntry(${entry.id})"
+                >
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        `;
+
+
+        tableBody.appendChild(row);
+
+    });
+
+
+    const netProfit =
+        totalIncome -
+        totalExpense;
+
+
+    document.getElementById(
+        "totalIncome"
+    ).innerText =
+        "₹" +
+        totalIncome.toFixed(2);
+
+
+    document.getElementById(
+        "totalExpense"
+    ).innerText =
+        "₹" +
+        totalExpense.toFixed(2);
+
+
+    const profitElement =
+        document.getElementById(
+            "netProfit"
+        );
+
+
+    profitElement.innerText =
+        "₹" +
+        netProfit.toFixed(2);
+
+
+    profitElement.className =
+        netProfit >= 0
+        ? "profit"
+        : "loss";
+
+
+    document.getElementById(
+        "totalServices"
+    ).innerText =
+        entries.length;
+
+}
+
+
+/* =========================
+   DELETE ENTRY
+========================= */
+
+function deleteEntry(id){
+
+    const entries =
+        getEntries();
+
+
+    const updatedEntries =
+        entries.filter(
+            entry =>
+            entry.id !== id
+        );
+
+
+    saveEntries(
+        updatedEntries
+    );
+
+
+    loadEntries();
+
+}
+
+
+/* =========================
+   FILTER BY DATE
+========================= */
+
+function filterEntries(){
+
+    const filterDate =
+        document.getElementById(
+            "filterDate"
+        ).value;
+
+
+    if(!filterDate){
+
+        alert(
+            "Please select a date"
+        );
+
+        return;
+
+    }
+
+
+    const entries =
+        getEntries();
+
+
+    const filtered =
+        entries.filter(
+            entry =>
+            entry.date === filterDate
+        );
+
+
+    loadEntries(
+        filtered
+    );
+
+}
+
+
+/* =========================
+   SHOW ALL
+========================= */
+
+function showAllEntries(){
+
+    document.getElementById(
+        "filterDate"
+    ).value = "";
+
+
+    loadEntries();
+
+}
+
+
+/* =========================
+   CLEAR ALL
+========================= */
+
+function clearAllData(){
+
+    const confirmDelete =
+        confirm(
+            "Are you sure? All records will be permanently deleted."
+        );
+
+
+    if(confirmDelete){
+
+        localStorage.removeItem(
+            "chendrayuduAccounts"
+        );
+
+
+        loadEntries();
+
+    }
+
+}
+
+
+/* =========================
+   SET TODAY DATE
+========================= */
+
+function setTodayDate(){
+
+    const today =
+        new Date()
+        .toISOString()
+        .split("T")[0];
+
+
+    document.getElementById(
+        "date"
+    ).value =
+        today;
+
+}
+
+
+/* START */
+
+setTodayDate();
+
+checkLogin();
+
+</script>
+
+</body>
+</html>
