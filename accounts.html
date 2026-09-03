@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,6 +27,7 @@ body{
     background:#f2f4f8;
     color:#222;
 }
+
 
 /* LOGIN */
 
@@ -60,6 +63,9 @@ body{
     margin-bottom:25px;
 }
 
+
+/* INPUTS */
+
 input,
 select{
     width:100%;
@@ -69,6 +75,9 @@ select{
     border-radius:8px;
     font-size:16px;
 }
+
+
+/* BUTTON */
 
 button{
     border:none;
@@ -85,16 +94,21 @@ button:hover{
     opacity:.9;
 }
 
+
 .error{
     color:red !important;
     margin-top:15px;
 }
+
 
 /* ACCOUNTS */
 
 .accounts-container{
     display:none;
 }
+
+
+/* HEADER */
 
 header{
     background:#002b7f;
@@ -112,6 +126,7 @@ header h1{
     background:#d40000;
     padding:10px 20px;
 }
+
 
 /* SUMMARY */
 
@@ -155,6 +170,11 @@ header h1{
     color:#002b7f;
 }
 
+.pending{
+    color:#e67e00;
+}
+
+
 /* FORM */
 
 .form-container{
@@ -179,6 +199,7 @@ header h1{
 .form-box button{
     width:100%;
 }
+
 
 /* FILTER */
 
@@ -210,6 +231,7 @@ header h1{
 .filter-grid select{
     margin-bottom:0;
 }
+
 
 /* MONTHLY REPORT */
 
@@ -246,10 +268,11 @@ header h1{
     background:#168b3a;
 }
 
+
 /* TABLE */
 
 .records-container{
-    max-width:1200px;
+    max-width:1400px;
     margin:20px auto 40px;
     padding:20px;
 }
@@ -267,7 +290,7 @@ table{
     width:100%;
     border-collapse:collapse;
     background:white;
-    min-width:800px;
+    min-width:1300px;
 }
 
 th{
@@ -286,6 +309,20 @@ td{
     background:#d40000;
     padding:8px 12px;
 }
+
+
+/* STATUS */
+
+.status-paid{
+    color:green;
+    font-weight:bold;
+}
+
+.status-pending{
+    color:#e67e00;
+    font-weight:bold;
+}
+
 
 /* MOBILE */
 
@@ -318,7 +355,9 @@ td{
 }
 
 </style>
+
 </head>
+
 
 <body>
 
@@ -333,11 +372,21 @@ td{
 
         <p>Chendrayudu Online Services</p>
 
-        <input type="email" id="email" placeholder="Enter Email">
+        <input
+        type="email"
+        id="email"
+        placeholder="Enter Email"
+        >
 
-        <input type="password" id="password" placeholder="Enter Password">
+        <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+        >
 
-        <button onclick="login()">Login</button>
+        <button onclick="login()">
+        Login
+        </button>
 
         <p class="error" id="errorMessage"></p>
 
@@ -346,9 +395,11 @@ td{
 </div>
 
 
+
 <!-- ACCOUNTS -->
 
 <div class="accounts-container" id="accountsContainer">
+
 
 <header>
 
@@ -356,59 +407,127 @@ td{
 
     <p>Chendrayudu Online Services</p>
 
-    <button class="logout-btn" onclick="logout()">
-        Logout
+    <button
+    class="logout-btn"
+    onclick="logout()"
+    >
+    Logout
     </button>
 
 </header>
 
 
+
 <!-- TODAY SUMMARY -->
 
-<h2 class="summary-title">📅 Today's Summary</h2>
+<h2 class="summary-title">
+📅 Today's Summary
+</h2>
+
 
 <div class="summary">
 
     <div class="summary-card">
+
         <h3>Today Income</h3>
-        <h2 class="income">₹ <span id="todayIncome">0</span></h2>
+
+        <h2 class="income">
+        ₹ <span id="todayIncome">0</span>
+        </h2>
+
     </div>
 
+
     <div class="summary-card">
+
         <h3>Today Expense</h3>
-        <h2 class="expense">₹ <span id="todayExpense">0</span></h2>
+
+        <h2 class="expense">
+        ₹ <span id="todayExpense">0</span>
+        </h2>
+
     </div>
 
+
     <div class="summary-card">
-        <h3>Today Profit / Loss</h3>
-        <h2 class="profit">₹ <span id="todayProfit">0</span></h2>
+
+        <h3>Today Profit</h3>
+
+        <h2 class="profit">
+        ₹ <span id="todayProfit">0</span>
+        </h2>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <h3>Today Pending</h3>
+
+        <h2 class="pending">
+        ₹ <span id="todayPending">0</span>
+        </h2>
+
     </div>
 
 </div>
+
 
 
 <!-- OVERALL SUMMARY -->
 
-<h2 class="summary-title">📊 Overall Summary</h2>
+<h2 class="summary-title">
+📊 Overall Summary
+</h2>
+
 
 <div class="summary">
 
     <div class="summary-card">
+
         <h3>Total Income</h3>
-        <h2 class="income">₹ <span id="totalIncome">0</span></h2>
+
+        <h2 class="income">
+        ₹ <span id="totalIncome">0</span>
+        </h2>
+
     </div>
 
+
     <div class="summary-card">
+
         <h3>Total Expense</h3>
-        <h2 class="expense">₹ <span id="totalExpense">0</span></h2>
+
+        <h2 class="expense">
+        ₹ <span id="totalExpense">0</span>
+        </h2>
+
     </div>
 
+
     <div class="summary-card">
-        <h3>Total Profit / Loss</h3>
-        <h2 class="profit">₹ <span id="totalProfit">0</span></h2>
+
+        <h3>Total Profit</h3>
+
+        <h2 class="profit">
+        ₹ <span id="totalProfit">0</span>
+        </h2>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <h3>Total Pending</h3>
+
+        <h2 class="pending">
+        ₹ <span id="totalPending">0</span>
+        </h2>
+
     </div>
 
 </div>
+
 
 
 <!-- ADD RECORD -->
@@ -417,50 +536,115 @@ td{
 
 <div class="form-box">
 
-<h2>➕ Add Daily Record</h2>
+<h2>➕ Add Customer Payment Record</h2>
+
+
+<input
+type="text"
+id="customerName"
+placeholder="Customer Name"
+/>
+
+
+<input
+type="tel"
+id="mobile"
+placeholder="Customer Mobile Number"
+/>
+
 
 <select id="service">
 
-<option value="">Select Service</option>
+<option value="">
+Select Service
+</option>
 
 <option>PAN Card</option>
+
 <option>Aadhaar Services</option>
+
 <option>Udyam Certificate</option>
+
 <option>Bill Payments</option>
+
 <option>Driving Licence</option>
+
 <option>Voter ID</option>
+
 <option>Passport</option>
+
 <option>E-Shram Card</option>
+
 <option>Ration Card</option>
+
 <option>Train Tickets</option>
+
 <option>APPSC</option>
+
 <option>UPSC</option>
+
 <option>SSC</option>
+
 <option>Railway Jobs</option>
+
 <option>E-Challan</option>
+
 <option>CAP Services</option>
+
 <option>PDF Tools</option>
+
 <option>AP Seva</option>
+
 <option>Sejda PDF Editor</option>
+
 <option>Crop Tool</option>
+
 <option>EPFO Services</option>
+
 <option>Other Service</option>
 
 </select>
 
-<input type="number" id="income" placeholder="Customer Amount / Income ₹">
 
-<input type="number" id="expense" placeholder="Your Expense ₹">
+<input
+type="number"
+id="totalAmount"
+placeholder="Total Amount ₹"
+/>
 
-<input type="text" id="description" placeholder="Description (Optional)">
+
+<input
+type="number"
+id="paidAmount"
+placeholder="Paid Amount ₹"
+/>
+
+
+<input
+type="number"
+id="expense"
+placeholder="Your Expense ₹"
+/>
+
+
+<input
+type="text"
+id="description"
+placeholder="Description (Optional)"
+/>
+
 
 <button onclick="addRecord()">
+
 ➕ Add Record
+
 </button>
 
+
 </div>
 
 </div>
+
 
 
 <!-- MONTHLY REPORT -->
@@ -470,6 +654,7 @@ td{
 <div class="monthly-box">
 
 <h2>📅 Monthly Report</h2>
+
 
 <div class="filter-grid">
 
@@ -482,58 +667,89 @@ onchange="calculateMonthlyReport()"
 </div>
 
 
+
 <div class="summary">
 
-    <div class="summary-card">
 
-        <h3>Monthly Income</h3>
+<div class="summary-card">
 
-        <h2 class="income">
-            ₹ <span id="monthlyIncome">0</span>
-        </h2>
+<h3>Monthly Income</h3>
 
-    </div>
-
-
-    <div class="summary-card">
-
-        <h3>Monthly Expense</h3>
-
-        <h2 class="expense">
-            ₹ <span id="monthlyExpense">0</span>
-        </h2>
-
-    </div>
-
-
-    <div class="summary-card">
-
-        <h3>Monthly Profit / Loss</h3>
-
-        <h2 class="profit">
-            ₹ <span id="monthlyProfit">0</span>
-        </h2>
-
-    </div>
+<h2 class="income">
+₹ <span id="monthlyIncome">0</span>
+</h2>
 
 </div>
+
+
+
+<div class="summary-card">
+
+<h3>Monthly Expense</h3>
+
+<h2 class="expense">
+₹ <span id="monthlyExpense">0</span>
+</h2>
+
+</div>
+
+
+
+<div class="summary-card">
+
+<h3>Monthly Profit</h3>
+
+<h2 class="profit">
+₹ <span id="monthlyProfit">0</span>
+</h2>
+
+</div>
+
+
+
+<div class="summary-card">
+
+<h3>Monthly Pending</h3>
+
+<h2 class="pending">
+₹ <span id="monthlyPending">0</span>
+</h2>
+
+</div>
+
+
+</div>
+
 
 
 <div class="report-buttons">
 
-<button class="pdf-btn" onclick="downloadPDF()">
+<button
+class="pdf-btn"
+onclick="downloadPDF()"
+>
+
 📄 Download PDF Report
+
 </button>
 
-<button class="excel-btn" onclick="downloadExcel()">
+
+<button
+class="excel-btn"
+onclick="downloadExcel()"
+>
+
 📗 Download Excel Report
+
 </button>
 
 </div>
 
+
 </div>
 
 </div>
+
 
 
 <!-- SEARCH & FILTER -->
@@ -544,14 +760,17 @@ onchange="calculateMonthlyReport()"
 
 <h2>🔎 Search & Filter</h2>
 
+
 <div class="filter-grid">
+
 
 <input
 type="text"
 id="searchService"
-placeholder="Search Service"
+placeholder="Search Service or Customer"
 oninput="applyFilters()"
 >
+
 
 <input
 type="date"
@@ -559,42 +778,76 @@ id="dateFilter"
 onchange="applyFilters()"
 >
 
+
 <input
 type="month"
 id="monthFilter"
 onchange="applyFilters()"
 >
 
+
 <select
 id="serviceFilter"
 onchange="applyFilters()"
 >
 
-<option value="">All Services</option>
+<option value="">
+All Services
+</option>
 
 <option>PAN Card</option>
+
 <option>Aadhaar Services</option>
+
 <option>Bill Payments</option>
+
 <option>Driving Licence</option>
+
 <option>Voter ID</option>
+
 <option>Passport</option>
+
 <option>EPFO Services</option>
+
 <option>Other Service</option>
 
 </select>
 
-</div>
+
+<select
+id="paymentFilter"
+onchange="applyFilters()"
+>
+
+<option value="">
+All Payments
+</option>
+
+<option value="Paid">
+Paid
+</option>
+
+<option value="Pending">
+Pending
+</option>
+
+</select>
+
 
 </div>
 
 </div>
+
+</div>
+
 
 
 <!-- RECORDS -->
 
 <div class="records-container">
 
-<h2>📋 Records</h2>
+<h2>📋 Customer Records</h2>
+
 
 <div class="table-wrapper">
 
@@ -603,18 +856,40 @@ onchange="applyFilters()"
 <thead>
 
 <tr>
+
 <th>Date</th>
+
+<th>Customer</th>
+
+<th>Mobile</th>
+
 <th>Service</th>
-<th>Income</th>
+
+<th>Total Amount</th>
+
+<th>Paid</th>
+
+<th>Pending</th>
+
+<th>Status</th>
+
 <th>Expense</th>
+
 <th>Profit</th>
+
 <th>Description</th>
+
 <th>Action</th>
+
 </tr>
 
 </thead>
 
-<tbody id="recordsTable"></tbody>
+
+<tbody id="recordsTable">
+
+</tbody>
+
 
 </table>
 
@@ -622,78 +897,135 @@ onchange="applyFilters()"
 
 </div>
 
+
 </div>
+
 
 
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+
+/* FIREBASE IMPORTS */
 
 import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+
+
+import {
+
 getAuth,
+
 signInWithEmailAndPassword,
+
 signOut,
+
 onAuthStateChanged
+
 }
-from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+from
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
 
 import {
-getFirestore,
-collection,
-addDoc,
-getDocs,
-deleteDoc,
-doc,
-query,
-orderBy
-}
-from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
+getFirestore,
+
+collection,
+
+addDoc,
+
+getDocs,
+
+deleteDoc,
+
+doc,
+
+query,
+
+orderBy
+
+}
+from
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+
+
+/* FIREBASE CONFIG */
 
 const firebaseConfig = {
 
-apiKey: "AIzaSyB_AUh6P-Xa2JFhLeNtgQ3Ibk-kd0OwSvc",
+apiKey:
+"AIzaSyB_AUh6P-Xa2JFhLeNtgQ3Ibk-kd0OwSvc",
 
-authDomain: "chendrayudu-online-services.firebaseapp.com",
+authDomain:
+"chendrayudu-online-services.firebaseapp.com",
 
-projectId: "chendrayudu-online-services",
+projectId:
+"chendrayudu-online-services",
 
-storageBucket: "chendrayudu-online-services.firebasestorage.app",
+storageBucket:
+"chendrayudu-online-services.firebasestorage.app",
 
-messagingSenderId: "619882558498",
+messagingSenderId:
+"619882558498",
 
-appId: "1:619882558498:web:5da004bc90f27b211e067b",
+appId:
+"1:619882558498:web:5da004bc90f27b211e067b",
 
-measurementId: "G-HXPJ015KJ0"
+measurementId:
+"G-HXPJ015KJ0"
 
 };
 
 
-const app = initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+/* INITIALIZE FIREBASE */
 
-const db = getFirestore(app);
+const app =
+initializeApp(firebaseConfig);
 
+
+const auth =
+getAuth(app);
+
+
+const db =
+getFirestore(app);
+
+
+
+/* RECORDS */
 
 let allRecords = [];
 
 
+
 /* LOGIN */
 
-window.login = async function(){
+window.login =
+async function(){
+
 
 const email =
-document.getElementById("email").value.trim();
+document.getElementById("email")
+.value
+.trim();
+
 
 const password =
-document.getElementById("password").value;
+document.getElementById("password")
+.value;
+
 
 const errorMessage =
 document.getElementById("errorMessage");
 
+
 errorMessage.innerText = "";
+
 
 if(!email || !password){
 
@@ -704,209 +1036,460 @@ return;
 
 }
 
+
 try{
 
+
 await signInWithEmailAndPassword(
+
 auth,
+
 email,
+
 password
+
 );
 
-}catch(error){
+
+}
+catch(error){
+
 
 errorMessage.innerText =
 "Invalid email or password";
 
+
 }
+
 
 };
 
 
+
 /* LOGOUT */
 
-window.logout = async function(){
+window.logout =
+async function(){
 
 await signOut(auth);
 
 };
 
 
-/* AUTH */
 
-onAuthStateChanged(auth,(user)=>{
+/* AUTH STATE */
+
+onAuthStateChanged(
+auth,
+(user)=>{
+
 
 if(user){
 
-document.getElementById("loginContainer")
+
+document
+.getElementById("loginContainer")
 .style.display = "none";
 
-document.getElementById("accountsContainer")
+
+document
+.getElementById("accountsContainer")
 .style.display = "block";
+
 
 loadRecords();
 
-}else{
 
-document.getElementById("loginContainer")
+}
+else{
+
+
+document
+.getElementById("loginContainer")
 .style.display = "flex";
 
-document.getElementById("accountsContainer")
+
+document
+.getElementById("accountsContainer")
 .style.display = "none";
+
 
 }
 
-});
+
+}
+);
+
 
 
 /* TODAY DATE */
 
 function getToday(){
 
-const now = new Date();
 
-const year = now.getFullYear();
+const now =
+new Date();
+
+
+const year =
+now.getFullYear();
+
 
 const month =
-String(now.getMonth()+1)
+String(
+now.getMonth() + 1
+)
 .padStart(2,"0");
 
+
 const day =
-String(now.getDate())
+String(
+now.getDate()
+)
 .padStart(2,"0");
+
 
 return `${year}-${month}-${day}`;
 
+
 }
+
 
 
 /* ADD RECORD */
 
-window.addRecord = async function(){
+window.addRecord =
+async function(){
+
+
+const customerName =
+document
+.getElementById("customerName")
+.value
+.trim();
+
+
+const mobile =
+document
+.getElementById("mobile")
+.value
+.trim();
+
 
 const service =
-document.getElementById("service").value;
+document
+.getElementById("service")
+.value;
 
-const incomeInput =
-document.getElementById("income").value;
+
+const totalAmountInput =
+document
+.getElementById("totalAmount")
+.value;
+
+
+const paidAmountInput =
+document
+.getElementById("paidAmount")
+.value;
+
 
 const expenseInput =
-document.getElementById("expense").value;
+document
+.getElementById("expense")
+.value;
+
 
 const description =
-document.getElementById("description").value.trim();
+document
+.getElementById("description")
+.value
+.trim();
+
+
+
+if(!customerName){
+
+alert(
+"Please enter customer name"
+);
+
+return;
+
+}
+
 
 
 if(!service){
 
-alert("Please select a service");
+alert(
+"Please select a service"
+);
 
 return;
 
 }
 
 
-if(incomeInput === ""){
 
-alert("Please enter income amount");
+if(totalAmountInput === ""){
+
+alert(
+"Please enter total amount"
+);
 
 return;
 
 }
 
 
-const income =
-Number(incomeInput);
+
+if(paidAmountInput === ""){
+
+alert(
+"Please enter paid amount"
+);
+
+return;
+
+}
+
+
+
+const totalAmount =
+Number(
+totalAmountInput
+);
+
+
+const paidAmount =
+Number(
+paidAmountInput
+);
+
 
 const expense =
 expenseInput === ""
 ? 0
-: Number(expenseInput);
+: Number(
+expenseInput
+);
+
+
+
+if(
+
+paidAmount >
+totalAmount
+
+){
+
+alert(
+"Paid amount cannot be greater than total amount"
+);
+
+return;
+
+}
+
+
+
+const pendingAmount =
+totalAmount -
+paidAmount;
+
+
+
+const paymentStatus =
+
+pendingAmount === 0
+
+?
+
+"Paid"
+
+:
+
+"Pending";
+
 
 
 const profit =
-income - expense;
+
+paidAmount -
+expense;
+
 
 
 const date =
 getToday();
 
 
+
 try{
 
+
 await addDoc(
-collection(db,"accounts"),
+
+collection(
+db,
+"accounts"
+),
+
 {
 
+customerName,
+
+mobile,
+
 service,
-income,
+
+totalAmount,
+
+paidAmount,
+
+pendingAmount,
+
+paymentStatus,
+
 expense,
+
 profit,
+
 description,
+
 date,
-createdAt: Date.now()
+
+createdAt:
+Date.now()
 
 }
+
 );
 
 
-alert("Record Added Successfully ✅");
+
+alert(
+"Record Added Successfully ✅"
+);
 
 
-document.getElementById("service").value = "";
 
-document.getElementById("income").value = "";
+document
+.getElementById("customerName")
+.value = "";
 
-document.getElementById("expense").value = "";
 
-document.getElementById("description").value = "";
+document
+.getElementById("mobile")
+.value = "";
+
+
+document
+.getElementById("service")
+.value = "";
+
+
+document
+.getElementById("totalAmount")
+.value = "";
+
+
+document
+.getElementById("paidAmount")
+.value = "";
+
+
+document
+.getElementById("expense")
+.value = "";
+
+
+document
+.getElementById("description")
+.value = "";
+
 
 
 loadRecords();
 
+
 }
 catch(error){
 
+
 alert(
+
 "Error saving record: " +
+
 error.message
+
 );
+
 
 }
 
+
 };
+
 
 
 /* LOAD RECORDS */
 
 async function loadRecords(){
 
+
 try{
 
+
 const q =
+
 query(
-collection(db,"accounts"),
-orderBy("createdAt","desc")
+
+collection(
+db,
+"accounts"
+),
+
+orderBy(
+"createdAt",
+"desc"
+)
+
 );
 
 
+
 const snapshot =
-await getDocs(q);
+
+await getDocs(
+q
+);
+
 
 
 allRecords = [];
 
 
-snapshot.forEach((documentSnapshot)=>{
+
+snapshot.forEach(
+(documentSnapshot)=>{
+
 
 allRecords.push({
 
-id: documentSnapshot.id,
+id:
+documentSnapshot.id,
 
-...documentSnapshot.data()
+...
+documentSnapshot.data()
 
 });
 
-});
+
+}
+);
+
 
 
 calculateSummary();
@@ -915,19 +1498,36 @@ calculateMonthlyReport();
 
 applyFilters();
 
+
 }
 catch(error){
 
-console.error(error);
+
+console.error(
+error
+);
+
+
+alert(
+
+"Unable to load records: " +
+
+error.message
+
+);
+
 
 }
 
+
 }
 
 
-/* OVERALL + TODAY SUMMARY */
+
+/* SUMMARY */
 
 function calculateSummary(){
+
 
 let totalIncome = 0;
 
@@ -935,88 +1535,229 @@ let totalExpense = 0;
 
 let totalProfit = 0;
 
+let totalPending = 0;
+
+
 let todayIncome = 0;
 
 let todayExpense = 0;
 
 let todayProfit = 0;
 
+let todayPending = 0;
+
+
 const today =
 getToday();
 
 
-allRecords.forEach(record=>{
 
-const income =
-Number(record.income || 0);
+allRecords.forEach(
+record=>{
+
+
+/* OLD RECORD COMPATIBILITY */
+
+const paidAmount =
+
+Number(
+
+record.paidAmount
+
+??
+
+record.income
+
+??
+
+0
+
+);
+
+
 
 const expense =
-Number(record.expense || 0);
+
+Number(
+
+record.expense
+
+??
+
+0
+
+);
+
+
+
+const pendingAmount =
+
+Number(
+
+record.pendingAmount
+
+??
+
+0
+
+);
+
+
 
 const profit =
-Number(record.profit || 0);
+
+Number(
+
+record.profit
+
+??
+
+0
+
+);
 
 
-totalIncome += income;
 
-totalExpense += expense;
-
-totalProfit += profit;
+totalIncome +=
+paidAmount;
 
 
-if(record.date === today){
+totalExpense +=
+expense;
 
-todayIncome += income;
 
-todayExpense += expense;
+totalProfit +=
+profit;
 
-todayProfit += profit;
+
+totalPending +=
+pendingAmount;
+
+
+
+if(
+record.date === today
+){
+
+
+todayIncome +=
+paidAmount;
+
+
+todayExpense +=
+expense;
+
+
+todayProfit +=
+profit;
+
+
+todayPending +=
+pendingAmount;
+
 
 }
 
-});
+
+}
+);
 
 
-document.getElementById("totalIncome").innerText =
+
+document
+.getElementById("totalIncome")
+.innerText =
 totalIncome;
 
-document.getElementById("totalExpense").innerText =
+
+document
+.getElementById("totalExpense")
+.innerText =
 totalExpense;
 
-document.getElementById("totalProfit").innerText =
+
+document
+.getElementById("totalProfit")
+.innerText =
 totalProfit;
 
-document.getElementById("todayIncome").innerText =
+
+document
+.getElementById("totalPending")
+.innerText =
+totalPending;
+
+
+
+document
+.getElementById("todayIncome")
+.innerText =
 todayIncome;
 
-document.getElementById("todayExpense").innerText =
+
+document
+.getElementById("todayExpense")
+.innerText =
 todayExpense;
 
-document.getElementById("todayProfit").innerText =
+
+document
+.getElementById("todayProfit")
+.innerText =
 todayProfit;
 
+
+document
+.getElementById("todayPending")
+.innerText =
+todayPending;
+
+
 }
+
 
 
 /* MONTHLY REPORT */
 
-window.calculateMonthlyReport = function(){
+window.calculateMonthlyReport =
+function(){
+
 
 const selectedMonth =
-document.getElementById("reportMonth").value;
+document
+.getElementById("reportMonth")
+.value;
+
 
 
 if(!selectedMonth){
 
-document.getElementById("monthlyIncome").innerText = 0;
 
-document.getElementById("monthlyExpense").innerText = 0;
+document
+.getElementById("monthlyIncome")
+.innerText = 0;
 
-document.getElementById("monthlyProfit").innerText = 0;
+
+document
+.getElementById("monthlyExpense")
+.innerText = 0;
+
+
+document
+.getElementById("monthlyProfit")
+.innerText = 0;
+
+
+document
+.getElementById("monthlyPending")
+.innerText = 0;
+
 
 return;
 
+
 }
+
 
 
 let monthlyIncome = 0;
@@ -1025,69 +1766,164 @@ let monthlyExpense = 0;
 
 let monthlyProfit = 0;
 
+let monthlyPending = 0;
 
-allRecords.forEach(record=>{
 
-if(record.date &&
-record.date.startsWith(selectedMonth)){
+
+allRecords.forEach(
+record=>{
+
+
+if(
+
+record.date &&
+
+record.date.startsWith(
+selectedMonth
+)
+
+){
+
 
 monthlyIncome +=
-Number(record.income || 0);
+
+Number(
+
+record.paidAmount
+
+??
+
+record.income
+
+??
+
+0
+
+);
+
+
 
 monthlyExpense +=
-Number(record.expense || 0);
+
+Number(
+record.expense
+||
+0
+);
+
+
 
 monthlyProfit +=
-Number(record.profit || 0);
+
+Number(
+record.profit
+||
+0
+);
+
+
+
+monthlyPending +=
+
+Number(
+
+record.pendingAmount
+
+??
+
+0
+
+);
+
 
 }
 
-});
+
+}
+);
 
 
-document.getElementById("monthlyIncome")
-.innerText = monthlyIncome;
 
-document.getElementById("monthlyExpense")
-.innerText = monthlyExpense;
+document
+.getElementById("monthlyIncome")
+.innerText =
+monthlyIncome;
 
-document.getElementById("monthlyProfit")
-.innerText = monthlyProfit;
+
+document
+.getElementById("monthlyExpense")
+.innerText =
+monthlyExpense;
+
+
+document
+.getElementById("monthlyProfit")
+.innerText =
+monthlyProfit;
+
+
+document
+.getElementById("monthlyPending")
+.innerText =
+monthlyPending;
+
 
 };
+
 
 
 /* GET MONTH RECORDS */
 
 function getMonthlyRecords(){
 
+
 const selectedMonth =
-document.getElementById("reportMonth").value;
+document
+.getElementById("reportMonth")
+.value;
+
 
 
 if(!selectedMonth){
 
-alert("Please select a month first");
+
+alert(
+"Please select a month first"
+);
+
 
 return null;
 
+
 }
 
 
-return allRecords.filter(record =>
+
+return allRecords.filter(
+record =>
+
 record.date &&
-record.date.startsWith(selectedMonth)
+
+record.date.startsWith(
+selectedMonth
+)
+
 );
 
+
 }
+
 
 
 /* DOWNLOAD PDF */
 
-window.downloadPDF = function(){
+window.downloadPDF =
+function(){
+
 
 const records =
 getMonthlyRecords();
+
 
 
 if(!records){
@@ -1097,38 +1933,57 @@ return;
 }
 
 
+
 const selectedMonth =
-document.getElementById("reportMonth").value;
+document
+.getElementById("reportMonth")
+.value;
+
 
 
 const { jsPDF } =
 window.jspdf;
 
 
+
 const pdf =
 new jsPDF();
 
 
+
 pdf.setFontSize(18);
 
+
 pdf.text(
+
 "Chendrayudu Online Services",
+
 20,
+
 20
+
 );
+
 
 
 pdf.setFontSize(14);
 
+
 pdf.text(
+
 "Monthly Accounts Report: " +
 selectedMonth,
+
 20,
+
 30
+
 );
 
 
+
 let y = 45;
+
 
 
 let totalIncome = 0;
@@ -1137,109 +1992,223 @@ let totalExpense = 0;
 
 let totalProfit = 0;
 
+let totalPending = 0;
 
-records.forEach((record,index)=>{
 
 
-const income =
-Number(record.income || 0);
+records.forEach(
+(record,index)=>{
+
+
+const paidAmount =
+
+Number(
+
+record.paidAmount
+
+??
+
+record.income
+
+??
+
+0
+
+);
+
+
 
 const expense =
-Number(record.expense || 0);
+Number(
+record.expense
+||
+0
+);
+
+
 
 const profit =
-Number(record.profit || 0);
+Number(
+record.profit
+||
+0
+);
 
 
-totalIncome += income;
 
-totalExpense += expense;
+const pending =
+Number(
+record.pendingAmount
+||
+0
+);
 
-totalProfit += profit;
 
 
-if(y > 270){
+totalIncome +=
+paidAmount;
+
+
+totalExpense +=
+expense;
+
+
+totalProfit +=
+profit;
+
+
+totalPending +=
+pending;
+
+
+
+if(y > 265){
+
 
 pdf.addPage();
 
+
 y = 20;
 
+
 }
+
 
 
 pdf.setFontSize(10);
 
 
+
 pdf.text(
-`${index+1}. ${record.date} | ${record.service}`,
+
+`${index + 1}. ${record.date} | ${record.customerName || "Customer"} | ${record.service}`,
+
 20,
+
 y
+
 );
+
+
 
 y += 6;
 
 
+
 pdf.text(
-`Income: Rs.${income} | Expense: Rs.${expense} | Profit: Rs.${profit}`,
+
+`Paid: Rs.${paidAmount} | Expense: Rs.${expense} | Profit: Rs.${profit} | Pending: Rs.${pending}`,
+
 25,
+
 y
+
 );
+
+
 
 y += 8;
 
-});
+
+}
+);
 
 
-if(y > 250){
+
+if(y > 245){
+
 
 pdf.addPage();
 
+
 y = 20;
 
+
 }
+
 
 
 pdf.setFontSize(14);
 
 
+
 pdf.text(
+
 `Total Income: Rs.${totalIncome}`,
+
 20,
+
 y
+
 );
+
 
 y += 8;
 
 
+
 pdf.text(
+
 `Total Expense: Rs.${totalExpense}`,
+
 20,
+
 y
+
 );
+
 
 y += 8;
 
 
+
 pdf.text(
-`Total Profit/Loss: Rs.${totalProfit}`,
+
+`Total Profit: Rs.${totalProfit}`,
+
 20,
+
 y
+
 );
+
+
+y += 8;
+
+
+
+pdf.text(
+
+`Total Pending: Rs.${totalPending}`,
+
+20,
+
+y
+
+);
+
 
 
 pdf.save(
+
 `Monthly_Report_${selectedMonth}.pdf`
+
 );
+
 
 };
 
 
+
 /* DOWNLOAD EXCEL */
 
-window.downloadExcel = function(){
+window.downloadExcel =
+function(){
+
 
 const records =
 getMonthlyRecords();
+
 
 
 if(!records){
@@ -1249,32 +2218,109 @@ return;
 }
 
 
+
 const selectedMonth =
-document.getElementById("reportMonth").value;
+document
+.getElementById("reportMonth")
+.value;
+
 
 
 const excelData =
-records.map(record => ({
+
+records.map(
+record => ({
 
 Date:
 record.date || "",
 
+Customer:
+record.customerName || "",
+
+Mobile:
+record.mobile || "",
+
 Service:
 record.service || "",
 
-Income:
-Number(record.income || 0),
+"Total Amount":
+
+Number(
+
+record.totalAmount
+
+??
+
+record.income
+
+??
+
+0
+
+),
+
+"Paid Amount":
+
+Number(
+
+record.paidAmount
+
+??
+
+record.income
+
+??
+
+0
+
+),
+
+"Pending Amount":
+
+Number(
+
+record.pendingAmount
+
+??
+
+0
+
+),
+
+Status:
+
+record.paymentStatus
+
+??
+
+"Paid",
 
 Expense:
-Number(record.expense || 0),
+
+Number(
+record.expense
+||
+0
+),
 
 Profit:
-Number(record.profit || 0),
+
+Number(
+record.profit
+||
+0
+),
 
 Description:
-record.description || ""
 
-}));
+record.description
+||
+""
+
+})
+
+);
+
 
 
 let totalIncome = 0;
@@ -1283,100 +2329,216 @@ let totalExpense = 0;
 
 let totalProfit = 0;
 
+let totalPending = 0;
 
-records.forEach(record=>{
+
+
+records.forEach(
+record=>{
+
 
 totalIncome +=
-Number(record.income || 0);
+
+Number(
+
+record.paidAmount
+
+??
+
+record.income
+
+??
+
+0
+
+);
+
+
 
 totalExpense +=
-Number(record.expense || 0);
+
+Number(
+record.expense
+||
+0
+);
+
+
 
 totalProfit +=
-Number(record.profit || 0);
 
-});
+Number(
+record.profit
+||
+0
+);
+
+
+
+totalPending +=
+
+Number(
+record.pendingAmount
+||
+0
+);
+
+
+}
+);
+
 
 
 excelData.push({
 
 Date:"",
 
+Customer:"",
+
+Mobile:"",
+
 Service:"TOTAL",
 
-Income:totalIncome,
+"Total Amount":"",
 
-Expense:totalExpense,
+"Paid Amount":
+totalIncome,
 
-Profit:totalProfit,
+"Pending Amount":
+totalPending,
 
-Description:"Monthly Summary"
+Status:"",
+
+Expense:
+totalExpense,
+
+Profit:
+totalProfit,
+
+Description:
+"Monthly Summary"
 
 });
 
 
+
 const worksheet =
+
 XLSX.utils.json_to_sheet(
 excelData
 );
+
 
 
 const workbook =
 XLSX.utils.book_new();
 
 
+
 XLSX.utils.book_append_sheet(
+
 workbook,
+
 worksheet,
+
 "Monthly Report"
+
 );
+
 
 
 XLSX.writeFile(
+
 workbook,
+
 `Monthly_Report_${selectedMonth}.xlsx`
+
 );
+
 
 };
 
 
+
 /* FILTER */
 
-window.applyFilters = function(){
+window.applyFilters =
+function(){
+
 
 const search =
-document.getElementById("searchService")
+document
+.getElementById("searchService")
 .value
 .toLowerCase()
 .trim();
 
 
+
 const selectedDate =
-document.getElementById("dateFilter")
+document
+.getElementById("dateFilter")
 .value;
+
 
 
 const selectedMonth =
-document.getElementById("monthFilter")
+document
+.getElementById("monthFilter")
 .value;
+
 
 
 const selectedService =
-document.getElementById("serviceFilter")
+document
+.getElementById("serviceFilter")
 .value;
 
 
+
+const paymentFilter =
+document
+.getElementById("paymentFilter")
+.value;
+
+
+
 const filteredRecords =
-allRecords.filter(record=>{
+
+allRecords.filter(
+record=>{
+
 
 const service =
-(record.service || "")
+
+(
+record.service
+||
+""
+)
 .toLowerCase();
 
 
+
+const customer =
+
+(
+record.customerName
+||
+""
+)
+.toLowerCase();
+
+
+
 if(
+
 search &&
-!service.includes(search)
+
+!service.includes(search) &&
+
+!customer.includes(search)
+
 ){
 
 return false;
@@ -1384,9 +2546,14 @@ return false;
 }
 
 
+
 if(
+
 selectedDate &&
-record.date !== selectedDate
+
+record.date !==
+selectedDate
+
 ){
 
 return false;
@@ -1394,90 +2561,264 @@ return false;
 }
 
 
+
 if(
+
 selectedMonth &&
-!record.date.startsWith(selectedMonth)
+
+!record.date.startsWith(
+selectedMonth
+)
+
 ){
 
 return false;
 
 }
+
 
 
 if(
+
 selectedService &&
-record.service !== selectedService
+
+record.service !==
+selectedService
+
 ){
 
 return false;
 
 }
+
+
+
+const status =
+
+record.paymentStatus
+
+??
+
+"Paid";
+
+
+
+if(
+
+paymentFilter &&
+
+status !==
+paymentFilter
+
+){
+
+return false;
+
+}
+
 
 
 return true;
 
-});
+
+}
+);
+
 
 
 displayRecords(
 filteredRecords
 );
 
+
 };
+
 
 
 /* DISPLAY RECORDS */
 
 function displayRecords(records){
 
+
 const recordsTable =
-document.getElementById("recordsTable");
+document
+.getElementById("recordsTable");
+
 
 
 recordsTable.innerHTML = "";
 
 
-if(records.length === 0){
 
-recordsTable.innerHTML =
-`
+if(
+records.length === 0
+){
+
+
+recordsTable.innerHTML = `
+
 <tr>
-<td colspan="7">
+
+<td colspan="12">
+
 No records found
+
 </td>
+
 </tr>
+
 `;
 
+
 return;
+
 
 }
 
 
-records.forEach(record=>{
+
+records.forEach(
+record=>{
+
 
 const row =
-document.createElement("tr");
+document.createElement(
+"tr"
+);
 
 
-row.innerHTML =
-`
-<td>${record.date || ""}</td>
 
-<td>${record.service || ""}</td>
+const totalAmount =
 
-<td>₹${record.income || 0}</td>
+record.totalAmount
 
-<td>₹${record.expense || 0}</td>
+??
 
-<td>₹${record.profit || 0}</td>
+record.income
 
-<td>${record.description || ""}</td>
+??
+
+0;
+
+
+
+const paidAmount =
+
+record.paidAmount
+
+??
+
+record.income
+
+??
+
+0;
+
+
+
+const pendingAmount =
+
+record.pendingAmount
+
+??
+
+0;
+
+
+
+const status =
+
+record.paymentStatus
+
+??
+
+"Paid";
+
+
+
+const statusClass =
+
+status === "Paid"
+
+?
+
+"status-paid"
+
+:
+
+"status-pending";
+
+
+
+row.innerHTML = `
+
+<td>
+${record.date || ""}
+</td>
+
+
+<td>
+${record.customerName || "-"}
+</td>
+
+
+<td>
+${record.mobile || "-"}
+</td>
+
+
+<td>
+${record.service || ""}
+</td>
+
+
+<td>
+₹${totalAmount}
+</td>
+
+
+<td>
+₹${paidAmount}
+</td>
+
+
+<td>
+₹${pendingAmount}
+</td>
+
+
+<td
+class="${statusClass}"
+>
+
+${status}
+
+</td>
+
+
+<td>
+₹${record.expense || 0}
+</td>
+
+
+<td>
+₹${record.profit || 0}
+</td>
+
+
+<td>
+${record.description || ""}
+</td>
+
 
 <td>
 
 <button
+
 class="delete-btn"
+
 onclick="deleteRecord('${record.id}')"
+
 >
 
 Delete
@@ -1485,58 +2826,94 @@ Delete
 </button>
 
 </td>
+
 `;
+
 
 
 recordsTable.appendChild(
 row
 );
 
-});
+
+}
+);
+
 
 }
 
 
-/* DELETE */
+
+/* DELETE RECORD */
 
 window.deleteRecord =
 async function(id){
 
+
 const confirmDelete =
+
 confirm(
+
 "Are you sure you want to delete this record?"
+
 );
 
 
-if(!confirmDelete){
+
+if(
+!confirmDelete
+){
 
 return;
 
 }
 
 
+
 try{
 
+
 await deleteDoc(
-doc(db,"accounts",id)
+
+doc(
+
+db,
+
+"accounts",
+
+id
+
+)
+
 );
+
 
 
 loadRecords();
 
+
 }
 catch(error){
 
+
 alert(
+
 "Error deleting record: " +
+
 error.message
+
 );
+
 
 }
 
+
 };
+
 
 </script>
 
+
 </body>
+
 </html>
