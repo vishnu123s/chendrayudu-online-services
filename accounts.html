@@ -6,6 +6,12 @@
 
 <title>Private Daily Accounts | Chendrayudu Online Services</title>
 
+<!-- PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- Excel Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 <style>
 
 *{
@@ -73,6 +79,10 @@ button{
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
+}
+
+button:hover{
+    opacity:.9;
 }
 
 .error{
@@ -201,6 +211,41 @@ header h1{
     margin-bottom:0;
 }
 
+/* MONTHLY REPORT */
+
+.monthly-report{
+    max-width:1200px;
+    margin:20px auto;
+    padding:20px;
+}
+
+.monthly-box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.monthly-box h2{
+    color:#002b7f;
+    margin-bottom:20px;
+}
+
+.report-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.pdf-btn{
+    background:#d40000;
+}
+
+.excel-btn{
+    background:#168b3a;
+}
+
 /* TABLE */
 
 .records-container{
@@ -253,12 +298,21 @@ td{
     .summary,
     .form-container,
     .filter-container,
+    .monthly-report,
     .records-container{
         padding:15px;
     }
 
     .login-box{
         padding:25px;
+    }
+
+    .report-buttons{
+        flex-direction:column;
+    }
+
+    .report-buttons button{
+        width:100%;
     }
 
 }
@@ -333,7 +387,7 @@ td{
 </div>
 
 
-<!-- TOTAL SUMMARY -->
+<!-- OVERALL SUMMARY -->
 
 <h2 class="summary-title">📊 Overall Summary</h2>
 
@@ -409,7 +463,80 @@ td{
 </div>
 
 
-<!-- FILTER -->
+<!-- MONTHLY REPORT -->
+
+<div class="monthly-report">
+
+<div class="monthly-box">
+
+<h2>📅 Monthly Report</h2>
+
+<div class="filter-grid">
+
+<input
+type="month"
+id="reportMonth"
+onchange="calculateMonthlyReport()"
+>
+
+</div>
+
+
+<div class="summary">
+
+    <div class="summary-card">
+
+        <h3>Monthly Income</h3>
+
+        <h2 class="income">
+            ₹ <span id="monthlyIncome">0</span>
+        </h2>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <h3>Monthly Expense</h3>
+
+        <h2 class="expense">
+            ₹ <span id="monthlyExpense">0</span>
+        </h2>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <h3>Monthly Profit / Loss</h3>
+
+        <h2 class="profit">
+            ₹ <span id="monthlyProfit">0</span>
+        </h2>
+
+    </div>
+
+</div>
+
+
+<div class="report-buttons">
+
+<button class="pdf-btn" onclick="downloadPDF()">
+📄 Download PDF Report
+</button>
+
+<button class="excel-btn" onclick="downloadExcel()">
+📗 Download Excel Report
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SEARCH & FILTER -->
 
 <div class="filter-container">
 
@@ -524,8 +651,6 @@ orderBy
 from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 
-/* FIREBASE CONFIG */
-
 const firebaseConfig = {
 
 apiKey: "AIzaSyB_AUh6P-Xa2JFhLeNtgQ3Ibk-kd0OwSvc",
@@ -545,16 +670,12 @@ measurementId: "G-HXPJ015KJ0"
 };
 
 
-/* INITIALIZE */
-
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
 const db = getFirestore(app);
 
-
-/* RECORDS ARRAY */
 
 let allRecords = [];
 
@@ -563,11 +684,14 @@ let allRecords = [];
 
 window.login = async function(){
 
-const email = document.getElementById("email").value.trim();
+const email =
+document.getElementById("email").value.trim();
 
-const password = document.getElementById("password").value;
+const password =
+document.getElementById("password").value;
 
-const errorMessage = document.getElementById("errorMessage");
+const errorMessage =
+document.getElementById("errorMessage");
 
 errorMessage.innerText = "";
 
@@ -634,7 +758,7 @@ document.getElementById("accountsContainer")
 });
 
 
-/* DATE FORMAT */
+/* TODAY DATE */
 
 function getToday(){
 
@@ -642,9 +766,13 @@ const now = new Date();
 
 const year = now.getFullYear();
 
-const month = String(now.getMonth()+1).padStart(2,"0");
+const month =
+String(now.getMonth()+1)
+.padStart(2,"0");
 
-const day = String(now.getDate()).padStart(2,"0");
+const day =
+String(now.getDate())
+.padStart(2,"0");
 
 return `${year}-${month}-${day}`;
 
@@ -686,7 +814,8 @@ return;
 }
 
 
-const income = Number(incomeInput);
+const income =
+Number(incomeInput);
 
 const expense =
 expenseInput === ""
@@ -753,12 +882,10 @@ async function loadRecords(){
 
 try{
 
-const q = query(
-
+const q =
+query(
 collection(db,"accounts"),
-
 orderBy("createdAt","desc")
-
 );
 
 
@@ -784,6 +911,8 @@ id: documentSnapshot.id,
 
 calculateSummary();
 
+calculateMonthlyReport();
+
 applyFilters();
 
 }
@@ -791,17 +920,12 @@ catch(error){
 
 console.error(error);
 
-alert(
-"Unable to load records: " +
-error.message
-);
-
 }
 
 }
 
 
-/* CALCULATE SUMMARY */
+/* OVERALL + TODAY SUMMARY */
 
 function calculateSummary(){
 
@@ -853,33 +977,370 @@ todayProfit += profit;
 });
 
 
-document.getElementById("totalIncome")
-.innerText = totalIncome;
+document.getElementById("totalIncome").innerText =
+totalIncome;
 
+document.getElementById("totalExpense").innerText =
+totalExpense;
 
-document.getElementById("totalExpense")
-.innerText = totalExpense;
+document.getElementById("totalProfit").innerText =
+totalProfit;
 
+document.getElementById("todayIncome").innerText =
+todayIncome;
 
-document.getElementById("totalProfit")
-.innerText = totalProfit;
+document.getElementById("todayExpense").innerText =
+todayExpense;
 
-
-document.getElementById("todayIncome")
-.innerText = todayIncome;
-
-
-document.getElementById("todayExpense")
-.innerText = todayExpense;
-
-
-document.getElementById("todayProfit")
-.innerText = todayProfit;
+document.getElementById("todayProfit").innerText =
+todayProfit;
 
 }
 
 
-/* APPLY FILTERS */
+/* MONTHLY REPORT */
+
+window.calculateMonthlyReport = function(){
+
+const selectedMonth =
+document.getElementById("reportMonth").value;
+
+
+if(!selectedMonth){
+
+document.getElementById("monthlyIncome").innerText = 0;
+
+document.getElementById("monthlyExpense").innerText = 0;
+
+document.getElementById("monthlyProfit").innerText = 0;
+
+return;
+
+}
+
+
+let monthlyIncome = 0;
+
+let monthlyExpense = 0;
+
+let monthlyProfit = 0;
+
+
+allRecords.forEach(record=>{
+
+if(record.date &&
+record.date.startsWith(selectedMonth)){
+
+monthlyIncome +=
+Number(record.income || 0);
+
+monthlyExpense +=
+Number(record.expense || 0);
+
+monthlyProfit +=
+Number(record.profit || 0);
+
+}
+
+});
+
+
+document.getElementById("monthlyIncome")
+.innerText = monthlyIncome;
+
+document.getElementById("monthlyExpense")
+.innerText = monthlyExpense;
+
+document.getElementById("monthlyProfit")
+.innerText = monthlyProfit;
+
+};
+
+
+/* GET MONTH RECORDS */
+
+function getMonthlyRecords(){
+
+const selectedMonth =
+document.getElementById("reportMonth").value;
+
+
+if(!selectedMonth){
+
+alert("Please select a month first");
+
+return null;
+
+}
+
+
+return allRecords.filter(record =>
+record.date &&
+record.date.startsWith(selectedMonth)
+);
+
+}
+
+
+/* DOWNLOAD PDF */
+
+window.downloadPDF = function(){
+
+const records =
+getMonthlyRecords();
+
+
+if(!records){
+
+return;
+
+}
+
+
+const selectedMonth =
+document.getElementById("reportMonth").value;
+
+
+const { jsPDF } =
+window.jspdf;
+
+
+const pdf =
+new jsPDF();
+
+
+pdf.setFontSize(18);
+
+pdf.text(
+"Chendrayudu Online Services",
+20,
+20
+);
+
+
+pdf.setFontSize(14);
+
+pdf.text(
+"Monthly Accounts Report: " +
+selectedMonth,
+20,
+30
+);
+
+
+let y = 45;
+
+
+let totalIncome = 0;
+
+let totalExpense = 0;
+
+let totalProfit = 0;
+
+
+records.forEach((record,index)=>{
+
+
+const income =
+Number(record.income || 0);
+
+const expense =
+Number(record.expense || 0);
+
+const profit =
+Number(record.profit || 0);
+
+
+totalIncome += income;
+
+totalExpense += expense;
+
+totalProfit += profit;
+
+
+if(y > 270){
+
+pdf.addPage();
+
+y = 20;
+
+}
+
+
+pdf.setFontSize(10);
+
+
+pdf.text(
+`${index+1}. ${record.date} | ${record.service}`,
+20,
+y
+);
+
+y += 6;
+
+
+pdf.text(
+`Income: Rs.${income} | Expense: Rs.${expense} | Profit: Rs.${profit}`,
+25,
+y
+);
+
+y += 8;
+
+});
+
+
+if(y > 250){
+
+pdf.addPage();
+
+y = 20;
+
+}
+
+
+pdf.setFontSize(14);
+
+
+pdf.text(
+`Total Income: Rs.${totalIncome}`,
+20,
+y
+);
+
+y += 8;
+
+
+pdf.text(
+`Total Expense: Rs.${totalExpense}`,
+20,
+y
+);
+
+y += 8;
+
+
+pdf.text(
+`Total Profit/Loss: Rs.${totalProfit}`,
+20,
+y
+);
+
+
+pdf.save(
+`Monthly_Report_${selectedMonth}.pdf`
+);
+
+};
+
+
+/* DOWNLOAD EXCEL */
+
+window.downloadExcel = function(){
+
+const records =
+getMonthlyRecords();
+
+
+if(!records){
+
+return;
+
+}
+
+
+const selectedMonth =
+document.getElementById("reportMonth").value;
+
+
+const excelData =
+records.map(record => ({
+
+Date:
+record.date || "",
+
+Service:
+record.service || "",
+
+Income:
+Number(record.income || 0),
+
+Expense:
+Number(record.expense || 0),
+
+Profit:
+Number(record.profit || 0),
+
+Description:
+record.description || ""
+
+}));
+
+
+let totalIncome = 0;
+
+let totalExpense = 0;
+
+let totalProfit = 0;
+
+
+records.forEach(record=>{
+
+totalIncome +=
+Number(record.income || 0);
+
+totalExpense +=
+Number(record.expense || 0);
+
+totalProfit +=
+Number(record.profit || 0);
+
+});
+
+
+excelData.push({
+
+Date:"",
+
+Service:"TOTAL",
+
+Income:totalIncome,
+
+Expense:totalExpense,
+
+Profit:totalProfit,
+
+Description:"Monthly Summary"
+
+});
+
+
+const worksheet =
+XLSX.utils.json_to_sheet(
+excelData
+);
+
+
+const workbook =
+XLSX.utils.book_new();
+
+
+XLSX.utils.book_append_sheet(
+workbook,
+worksheet,
+"Monthly Report"
+);
+
+
+XLSX.writeFile(
+workbook,
+`Monthly_Report_${selectedMonth}.xlsx`
+);
+
+};
+
+
+/* FILTER */
 
 window.applyFilters = function(){
 
@@ -905,9 +1366,8 @@ document.getElementById("serviceFilter")
 .value;
 
 
-let filteredRecords =
+const filteredRecords =
 allRecords.filter(record=>{
-
 
 const service =
 (record.service || "")
@@ -971,9 +1431,7 @@ filteredRecords
 function displayRecords(records){
 
 const recordsTable =
-document.getElementById(
-"recordsTable"
-);
+document.getElementById("recordsTable");
 
 
 recordsTable.innerHTML = "";
@@ -982,14 +1440,11 @@ recordsTable.innerHTML = "";
 if(records.length === 0){
 
 recordsTable.innerHTML =
-
 `
 <tr>
-
 <td colspan="7">
 No records found
 </td>
-
 </tr>
 `;
 
@@ -1005,9 +1460,7 @@ document.createElement("tr");
 
 
 row.innerHTML =
-
 `
-
 <td>${record.date || ""}</td>
 
 <td>${record.service || ""}</td>
@@ -1032,7 +1485,6 @@ Delete
 </button>
 
 </td>
-
 `;
 
 
