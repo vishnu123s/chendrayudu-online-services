@@ -2,414 +2,573 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
 
-    <!-- Mobile Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
-    <title>Chendrayudu Online Services | Online Service Center in Jamal Palle</title>
+<title>Chendrayudu Online Services</title>
 
-    <meta name="description"
-        content="Chendrayudu Online Services is a trusted online service center in Jamal Palle, Chinthakommadinne, Kadapa. PAN Card, Aadhaar Services, Udyam Registration, Bill Payments, e-Challan, EPFO, AP Seva, Government Job Information and more.">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <meta name="keywords"
-        content="Chendrayudu Online Services, online center Jamal Palle, online services Chinthakommadinne, online center Kadapa, PAN card services, Aadhaar services, CSC services">
+<style>
 
-    <meta name="author" content="Chendrayudu Online Services">
+/* =========================
+   GLOBAL
+========================= */
 
-    <meta name="robots" content="index, follow">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-    <!-- Canonical URL -->
-    <link rel="canonical"
-        href="https://vishnu123s.github.io/chendrayudu-online-services/">
+html{
+    scroll-behavior:smooth;
+}
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Chendrayudu Online Services">
+body{
+    background:#f5f7fb;
+    color:#222;
+}
 
-    <meta property="og:description"
-        content="Your trusted online service center for PAN Card, Aadhaar, Udyam, Bill Payments, e-Challan, EPFO and more.">
 
-    <meta property="og:type" content="website">
+/* =========================
+   HEADER
+========================= */
 
-    <meta property="og:url"
-        content="https://vishnu123s.github.io/chendrayudu-online-services/">
+header{
+    background:white;
+    padding:20px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+    border-bottom:4px solid #002b7f;
+}
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
+.logo h1{
+    color:#002b7f;
+    font-size:45px;
+    letter-spacing:1px;
+}
 
-    <meta name="twitter:title" content="Chendrayudu Online Services">
+.logo h2{
+    color:#d40000;
+    font-size:30px;
+    margin-top:5px;
+}
 
-    <meta name="twitter:description"
-        content="Trusted Online Service Center in Jamal Palle, Chinthakommadinne, Kadapa.">
+.logo p{
+    color:#159447;
+    font-size:18px;
+    font-style:italic;
+    margin-top:8px;
+}
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+.contact{
+    text-align:right;
+}
 
-    <!-- Structured Data for Google -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Chendrayudu Online Services",
-        "description": "Online service center providing PAN card services, Aadhaar-related services, Udyam registration, bill payments, e-Challan, EPFO services, AP Seva and government job information.",
-        "url": "https://vishnu123s.github.io/chendrayudu-online-services/",
-        "telephone": "+919390511455",
-        "email": "cherishvivaan@gmail.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Jamal Palle",
-            "addressRegion": "Andhra Pradesh",
-            "postalCode": "516003",
-            "addressCountry": "IN"
-        },
-        "openingHours": "Mo-Su 09:00-20:00"
+.contact p{
+    padding:5px;
+    font-size:16px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    background:#002b7f;
+    padding:16px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px 18px;
+    font-size:17px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:linear-gradient(135deg,#ffffff,#e9efff);
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    color:#002b7f;
+    font-size:60px;
+}
+
+.hero h2{
+    color:#d40000;
+    font-size:38px;
+    margin-top:8px;
+}
+
+.hero p{
+    font-size:23px;
+    margin-top:18px;
+    color:#333;
+}
+
+.features{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.feature{
+    color:white;
+    padding:14px 25px;
+    border-radius:30px;
+    font-size:17px;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+.feature:nth-child(1){
+    background:#1976d2;
+}
+
+.feature:nth-child(2){
+    background:#2e7d32;
+}
+
+.feature:nth-child(3){
+    background:#7b1fa2;
+}
+
+.feature:nth-child(4){
+    background:#ef6c00;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    padding:60px 5%;
+    text-align:center;
+}
+
+.services h2{
+    color:#002b7f;
+    font-size:38px;
+    margin-bottom:35px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:28px 20px;
+    border-radius:18px;
+    text-decoration:none;
+    color:#222;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+    border-top:5px solid transparent;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.card i{
+    font-size:52px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#222;
+}
+
+.card p{
+    color:#666;
+    line-height:1.5;
+}
+
+
+/* =========================
+   COLOURFUL ICONS
+========================= */
+
+.card:nth-child(1){
+    border-color:#1976d2;
+}
+.card:nth-child(1) i{
+    color:#1976d2;
+}
+
+/* Aadhaar */
+
+.card:nth-child(2){
+    border-color:#ff9800;
+}
+.card:nth-child(2) i{
+    color:#ff9800;
+}
+
+/* Udyam */
+
+.card:nth-child(3){
+    border-color:#9c27b0;
+}
+.card:nth-child(3) i{
+    color:#9c27b0;
+}
+
+/* Bill */
+
+.card:nth-child(4){
+    border-color:#fbc02d;
+}
+.card:nth-child(4) i{
+    color:#fbc02d;
+}
+
+/* Driving Licence */
+
+.card:nth-child(5){
+    border-color:#e53935;
+}
+.card:nth-child(5) i{
+    color:#e53935;
+}
+
+/* Voter ID */
+
+.card:nth-child(6){
+    border-color:#43a047;
+}
+.card:nth-child(6) i{
+    color:#43a047;
+}
+
+/* Passport */
+
+.card:nth-child(7){
+    border-color:#673ab7;
+}
+.card:nth-child(7) i{
+    color:#673ab7;
+}
+
+/* E-Shram */
+
+.card:nth-child(8){
+    border-color:#00acc1;
+}
+.card:nth-child(8) i{
+    color:#00acc1;
+}
+
+/* Ration Card */
+
+.card:nth-child(9){
+    border-color:#795548;
+}
+.card:nth-child(9) i{
+    color:#795548;
+}
+
+/* Train */
+
+.card:nth-child(10){
+    border-color:#1565c0;
+}
+.card:nth-child(10) i{
+    color:#1565c0;
+}
+
+/* APPSC */
+
+.card:nth-child(11){
+    border-color:#6a1b9a;
+}
+.card:nth-child(11) i{
+    color:#6a1b9a;
+}
+
+/* UPSC */
+
+.card:nth-child(12){
+    border-color:#d32f2f;
+}
+.card:nth-child(12) i{
+    color:#d32f2f;
+}
+
+/* SSC */
+
+.card:nth-child(13){
+    border-color:#00897b;
+}
+.card:nth-child(13) i{
+    color:#00897b;
+}
+
+/* Railway */
+
+.card:nth-child(14){
+    border-color:#ef6c00;
+}
+.card:nth-child(14) i{
+    color:#ef6c00;
+}
+
+/* E-Challan */
+
+.card:nth-child(15){
+    border-color:#c62828;
+}
+.card:nth-child(15) i{
+    color:#c62828;
+}
+
+/* CAP */
+
+.card:nth-child(16){
+    border-color:#3949ab;
+}
+.card:nth-child(16) i{
+    color:#3949ab;
+}
+
+/* PDF Tools */
+
+.card:nth-child(17){
+    border-color:#e53935;
+}
+.card:nth-child(17) i{
+    color:#e53935;
+}
+
+/* AP Seva */
+
+.card:nth-child(18){
+    border-color:#00897b;
+}
+.card:nth-child(18) i{
+    color:#00897b;
+}
+
+/* Sejda */
+
+.card:nth-child(19){
+    border-color:#8e24aa;
+}
+.card:nth-child(19) i{
+    color:#8e24aa;
+}
+
+/* Crop Tool */
+
+.card:nth-child(20){
+    border-color:#43a047;
+}
+.card:nth-child(20) i{
+    color:#43a047;
+}
+
+/* EPFO */
+
+.card:nth-child(21){
+    border-color:#0277bd;
+}
+.card:nth-child(21) i{
+    color:#0277bd;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#002b7f;
+    color:white;
+    padding:45px 5%;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.footer-grid h3{
+    margin-bottom:15px;
+    color:#ffd700;
+}
+
+.footer-grid p{
+    margin:8px 0;
+    line-height:1.6;
+}
+
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:65px;
+    height:65px;
+    background:#25d366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:35px;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    z-index:1000;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    header{
+        text-align:center;
+        justify-content:center;
     }
-    </script>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #f5f5f5;
-            color: #222;
-        }
-
-        /* HEADER */
-
-        header {
-            background: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            border-bottom: 4px solid #002b7f;
-        }
-
-        .logo h1 {
-            color: #002b7f;
-            font-size: 50px;
-        }
-
-        .logo h2 {
-            color: #d40000;
-            font-size: 35px;
-        }
-
-        .logo p {
-            color: green;
-            font-size: 22px;
-            font-style: italic;
-            margin-top: 5px;
-        }
-
-        .contact p {
-            padding: 7px 0;
-            font-size: 17px;
-        }
-
-        .contact i {
-            color: #002b7f;
-            width: 25px;
-        }
-
-
-        /* NAVIGATION */
-
-        nav {
-            background: #002b7f;
-            padding: 16px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 18px;
-            font-size: 18px;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            color: yellow;
-        }
-
-
-        /* HERO */
-
-        .hero {
-            background: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .hero h1 {
-            color: #002b7f;
-            font-size: 70px;
-        }
-
-        .hero h2 {
-            color: #d40000;
-            font-size: 45px;
-            margin-top: 5px;
-        }
-
-        .hero p {
-            font-size: 28px;
-            margin-top: 20px;
-        }
-
-
-        /* FEATURES */
-
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .feature {
-            background: #002b7f;
-            color: white;
-            padding: 14px 25px;
-            border-radius: 40px;
-            font-size: 17px;
-        }
-
-
-        /* SERVICES */
-
-        .services {
-            padding: 55px 20px;
-            text-align: center;
-        }
-
-        .services h2 {
-            color: #002b7f;
-            font-size: 42px;
-            margin-bottom: 35px;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            max-width: 1400px;
-            margin: auto;
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            text-decoration: none;
-            color: #222;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
-            transition: 0.3s;
-            min-height: 190px;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-        }
-
-        .card i {
-            font-size: 48px;
-            color: #002b7f;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            color: #002b7f;
-        }
-
-        .card p {
-            line-height: 1.5;
-        }
-
-
-        /* CONTACT */
-
-        footer {
-            background: #002b7f;
-            color: white;
-            padding: 45px 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        footer h3 {
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-
-        footer p {
-            line-height: 1.8;
-        }
-
-
-        /* WHATSAPP */
-
-        .whatsapp {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 65px;
-            height: 65px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 35px;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
-            z-index: 999;
-        }
-
-
-        /* MOBILE RESPONSIVE */
-
-        @media (max-width: 768px) {
-
-            header {
-                text-align: center;
-                justify-content: center;
-                padding: 18px 15px;
-            }
-
-            .logo h1 {
-                font-size: 34px;
-            }
-
-            .logo h2 {
-                font-size: 26px;
-            }
-
-            .logo p {
-                font-size: 16px;
-            }
-
-            .contact p {
-                font-size: 15px;
-            }
-
-            nav {
-                padding: 12px 5px;
-            }
-
-            nav a {
-                margin: 6px 10px;
-                font-size: 15px;
-            }
-
-            .hero {
-                padding: 45px 15px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero h2 {
-                font-size: 30px;
-            }
-
-            .hero p {
-                font-size: 20px;
-            }
-
-            .feature {
-                font-size: 15px;
-                padding: 12px 18px;
-            }
-
-            .services {
-                padding: 40px 15px;
-            }
-
-            .services h2 {
-                font-size: 32px;
-            }
-
-            .service-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-
-            .card {
-                padding: 18px 10px;
-                min-height: 175px;
-            }
-
-            .card i {
-                font-size: 38px;
-            }
-
-            .card h3 {
-                font-size: 15px;
-            }
-
-            .card p {
-                font-size: 13px;
-            }
-
-            footer {
-                text-align: center;
-            }
-
-            .whatsapp {
-                width: 58px;
-                height: 58px;
-                font-size: 30px;
-                right: 15px;
-                bottom: 15px;
-            }
-
-        }
-
-
-        @media (max-width: 400px) {
-
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero h2 {
-                font-size: 25px;
-            }
-
-        }
-
-    </style>
+
+    .logo h1{
+        font-size:32px;
+    }
+
+    .logo h2{
+        font-size:24px;
+    }
+
+    .logo p{
+        font-size:16px;
+    }
+
+    .contact{
+        text-align:center;
+    }
+
+    nav{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    nav a{
+        margin:6px 10px;
+        font-size:15px;
+    }
+
+    .hero{
+        padding:45px 15px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h2{
+        font-size:27px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .feature{
+        font-size:14px;
+        padding:12px 18px;
+    }
+
+    .services{
+        padding:40px 15px;
+    }
+
+    .services h2{
+        font-size:30px;
+    }
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:14px;
+    }
+
+    .card{
+        padding:20px 10px;
+        border-radius:14px;
+    }
+
+    .card i{
+        font-size:40px;
+    }
+
+    .card h3{
+        font-size:15px;
+    }
+
+    .card p{
+        font-size:13px;
+    }
+
+}
+
+@media(max-width:420px){
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .card i{
+        font-size:35px;
+    }
+
+    .card h3{
+        font-size:13px;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -417,498 +576,518 @@
 <body>
 
 
-    <!-- HEADER -->
+<!-- =========================
+HEADER
+========================= -->
 
-    <header>
+<header>
 
-        <div class="logo">
+<div class="logo">
 
-            <h1>CHENDRAYUDU</h1>
+<h1>CHENDRAYUDU</h1>
 
-            <h2>ONLINE SERVICES</h2>
+<h2>ONLINE SERVICES</h2>
 
-            <p>Your Trusted Online Service Center</p>
+<p>Your Trusted Online Service Center</p>
 
-        </div>
+</div>
 
 
-        <div class="contact">
+<div class="contact">
 
-            <p>
-                <i class="fa-solid fa-phone"></i>
-                9390511455
-            </p>
+<p>
+<i class="fa-solid fa-phone"></i>
+9390511455
+</p>
 
-            <p>
-                <i class="fa-solid fa-id-card"></i>
-                CSC ID : 724413640010
-            </p>
+<p>
+<i class="fa-solid fa-id-card"></i>
+CSC ID : 724413640010
+</p>
 
-            <p>
-                <i class="fa-solid fa-envelope"></i>
-                cherishvivaan@gmail.com
-            </p>
+<p>
+<i class="fa-solid fa-envelope"></i>
+cherishvivaan@gmail.com
+</p>
 
-        </div>
+</div>
 
-    </header>
+</header>
 
 
 
-    <!-- NAVIGATION -->
+<!-- =========================
+NAVIGATION
+========================= -->
 
-    <nav>
+<nav>
 
-        <a href="#">Home</a>
+<a href="#">🏠 Home</a>
 
-        <a href="#services">Services</a>
+<a href="#services">🛠 Services</a>
 
-        <a href="#contact">Contact</a>
+<a href="#contact">📞 Contact</a>
 
-       <a href="accounts.html" target="_blank">🔐 Private Accounts</a>
+</nav>
 
-    </nav>
 
 
+<!-- =========================
+HERO
+========================= -->
 
-    <!-- HERO -->
+<section class="hero">
 
-    <section class="hero">
+<h1>CHENDRAYUDU</h1>
 
-        <h1>CHENDRAYUDU</h1>
+<h2>ONLINE SERVICES</h2>
 
-        <h2>ONLINE SERVICES</h2>
+<p>All Online Services Under One Roof</p>
 
-        <p>All Online Services Under One Roof</p>
 
+<div class="features">
 
-        <div class="features">
+<div class="feature">
+⚡ Fast Service
+</div>
 
-            <div class="feature">⚡ Fast Service</div>
+<div class="feature">
+✅ Reliable
+</div>
 
-            <div class="feature">✅ Reliable</div>
+<div class="feature">
+🛡 Trusted
+</div>
 
-            <div class="feature">🛡 Trusted</div>
+<div class="feature">
+😊 Customer Friendly
+</div>
 
-            <div class="feature">😊 Customer Friendly</div>
+</div>
 
-        </div>
+</section>
 
-    </section>
 
 
+<!-- =========================
+SERVICES
+========================= -->
 
-    <!-- SERVICES -->
+<section class="services" id="services">
 
-    <section class="services" id="services">
+<h2>🌟 OUR SERVICES 🌟</h2>
 
-        <h2>OUR SERVICES</h2>
 
+<div class="service-grid">
 
-        <div class="service-grid">
 
+<!-- 1 PAN -->
 
-            <a class="card"
-                href="https://utiitsl.com/"
-                target="_blank"
-                rel="noopener">
+<a class="card"
+href="https://utiitsl.com/"
+target="_blank">
 
-                <i class="fa-solid fa-address-card"></i>
+<i class="fa-solid fa-address-card"></i>
 
-                <h3>PAN CARD</h3>
+<h3>PAN CARD</h3>
 
-                <p>Apply, Correction, Update</p>
+<p>Apply, Correction & Update</p>
 
-            </a>
+</a>
 
 
 
-            <a class="card"
-                href="https://myaadhaar.uidai.gov.in/"
-                target="_blank"
-                rel="noopener">
+<!-- 2 AADHAAR -->
 
-                <i class="fa-solid fa-fingerprint"></i>
+<a class="card"
+href="https://myaadhaar.uidai.gov.in/"
+target="_blank">
 
-                <h3>AADHAAR SERVICES</h3>
+<i class="fa-solid fa-fingerprint"></i>
 
-                <p>Update, Print, Download</p>
+<h3>AADHAAR SERVICES</h3>
 
-            </a>
+<p>Update, Print & Download</p>
 
+</a>
 
 
-            <a class="card"
-                href="https://udyamregistration.gov.in/"
-                target="_blank"
-                rel="noopener">
 
-                <i class="fa-solid fa-building"></i>
+<!-- 3 UDYAM -->
 
-                <h3>UDYAM CERTIFICATE</h3>
+<a class="card"
+href="https://udyamregistration.gov.in/"
+target="_blank">
 
-                <p>Registration & Certificate</p>
+<i class="fa-solid fa-building"></i>
 
-            </a>
+<h3>UDYAM CERTIFICATE</h3>
 
+<p>Registration & Certificate</p>
 
+</a>
 
-            <a class="card"
-                href="https://payments.billdesk.com/MercOnline/SPDCLController/"
-                target="_blank"
-                rel="noopener">
 
-                <i class="fa-solid fa-bolt"></i>
 
-                <h3>BILL PAYMENTS</h3>
+<!-- 4 BILL -->
 
-                <p>Electricity, Water, DTH, Mobile</p>
+<a class="card"
+href="https://payments.billdesk.com/MercOnline/SPDCLController/"
+target="_blank">
 
-            </a>
+<i class="fa-solid fa-bolt"></i>
 
+<h3>BILL PAYMENTS</h3>
 
+<p>Electricity, Water, DTH & Mobile</p>
 
-            <a class="card"
-                href="https://parivahan.gov.in/"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                <i class="fa-solid fa-car"></i>
 
-                <h3>DRIVING LICENCE</h3>
 
-                <p>Apply & Renewal</p>
+<!-- 5 DRIVING -->
 
-            </a>
+<a class="card"
+href="https://parivahan.gov.in/"
+target="_blank">
 
+<i class="fa-solid fa-car"></i>
 
+<h3>DRIVING LICENCE</h3>
 
-            <a class="card"
-                href="https://voters.eci.gov.in/"
-                target="_blank"
-                rel="noopener">
+<p>Apply & Renewal</p>
 
-                <i class="fa-solid fa-id-badge"></i>
+</a>
 
-                <h3>VOTER ID</h3>
 
-                <p>Apply & Correction</p>
 
-            </a>
+<!-- 6 VOTER -->
 
+<a class="card"
+href="https://voters.eci.gov.in/"
+target="_blank">
 
+<i class="fa-solid fa-id-badge"></i>
 
-            <a class="card"
-                href="https://www.passportindia.gov.in/"
-                target="_blank"
-                rel="noopener">
+<h3>VOTER ID</h3>
 
-                <i class="fa-solid fa-passport"></i>
+<p>Apply & Correction</p>
 
-                <h3>PASSPORT</h3>
+</a>
 
-                <p>Apply & Renewal</p>
 
-            </a>
 
+<!-- 7 PASSPORT -->
 
+<a class="card"
+href="https://www.passportindia.gov.in/"
+target="_blank">
 
-            <a class="card"
-                href="https://eshram.gov.in/"
-                target="_blank"
-                rel="noopener">
+<i class="fa-solid fa-passport"></i>
 
-                <i class="fa-solid fa-users"></i>
+<h3>PASSPORT</h3>
 
-                <h3>E-SHRAM CARD</h3>
+<p>Apply & Renewal</p>
 
-                <p>Registration & Update</p>
+</a>
 
-            </a>
 
 
+<!-- 8 E-SHRAM -->
 
-            <a class="card"
-                href="https://cardsadda.in/ap_newricecard/"
-                target="_blank"
-                rel="noopener">
+<a class="card"
+href="https://eshram.gov.in/"
+target="_blank">
 
-                <i class="fa-solid fa-book"></i>
+<i class="fa-solid fa-users"></i>
 
-                <h3>RATION CARD</h3>
+<h3>E-SHRAM CARD</h3>
 
-                <p>New & Correction</p>
+<p>Registration & Update</p>
 
-            </a>
+</a>
 
 
 
-            <a class="card"
-                href="https://www.irctc.co.in/"
-                target="_blank"
-                rel="noopener">
+<!-- 9 RATION -->
 
-                <i class="fa-solid fa-train"></i>
+<a class="card"
+href="https://cardsadda.in/ap_newricecard/"
+target="_blank">
 
-                <h3>TRAIN TICKETS</h3>
+<i class="fa-solid fa-book"></i>
 
-                <p>Online Booking</p>
+<h3>RATION CARD</h3>
 
-            </a>
+<p>New, Correction & Print</p>
 
+</a>
 
 
-            <!-- GOVERNMENT JOBS -->
 
-            <a class="card"
-                href="https://psc.ap.gov.in/"
-                target="_blank"
-                rel="noopener">
+<!-- 10 TRAIN -->
 
-                <i class="fa-solid fa-building-columns"></i>
+<a class="card"
+href="https://www.irctc.co.in/"
+target="_blank">
 
-                <h3>APPSC</h3>
+<i class="fa-solid fa-train"></i>
 
-                <p>Andhra Pradesh Government Jobs</p>
+<h3>TRAIN TICKETS</h3>
 
-            </a>
+<p>Online Ticket Booking</p>
 
+</a>
 
 
-            <a class="card"
-                href="https://upsc.gov.in/"
-                target="_blank"
-                rel="noopener">
 
-                <i class="fa-solid fa-user-tie"></i>
+<!-- 11 APPSC -->
 
-                <h3>UPSC</h3>
+<a class="card"
+href="https://psc.ap.gov.in/"
+target="_blank">
 
-                <p>Union Government Jobs</p>
+<i class="fa-solid fa-building-columns"></i>
 
-            </a>
+<h3>APPSC</h3>
 
+<p>Andhra Pradesh Jobs</p>
 
+</a>
 
-            <a class="card"
-                href="https://ssc.gov.in/"
-                target="_blank"
-                rel="noopener">
 
-                <i class="fa-solid fa-users"></i>
 
-                <h3>SSC</h3>
+<!-- 12 UPSC -->
 
-                <p>Staff Selection Commission Jobs</p>
+<a class="card"
+href="https://upsc.gov.in/"
+target="_blank">
 
-            </a>
+<i class="fa-solid fa-user-tie"></i>
 
+<h3>UPSC</h3>
 
+<p>Central Government Jobs</p>
 
-            <a class="card"
-                href="https://www.rrbapply.gov.in/"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                <i class="fa-solid fa-train"></i>
 
-                <h3>RAILWAY JOBS</h3>
 
-                <p>Railway Recruitment</p>
+<!-- 13 SSC -->
 
-            </a>
+<a class="card"
+href="https://ssc.gov.in/"
+target="_blank">
 
+<i class="fa-solid fa-users"></i>
 
+<h3>SSC</h3>
 
-            <!-- E CHALLAN -->
+<p>Government Job Notifications</p>
 
-            <a class="card"
-                href="https://citizen.appolice.gov.in/?method=getHomePageElements/"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                <i class="fa-solid fa-receipt"></i>
 
-                <h3>E-CHALLAN</h3>
 
-                <p>Check & Pay Traffic Challans</p>
+<!-- 14 RAILWAY -->
 
-            </a>
+<a class="card"
+href="https://www.rrbapply.gov.in/"
+target="_blank">
 
+<i class="fa-solid fa-train"></i>
 
+<h3>RAILWAY JOBS</h3>
 
-            <!-- CAP -->
+<p>Railway Recruitment</p>
 
-            <a class="card"
-                href="https://cap.apcfss.in/"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                <i class="fa-solid fa-laptop-file"></i>
 
-                <h3>CAP SERVICES</h3>
 
-                <p>APCFSS Citizen Services</p>
+<!-- 15 E-CHALLAN -->
 
-            </a>
+<a class="card"
+href="https://citizen.appolice.gov.in/?method=getHomePageElements/"
+target="_blank">
 
+<i class="fa-solid fa-receipt"></i>
 
+<h3>E-CHALLAN</h3>
 
-            <!-- I LOVE PDF -->
+<p>Check & Pay Traffic Challans</p>
 
-            <a class="card"
-                href="https://www.ilovepdf.com/"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                <i class="fa-solid fa-file-pdf"></i>
 
-                <h3>PDF TOOLS</h3>
 
-                <p>Merge, Split, Compress & Convert PDFs</p>
+<!-- 16 CAP -->
 
-            </a>
+<a class="card"
+href="https://cap.apcfss.in/"
+target="_blank">
 
+<i class="fa-solid fa-laptop-file"></i>
 
+<h3>CAP SERVICES</h3>
 
-            <!-- AP SEVA -->
+<p>APCFSS Citizen Services</p>
 
-            <a class="card"
-                href="https://apseva.ap.gov.in/#/home"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                <i class="fa-solid fa-landmark"></i>
 
-                <h3>AP SEVA</h3>
 
-                <p>Andhra Pradesh Citizen Services</p>
+<!-- 17 PDF -->
 
-            </a>
+<a class="card"
+href="https://www.ilovepdf.com/"
+target="_blank">
 
+<i class="fa-solid fa-file-pdf"></i>
 
+<h3>PDF TOOLS</h3>
 
-            <!-- SEJDA -->
+<p>Merge, Split, Compress & Convert</p>
 
-            <a class="card"
-                href="https://www.sejda.com/"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                <i class="fa-solid fa-file-pen"></i>
 
-                <h3>SEJDA PDF EDITOR</h3>
 
-                <p>Edit, Merge, Compress & Convert PDFs</p>
+<!-- 18 AP SEVA -->
 
-            </a>
+<a class="card"
+href="https://apseva.ap.gov.in/#/home"
+target="_blank">
 
+<i class="fa-solid fa-landmark"></i>
 
+<h3>AP SEVA</h3>
 
-            <!-- CROP TOOL -->
+<p>Andhra Pradesh Citizen Services</p>
 
-            <a class="card"
-                href="https://jsonlineservices.in/portallogin/croptool"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                <i class="fa-solid fa-crop"></i>
 
-                <h3>CROP TOOL</h3>
 
-                <p>Online Photo Crop & Editing Tool</p>
+<!-- 19 SEJDA -->
 
-            </a>
+<a class="card"
+href="https://www.sejda.com/"
+target="_blank">
 
+<i class="fa-solid fa-file-pen"></i>
 
+<h3>SEJDA PDF EDITOR</h3>
 
-            <!-- EPFO -->
+<p>Edit, Merge & Convert PDF Files</p>
 
-            <a class="card"
-                href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                <i class="fa-solid fa-piggy-bank"></i>
 
-                <h3>EPFO SERVICES</h3>
 
-                <p>PF Balance, Passbook, Claims & Member Services</p>
+<!-- 20 CROP TOOL -->
 
-            </a>
+<a class="card"
+href="https://jsonlineservices.in/portallogin/croptool"
+target="_blank">
 
+<i class="fa-solid fa-crop"></i>
 
-        </div>
+<h3>CROP TOOL</h3>
 
-    </section>
+<p>Photo Crop & Editing Tool</p>
 
+</a>
 
 
-    <!-- CONTACT / FOOTER -->
 
-    <footer id="contact">
+<!-- 21 EPFO -->
 
-        <div class="footer-grid">
+<a class="card"
+href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/"
+target="_blank">
 
+<i class="fa-solid fa-piggy-bank"></i>
 
-            <div>
+<h3>EPFO SERVICES</h3>
 
-                <h3>📍 ADDRESS</h3>
+<p>PF Balance, Passbook & Claims</p>
 
-                <p>Jamal Palle</p>
+</a>
 
-                <p>Chinthakommadinne</p>
 
-                <p>Andhra Pradesh</p>
+</div>
 
-                <p>Pincode : 516003</p>
+</section>
 
-            </div>
 
 
+<!-- =========================
+FOOTER
+========================= -->
 
-            <div>
+<footer id="contact">
 
-                <h3>🕒 WORKING HOURS</h3>
+<div class="footer-grid">
 
-                <p>09:00 AM - 08:00 PM</p>
 
-                <p>Monday - Sunday</p>
+<div>
 
-            </div>
+<h3>📍 ADDRESS</h3>
 
+<p>Jamal Palle</p>
 
+<p>Chinthakommadinne</p>
 
-            <div>
+<p>Pincode : 516003</p>
 
-                <h3>☎ CONTACT</h3>
+</div>
 
-                <p>📞 9390511455</p>
 
-                <p>✉ cherishvivaan@gmail.com</p>
 
-                <p>🪪 CSC ID : 724413640010</p>
+<div>
 
-            </div>
+<h3>🕒 WORKING HOURS</h3>
 
+<p>09:00 AM - 08:00 PM</p>
 
-        </div>
+<p>Monday - Sunday</p>
 
-    </footer>
+</div>
 
 
 
-    <!-- WHATSAPP BUTTON -->
+<div>
 
-    <a class="whatsapp"
-        href="https://wa.me/919390511455"
-        target="_blank"
-        rel="noopener"
-        aria-label="Chat on WhatsApp">
+<h3>☎ CONTACT</h3>
 
-        <i class="fa-brands fa-whatsapp"></i>
+<p>📞 9390511455</p>
 
-    </a>
+<p>📧 cherishvivaan@gmail.com</p>
+
+<p>🪪 CSC ID : 724413640010</p>
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================
+WHATSAPP
+========================= -->
+
+<a class="whatsapp"
+href="https://wa.me/919390511455"
+target="_blank"
+title="Chat on WhatsApp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
 
 
 </body>
