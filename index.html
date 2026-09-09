@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Chendrayudu Online Services</title>
 
 <style>
+
+/* =========================
+   GENERAL
+========================= */
 
 *{
     margin:0;
@@ -24,7 +30,9 @@ body{
     color:#222;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
     background:linear-gradient(135deg,#002b7f,#005bea);
@@ -68,7 +76,9 @@ nav a:hover{
     color:#ffd43b;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
     background:linear-gradient(135deg,#002b7f,#007bff);
@@ -97,7 +107,9 @@ nav a:hover{
     font-weight:bold;
 }
 
-/* SECTION */
+/* =========================
+   SECTION
+========================= */
 
 .section{
     max-width:1250px;
@@ -118,7 +130,9 @@ nav a:hover{
     margin-bottom:35px;
 }
 
-/* SERVICES */
+/* =========================
+   SERVICES
+========================= */
 
 .services{
     display:grid;
@@ -172,7 +186,7 @@ nav a:hover{
     background:#005bea;
 }
 
-/* DIFFERENT CARD COLORS */
+/* COLORFUL ICONS */
 
 .card-blue .icon{color:#0066ff;}
 .card-red .icon{color:#e63946;}
@@ -181,7 +195,62 @@ nav a:hover{
 .card-purple .icon{color:#9333ea;}
 .card-pink .icon{color:#db2777;}
 
-/* ACCOUNTS */
+/* =========================
+   BILL PAYMENTS
+========================= */
+
+.bill-section{
+    background:white;
+}
+
+.bill-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.bill-card{
+    background:#f8fafc;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.bill-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 7px 20px rgba(0,0,0,.15);
+}
+
+.bill-card h3{
+    margin:12px 0;
+    color:#002b7f;
+}
+
+.bill-card p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.bill-card button{
+    background:#16a34a;
+    border:none;
+    color:white;
+    padding:10px 18px;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.bill-card button:hover{
+    opacity:.9;
+}
+
+/* =========================
+   ACCOUNTS
+========================= */
 
 .accounts-section{
     background:linear-gradient(135deg,#002b7f,#005bea);
@@ -213,42 +282,9 @@ nav a:hover{
     text-decoration:none;
 }
 
-/* BILL PAYMENT */
-
-.bill-section{
-    background:white;
-}
-
-.bill-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
-
-.bill-card{
-    background:#f8fafc;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
-
-.bill-card h3{
-    margin:12px 0;
-    color:#002b7f;
-}
-
-.bill-card button{
-    background:#16a34a;
-    border:none;
-    color:white;
-    padding:10px 18px;
-    border-radius:7px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-/* GOVERNMENT JOBS */
+/* =========================
+   GOVERNMENT JOBS
+========================= */
 
 .jobs{
     display:grid;
@@ -279,7 +315,9 @@ nav a:hover{
     font-weight:bold;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about-box{
     background:white;
@@ -290,7 +328,9 @@ nav a:hover{
     line-height:1.8;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-section{
     background:#002b7f;
@@ -318,7 +358,9 @@ nav a:hover{
     font-weight:bold;
 }
 
-/* FLOATING WHATSAPP */
+/* =========================
+   WHATSAPP
+========================= */
 
 .whatsapp{
     position:fixed;
@@ -338,7 +380,9 @@ nav a:hover{
     z-index:999;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:#001a4d;
@@ -347,7 +391,9 @@ footer{
     padding:20px;
 }
 
-/* MODAL */
+/* =========================
+   MODAL
+========================= */
 
 .modal{
     display:none;
@@ -358,12 +404,13 @@ footer{
     width:100%;
     height:100%;
     background:rgba(0,0,0,.6);
+    overflow:auto;
 }
 
 .modal-content{
     background:white;
-    max-width:420px;
-    margin:10% auto;
+    max-width:450px;
+    margin:8% auto;
     padding:30px;
     border-radius:15px;
     text-align:center;
@@ -374,21 +421,19 @@ footer{
     margin-bottom:15px;
 }
 
-.modal-content p{
-    color:#555;
-    margin-bottom:20px;
-}
-
 .close-btn{
-    background:#e63946;
+    background:#e63946 !important;
     color:white;
     border:none;
-    padding:10px 20px;
+    padding:12px 20px;
     border-radius:7px;
     cursor:pointer;
+    margin-top:15px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px){
 
@@ -398,6 +443,7 @@ footer{
 
     nav{
         justify-content:center;
+        gap:12px;
     }
 
     .hero h1{
@@ -408,16 +454,21 @@ footer{
         font-size:16px;
     }
 
+    .modal-content{
+        margin:15% 15px;
+    }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -428,12 +479,19 @@ footer{
 </div>
 
 <nav>
+
 <a href="#home">🏠 Home</a>
+
 <a href="#services">🛠️ Services</a>
+
 <a href="#bills">⚡ Bills</a>
+
 <a href="#jobs">💼 Jobs</a>
+
 <a href="#about">ℹ️ About</a>
+
 <a href="#contact">📞 Contact</a>
+
 </nav>
 
 </div>
@@ -441,7 +499,7 @@ footer{
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
@@ -452,13 +510,15 @@ All Online Services Available Here
 </p>
 
 <a href="#services" class="hero-btn">
+
 🚀 View Services
+
 </a>
 
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
 <section class="section" id="services">
 
@@ -473,6 +533,8 @@ Government, Document and Online Services
 
 <div class="services">
 
+
+<!-- PAN -->
 
 <div class="service-card card-blue">
 
@@ -495,6 +557,7 @@ Open Service
 </div>
 
 
+<!-- PAN LOST -->
 
 <div class="service-card card-red">
 
@@ -503,7 +566,7 @@ Open Service
 <h3>PAN Number Lost</h3>
 
 <p>
-PAN number lost? We provide assistance to find PAN details using available identity information.
+PAN number lost? Get assistance to find PAN details using available identity information.
 </p>
 
 <a class="service-btn"
@@ -517,6 +580,7 @@ Open Service
 </div>
 
 
+<!-- AADHAAR -->
 
 <div class="service-card card-blue">
 
@@ -539,6 +603,7 @@ Open Service
 </div>
 
 
+<!-- UDYAM -->
 
 <div class="service-card card-green">
 
@@ -561,6 +626,7 @@ Open Service
 </div>
 
 
+<!-- DRIVING -->
 
 <div class="service-card card-orange">
 
@@ -583,6 +649,7 @@ Open Service
 </div>
 
 
+<!-- VOTER -->
 
 <div class="service-card card-purple">
 
@@ -605,6 +672,7 @@ Open Service
 </div>
 
 
+<!-- PASSPORT -->
 
 <div class="service-card card-blue">
 
@@ -627,6 +695,7 @@ Open Service
 </div>
 
 
+<!-- ESHRAM -->
 
 <div class="service-card card-green">
 
@@ -649,6 +718,7 @@ Open Service
 </div>
 
 
+<!-- RATION -->
 
 <div class="service-card card-orange">
 
@@ -671,6 +741,7 @@ Open Service
 </div>
 
 
+<!-- TRAIN -->
 
 <div class="service-card card-red">
 
@@ -693,6 +764,7 @@ Open Service
 </div>
 
 
+<!-- PDF -->
 
 <div class="service-card card-purple">
 
@@ -715,6 +787,7 @@ Open Service
 </div>
 
 
+<!-- AP SEVA -->
 
 <div class="service-card card-blue">
 
@@ -737,6 +810,7 @@ Open Service
 </div>
 
 
+<!-- IMAGE -->
 
 <div class="service-card card-orange">
 
@@ -759,6 +833,7 @@ Open Service
 </div>
 
 
+<!-- EPFO -->
 
 <div class="service-card card-green">
 
@@ -781,6 +856,7 @@ Open Service
 </div>
 
 
+<!-- E CHALLAN -->
 
 <div class="service-card card-red">
 
@@ -802,22 +878,21 @@ Open Service
 
 </div>
 
-
 </div>
 
 </section>
 
 
-<!-- BILL PAYMENTS -->
+<!-- ================= BILL PAYMENTS ================= -->
 
 <section class="section bill-section" id="bills">
 
 <h2 class="section-title">
-⚡ Bill Payments
+💳 Bill Payments
 </h2>
 
 <p class="section-subtitle">
-Electricity, Mobile, DTH and other bill payment services
+Select your service provider and open the official website
 </p>
 
 
@@ -830,8 +905,12 @@ Electricity, Mobile, DTH and other bill payment services
 
 <h3>Electricity Bill</h3>
 
+<p>Pay electricity bills online.</p>
+
 <button onclick="openBill('Electricity Bill')">
-Pay Bill
+
+⚡ View Options
+
 </button>
 
 </div>
@@ -843,8 +922,12 @@ Pay Bill
 
 <h3>Mobile Recharge</h3>
 
+<p>Recharge prepaid or pay postpaid bills.</p>
+
 <button onclick="openBill('Mobile Recharge')">
-Recharge
+
+📱 Recharge
+
 </button>
 
 </div>
@@ -856,8 +939,12 @@ Recharge
 
 <h3>DTH Recharge</h3>
 
+<p>Recharge your DTH connection.</p>
+
 <button onclick="openBill('DTH Recharge')">
-Recharge
+
+📺 Recharge
+
 </button>
 
 </div>
@@ -869,8 +956,12 @@ Recharge
 
 <h3>Water Bill</h3>
 
+<p>Water bill payment services.</p>
+
 <button onclick="openBill('Water Bill')">
-Pay Bill
+
+💧 Pay Bill
+
 </button>
 
 </div>
@@ -880,10 +971,31 @@ Pay Bill
 
 <div class="icon">🔥</div>
 
-<h3>Gas Bill</h3>
+<h3>Gas Services</h3>
+
+<p>LPG and gas services.</p>
 
 <button onclick="openBill('Gas Bill')">
-Pay Bill
+
+🔥 View Options
+
+</button>
+
+</div>
+
+
+<div class="bill-card">
+
+<div class="icon">🌐</div>
+
+<h3>Broadband Bill</h3>
+
+<p>Pay your broadband bill.</p>
+
+<button onclick="openBill('Broadband Bill')">
+
+🌐 Pay Bill
+
 </button>
 
 </div>
@@ -894,7 +1006,7 @@ Pay Bill
 </section>
 
 
-<!-- ACCOUNTS -->
+<!-- ================= ACCOUNTS ================= -->
 
 <section class="accounts-section">
 
@@ -916,7 +1028,7 @@ class="accounts-btn">
 </section>
 
 
-<!-- GOVERNMENT JOBS -->
+<!-- ================= GOVERNMENT JOBS ================= -->
 
 <section class="section" id="jobs">
 
@@ -939,7 +1051,9 @@ Latest Government Recruitment Websites
 <h3>UPSC</h3>
 
 <a href="https://upsc.gov.in/" target="_blank">
+
 Visit UPSC
+
 </a>
 
 </div>
@@ -952,7 +1066,9 @@ Visit UPSC
 <h3>APPSC</h3>
 
 <a href="https://psc.ap.gov.in/" target="_blank">
+
 Visit APPSC
+
 </a>
 
 </div>
@@ -965,7 +1081,9 @@ Visit APPSC
 <h3>SSC</h3>
 
 <a href="https://ssc.gov.in/" target="_blank">
+
 Visit SSC
+
 </a>
 
 </div>
@@ -978,7 +1096,9 @@ Visit SSC
 <h3>Railway Jobs</h3>
 
 <a href="https://www.rrbcdg.gov.in/" target="_blank">
+
 Visit Railway
+
 </a>
 
 </div>
@@ -989,13 +1109,14 @@ Visit Railway
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section class="section" id="about">
 
 <h2 class="section-title">
 ℹ️ About Us
 </h2>
+
 
 <div class="about-box">
 
@@ -1014,7 +1135,7 @@ printouts and other digital services.
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section class="contact-section" id="contact">
 
@@ -1038,7 +1159,7 @@ class="contact-btn">
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1049,7 +1170,7 @@ class="contact-btn">
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- ================= FLOATING WHATSAPP ================= -->
 
 <a
 href="https://wa.me/"
@@ -1061,20 +1182,22 @@ class="whatsapp">
 </a>
 
 
-<!-- BILL MODAL -->
+<!-- ================= BILL MODAL ================= -->
 
 <div class="modal" id="billModal">
 
 <div class="modal-content">
 
-<h2 id="billTitle">Bill Payment</h2>
+<h2 id="billTitle">
+Bill Payment
+</h2>
 
-<p>
-For secure bill payment, please use the appropriate official payment portal or service provider.
-</p>
+<div id="billOptions"></div>
 
 <button class="close-btn" onclick="closeBill()">
-Close
+
+❌ Close
+
 </button>
 
 </div>
@@ -1082,25 +1205,221 @@ Close
 </div>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
+
 
 function openBill(service){
 
-    document.getElementById("billTitle").innerText =
-    "⚡ " + service;
+    const websites = {
 
-    document.getElementById("billModal").style.display =
-    "block";
+
+        "Electricity Bill":[
+
+            {
+                name:"⚡ APSPDCL",
+                url:"https://www.apspdcl.in/"
+            },
+
+            {
+                name:"⚡ APEPDCL",
+                url:"https://www.apeasternpower.com/"
+            }
+
+        ],
+
+
+        "Mobile Recharge":[
+
+            {
+                name:"📱 Jio",
+                url:"https://www.jio.com/selfcare/recharge/mobility/"
+            },
+
+            {
+                name:"📱 Airtel",
+                url:"https://www.airtel.in/recharge-online"
+            },
+
+            {
+                name:"📱 Vi",
+                url:"https://www.myvi.in/prepaid/mobile-recharge"
+            },
+
+            {
+                name:"📱 BSNL",
+                url:"https://portal2.bsnl.in/myportal/quickrecharge.do"
+            }
+
+        ],
+
+
+        "DTH Recharge":[
+
+            {
+                name:"📺 Tata Play",
+                url:"https://www.tataplay.com/"
+            },
+
+            {
+                name:"📺 Airtel Digital TV",
+                url:"https://www.airtel.in/dth-recharge"
+            },
+
+            {
+                name:"📺 Dish TV",
+                url:"https://www.dishtv.in/"
+            },
+
+            {
+                name:"📺 Sun Direct",
+                url:"https://www.sundirect.in/"
+            }
+
+        ],
+
+
+        "Water Bill":[
+
+            {
+                name:"💧 AP Government Services",
+                url:"https://www.ap.gov.in/"
+            }
+
+        ],
+
+
+        "Gas Bill":[
+
+            {
+                name:"🔥 Indian Oil",
+                url:"https://www.iocl.com/"
+            },
+
+            {
+                name:"🔥 Bharat Gas",
+                url:"https://www.ebharatgas.com/"
+            },
+
+            {
+                name:"🔥 HP Gas",
+                url:"https://myhpgas.in/"
+            }
+
+        ],
+
+
+        "Broadband Bill":[
+
+            {
+                name:"🌐 JioFiber",
+                url:"https://www.jio.com/selfcare/recharge/fiber/"
+            },
+
+            {
+                name:"🌐 Airtel Broadband",
+                url:"https://www.airtel.in/broadband"
+            },
+
+            {
+                name:"🌐 BSNL Broadband",
+                url:"https://portal2.bsnl.in/"
+            }
+
+        ]
+
+    };
+
+
+    document.getElementById("billTitle").innerText =
+    "💳 " + service;
+
+
+    const options =
+    document.getElementById("billOptions");
+
+
+    options.innerHTML = "";
+
+
+    websites[service].forEach(site => {
+
+
+        const button =
+        document.createElement("button");
+
+
+        button.innerText =
+        site.name;
+
+
+        button.style.width =
+        "100%";
+
+
+        button.style.margin =
+        "8px 0";
+
+
+        button.style.padding =
+        "13px";
+
+
+        button.style.border =
+        "none";
+
+
+        button.style.borderRadius =
+        "8px";
+
+
+        button.style.background =
+        "#002b7f";
+
+
+        button.style.color =
+        "white";
+
+
+        button.style.fontWeight =
+        "bold";
+
+
+        button.style.cursor =
+        "pointer";
+
+
+        button.onclick = function(){
+
+            window.open(
+                site.url,
+                "_blank"
+            );
+
+        };
+
+
+        options.appendChild(button);
+
+
+    });
+
+
+    document.getElementById("billModal")
+    .style.display = "block";
 
 }
+
 
 
 function closeBill(){
 
-    document.getElementById("billModal").style.display =
-    "none";
+    document.getElementById("billModal")
+    .style.display = "none";
 
 }
+
 
 
 window.onclick = function(event){
@@ -1108,16 +1427,19 @@ window.onclick = function(event){
     const modal =
     document.getElementById("billModal");
 
+
     if(event.target === modal){
 
         modal.style.display = "none";
 
     }
 
-}
+};
+
 
 </script>
 
 
 </body>
+
 </html>
