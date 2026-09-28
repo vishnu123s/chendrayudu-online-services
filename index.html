@@ -1,1445 +1,1209 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Chendrayudu Online Services</title>
 
 <style>
-
-/* =========================
-   GENERAL
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    background:#f4f7fb;
-    color:#222;
+body {
+    background: #f4f7fb;
+    color: #222;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-header{
-    background:linear-gradient(135deg,#002b7f,#005bea);
-    color:white;
-    padding:18px 6%;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #002b7f, #005bea);
+    color: white;
+    padding: 18px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.logo{
-    font-size:24px;
-    font-weight:bold;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.logo span{
-    color:#ffd43b;
+.logo span {
+    color: #ffd43b;
 }
 
-nav{
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
+nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-nav a:hover{
-    color:#ffd43b;
+nav a:hover {
+    color: #ffd43b;
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    background:linear-gradient(135deg,#002b7f,#007bff);
-    color:white;
-    text-align:center;
-    padding:70px 20px;
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #002b7f, #007bff);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
 }
 
-.hero h1{
-    font-size:42px;
-    margin-bottom:15px;
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
 }
 
-.hero p{
-    font-size:19px;
-    margin-bottom:25px;
+.hero p {
+    font-size: 19px;
+    margin-bottom: 25px;
 }
 
-.hero-btn{
-    display:inline-block;
-    background:#ffd43b;
-    color:#222;
-    padding:14px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
+.hero-btn {
+    display: inline-block;
+    background: #ffd43b;
+    color: #222;
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* =========================
-   SECTION
-========================= */
-
-.section{
-    max-width:1250px;
-    margin:auto;
-    padding:55px 20px;
+/* GENERAL SECTIONS */
+.section {
+    max-width: 1250px;
+    margin: auto;
+    padding: 55px 20px;
 }
 
-.section-title{
-    text-align:center;
-    color:#002b7f;
-    font-size:30px;
-    margin-bottom:10px;
+.section-title {
+    text-align: center;
+    color: #002b7f;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
-.section-subtitle{
-    text-align:center;
-    color:#666;
-    margin-bottom:35px;
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 35px;
 }
 
-/* =========================
-   SERVICES
-========================= */
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:20px;
-}
-
-.service-card{
-    background:white;
-    border-radius:15px;
-    padding:25px 18px;
-    text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,.1);
-    transition:.3s;
-    border:1px solid #eee;
-}
-
-.service-card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 8px 25px rgba(0,0,0,.18);
-}
-
-.icon{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-.service-card h3{
-    color:#002b7f;
-    margin-bottom:10px;
-}
-
-.service-card p{
-    color:#666;
-    font-size:14px;
-    margin-bottom:18px;
-    line-height:1.5;
-}
-
-.service-btn{
-    display:inline-block;
-    background:#002b7f;
-    color:white;
-    padding:10px 18px;
-    border-radius:7px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.service-btn:hover{
-    background:#005bea;
-}
-
-/* COLORFUL ICONS */
-
-.card-blue .icon{color:#0066ff;}
-.card-red .icon{color:#e63946;}
-.card-green .icon{color:#16a34a;}
-.card-orange .icon{color:#f97316;}
-.card-purple .icon{color:#9333ea;}
-.card-pink .icon{color:#db2777;}
-
-/* =========================
-   BILL PAYMENTS
-========================= */
-
-.bill-section{
-    background:white;
-}
-
-.bill-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
-
-.bill-card{
-    background:#f8fafc;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.bill-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 7px 20px rgba(0,0,0,.15);
-}
-
-.bill-card h3{
-    margin:12px 0;
-    color:#002b7f;
-}
-
-.bill-card p{
-    color:#666;
-    font-size:14px;
-    margin-bottom:15px;
-}
-
-.bill-card button{
-    background:#16a34a;
-    border:none;
-    color:white;
-    padding:10px 18px;
-    border-radius:7px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.bill-card button:hover{
-    opacity:.9;
-}
-
-/* =========================
-   ACCOUNTS
-========================= */
-
-.accounts-section{
-    background:linear-gradient(135deg,#002b7f,#005bea);
-    color:white;
-    border-radius:20px;
-    padding:45px 25px;
-    text-align:center;
-    max-width:1150px;
-    margin:40px auto;
-}
-
-.accounts-section h2{
-    font-size:30px;
-    margin-bottom:15px;
-}
-
-.accounts-section p{
-    margin-bottom:25px;
-    font-size:17px;
-}
-
-.accounts-btn{
-    display:inline-block;
-    background:#ffd43b;
-    color:#222;
-    padding:15px 28px;
-    border-radius:30px;
-    font-weight:bold;
-    text-decoration:none;
-}
-
-/* =========================
-   GOVERNMENT JOBS
-========================= */
-
-.jobs{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.job-card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-.job-card h3{
-    color:#002b7f;
-    margin:12px 0;
-}
-
-.job-card a{
-    display:inline-block;
-    background:#e63946;
-    color:white;
-    padding:10px 18px;
-    border-radius:7px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-box{
-    background:white;
-    padding:35px;
-    border-radius:18px;
-    box-shadow:0 4px 15px rgba(0,0,0,.1);
-    text-align:center;
-    line-height:1.8;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-section{
-    background:#002b7f;
-    color:white;
-    text-align:center;
-    padding:50px 20px;
-}
-
-.contact-section h2{
-    margin-bottom:20px;
-}
-
-.contact-section p{
-    margin:10px;
-}
-
-.contact-btn{
-    display:inline-block;
-    margin-top:20px;
-    background:#25D366;
-    color:white;
-    padding:14px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    color:white;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-decoration:none;
-    font-size:30px;
-    box-shadow:0 4px 15px rgba(0,0,0,.3);
-    z-index:999;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:#001a4d;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-/* =========================
-   MODAL
-========================= */
-
-.modal{
-    display:none;
-    position:fixed;
-    z-index:2000;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.6);
-    overflow:auto;
-}
-
-.modal-content{
-    background:white;
-    max-width:450px;
-    margin:8% auto;
-    padding:30px;
-    border-radius:15px;
-    text-align:center;
-}
-
-.modal-content h2{
-    color:#002b7f;
-    margin-bottom:15px;
-}
-
-.close-btn{
-    background:#e63946 !important;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:7px;
-    cursor:pointer;
-    margin-top:15px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:700px){
-
-    .navbar{
-        flex-direction:column;
+/* MOBILE */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
     }
 
-    nav{
-        justify-content:center;
-        gap:12px;
+    nav {
+        justify-content: center;
+        gap: 12px;
     }
 
-    .hero h1{
-        font-size:30px;
+    .hero h1 {
+        font-size: 30px;
     }
 
-    .hero p{
-        font-size:16px;
+    .hero p {
+        font-size: 16px;
     }
-
-    .modal-content{
-        margin:15% 15px;
-    }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ================= HEADER ================= -->
-
+<!-- HEADER -->
 <header>
+    <div class="navbar">
+        <div class="logo">
+            🌐 Chendrayudu <span>Online Services</span>
+        </div>
 
-<div class="navbar">
-
-<div class="logo">
-🌐 Chendrayudu <span>Online Services</span>
-</div>
-
-<nav>
-
-<a href="#home">🏠 Home</a>
-
-<a href="#services">🛠️ Services</a>
-
-<a href="#bills">⚡ Bills</a>
-
-<a href="#jobs">💼 Jobs</a>
-
-<a href="#about">ℹ️ About</a>
-
-<a href="#contact">📞 Contact</a>
-
-</nav>
-
-</div>
-
+        <nav>
+            <a href="#home">🏠 Home</a>
+            <a href="#services">🛠️ Services</a>
+            <a href="#bills">⚡ Bills</a>
+            <a href="#jobs">💼 Jobs</a>
+            <a href="#about">ℹ️ About</a>
+            <a href="#contact">📞 Contact</a>
+        </nav>
+    </div>
 </header>
 
-
-<!-- ================= HERO ================= -->
-
+<!-- HERO -->
 <section class="hero" id="home">
+    <h1>🌐 Chendrayudu Online Services</h1>
+    <p>All Online Services Available Here</p>
 
-<h1>🌐 Chendrayudu Online Services</h1>
-
-<p>
-All Online Services Available Here
-</p>
-
-<a href="#services" class="hero-btn">
-
-🚀 View Services
-
-</a>
-
+    <a href="#services" class="hero-btn">
+        🚀 View Services
+    </a>
 </section>
 
-
-<!-- ================= SERVICES ================= -->
+<!-- SERVICES SECTION WILL CONTINUE IN PART 2 -->
+   <!-- ================= SERVICES ================= -->
 
 <section class="section" id="services">
 
-<h2 class="section-title">
-🛠️ Our Online Services
-</h2>
-
-<p class="section-subtitle">
-Government, Document and Online Services
-</p>
-
-
-<div class="services">
-
-
-<!-- PAN -->
-
-<div class="service-card card-blue">
-
-<div class="icon">🪪</div>
-
-<h3>PAN Card Services</h3>
-
-<p>
-New PAN Card, PAN Correction and PAN related services.
-</p>
-
-<a class="service-btn"
-href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- PAN LOST -->
-
-<div class="service-card card-red">
-
-<div class="icon">🔎</div>
-
-<h3>PAN Number Lost</h3>
-
-<p>
-PAN number lost? Get assistance to find PAN details using available identity information.
-</p>
-
-<a class="service-btn"
-href="https://www.incometax.gov.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- AADHAAR -->
-
-<div class="service-card card-blue">
-
-<div class="icon">🆔</div>
-
-<h3>Aadhaar Services</h3>
-
-<p>
-Aadhaar update, download and other Aadhaar related services.
-</p>
-
-<a class="service-btn"
-href="https://myaadhaar.uidai.gov.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- UDYAM -->
-
-<div class="service-card card-green">
-
-<div class="icon">🏢</div>
-
-<h3>Udyam Certificate</h3>
-
-<p>
-MSME Udyam Registration and certificate services.
-</p>
-
-<a class="service-btn"
-href="https://udyamregistration.gov.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- DRIVING -->
-
-<div class="service-card card-orange">
-
-<div class="icon">🚗</div>
-
-<h3>Driving Licence</h3>
-
-<p>
-Driving licence related online services.
-</p>
-
-<a class="service-btn"
-href="https://parivahan.gov.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- VOTER -->
-
-<div class="service-card card-purple">
-
-<div class="icon">🗳️</div>
-
-<h3>Voter ID</h3>
-
-<p>
-Voter registration and election related services.
-</p>
-
-<a class="service-btn"
-href="https://voters.eci.gov.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- PASSPORT -->
-
-<div class="service-card card-blue">
-
-<div class="icon">🛂</div>
-
-<h3>Passport</h3>
-
-<p>
-Passport application and related services.
-</p>
-
-<a class="service-btn"
-href="https://www.passportindia.gov.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- ESHRAM -->
-
-<div class="service-card card-green">
-
-<div class="icon">👷</div>
-
-<h3>E-Shram Card</h3>
-
-<p>
-E-Shram registration and related services.
-</p>
-
-<a class="service-btn"
-href="https://eshram.gov.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- RATION -->
-
-<div class="service-card card-orange">
-
-<div class="icon">🍚</div>
-
-<h3>Ration Card Services</h3>
-
-<p>
-Ration card services and printout assistance.
-</p>
-
-<a class="service-btn"
-href="https://spandana.ap.gov.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- TRAIN -->
-
-<div class="service-card card-red">
-
-<div class="icon">🚆</div>
-
-<h3>Train Tickets</h3>
-
-<p>
-Train ticket booking services.
-</p>
-
-<a class="service-btn"
-href="https://www.irctc.co.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- PDF -->
-
-<div class="service-card card-purple">
-
-<div class="icon">📄</div>
-
-<h3>PDF Tools</h3>
-
-<p>
-Merge, split, convert and edit PDF files.
-</p>
-
-<a class="service-btn"
-href="https://www.ilovepdf.com/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- AP SEVA -->
-
-<div class="service-card card-blue">
-
-<div class="icon">🏛️</div>
-
-<h3>AP Seva</h3>
-
-<p>
-Andhra Pradesh government online services.
-</p>
-
-<a class="service-btn"
-href="https://apseva.ap.gov.in/#/home/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- IMAGE -->
-
-<div class="service-card card-orange">
-
-<div class="icon">✂️</div>
-
-<h3>Crop & Image Tools</h3>
-
-<p>
-Image resize and crop services.
-</p>
-
-<a class="service-btn"
-href="https://www.iloveimg.com/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- EPFO -->
-
-<div class="service-card card-green">
-
-<div class="icon">🏦</div>
-
-<h3>EPFO Services</h3>
-
-<p>
-PF and EPFO member services.
-</p>
-
-<a class="service-btn"
-href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-
-<!-- E CHALLAN -->
-
-<div class="service-card card-red">
-
-<div class="icon">🧾</div>
-
-<h3>E-Challan</h3>
-
-<p>
-Traffic challan checking and payment.
-</p>
-
-<a class="service-btn"
-href="https://echallan.parivahan.gov.in/"
-target="_blank">
-
-Open Service
-
-</a>
-
-</div>
-
-</div>
-
+    <h2 class="section-title">🛠️ Our Online Services</h2>
+
+    <p class="section-subtitle">
+        Government, Document and Online Services
+    </p>
+
+    <div class="services">
+
+        <!-- PAN CARD -->
+        <div class="service-card">
+            <div class="icon">🪪</div>
+            <h3>PAN Card Services</h3>
+            <p>New PAN Card, PAN Correction and related services.</p>
+            <a class="service-btn"
+               href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- PAN LOST -->
+        <div class="service-card">
+            <div class="icon">🔎</div>
+            <h3>PAN Number Lost</h3>
+            <p>Get assistance with finding your PAN details.</p>
+            <a class="service-btn"
+               href="https://www.incometax.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- AADHAAR -->
+        <div class="service-card">
+            <div class="icon">🆔</div>
+            <h3>Aadhaar Services</h3>
+            <p>Aadhaar update, download and other related services.</p>
+            <a class="service-btn"
+               href="https://myaadhaar.uidai.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- UDYAM -->
+        <div class="service-card">
+            <div class="icon">🏢</div>
+            <h3>Udyam Certificate</h3>
+            <p>MSME Udyam registration and certificate services.</p>
+            <a class="service-btn"
+               href="https://udyamregistration.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- DRIVING LICENCE -->
+        <div class="service-card">
+            <div class="icon">🚗</div>
+            <h3>Driving Licence</h3>
+            <p>Driving licence application and related services.</p>
+            <a class="service-btn"
+               href="https://parivahan.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- VOTER ID -->
+        <div class="service-card">
+            <div class="icon">🗳️</div>
+            <h3>Voter ID</h3>
+            <p>Voter registration and election-related services.</p>
+            <a class="service-btn"
+               href="https://voters.eci.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- PASSPORT -->
+        <div class="service-card">
+            <div class="icon">🛂</div>
+            <h3>Passport</h3>
+            <p>Passport application and related services.</p>
+            <a class="service-btn"
+               href="https://www.passportindia.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- E-SHRAM -->
+        <div class="service-card">
+            <div class="icon">👷</div>
+            <h3>E-Shram Card</h3>
+            <p>E-Shram registration and related services.</p>
+            <a class="service-btn"
+               href="https://eshram.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- RATION CARD -->
+        <div class="service-card">
+            <div class="icon">🍚</div>
+            <h3>Ration Card Services</h3>
+            <p>Ration card services and printout assistance.</p>
+            <a class="service-btn"
+               href="https://spandana.ap.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- TRAIN TICKETS -->
+        <div class="service-card">
+            <div class="icon">🚆</div>
+            <h3>Train Tickets</h3>
+            <p>Train ticket booking and related services.</p>
+            <a class="service-btn"
+               href="https://www.irctc.co.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- PDF TOOLS -->
+        <div class="service-card">
+            <div class="icon">📄</div>
+            <h3>PDF Tools</h3>
+            <p>Merge, split, convert and edit PDF files.</p>
+            <a class="service-btn"
+               href="https://www.ilovepdf.com/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- AP SEVA -->
+        <div class="service-card">
+            <div class="icon">🏛️</div>
+            <h3>AP Seva</h3>
+            <p>Andhra Pradesh government online services.</p>
+            <a class="service-btn"
+               href="https://apseva.ap.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- IMAGE TOOLS -->
+        <div class="service-card">
+            <div class="icon">✂️</div>
+            <h3>Crop & Image Tools</h3>
+            <p>Image resizing, cropping and editing tools.</p>
+            <a class="service-btn"
+               href="https://www.iloveimg.com/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- EPFO -->
+        <div class="service-card">
+            <div class="icon">🏦</div>
+            <h3>EPFO Services</h3>
+            <p>PF and EPFO member services.</p>
+            <a class="service-btn"
+               href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/"
+               target="_blank">Open Service</a>
+        </div>
+
+        <!-- E-CHALLAN -->
+        <div class="service-card">
+            <div class="icon">🧾</div>
+            <h3>E-Challan</h3>
+            <p>Traffic challan checking and payment services.</p>
+            <a class="service-btn"
+               href="https://echallan.parivahan.gov.in/"
+               target="_blank">Open Service</a>
+        </div>
+
+    </div>
 </section>
 
+<!-- SERVICES SECTION END -->
+   /* SERVICES GRID */
 
-<!-- ================= BILL PAYMENTS ================= -->
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px 18px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
+    transition: .3s;
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.18);
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #002b7f;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.service-btn {
+    display: inline-block;
+    background: #002b7f;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.service-btn:hover {
+    background: #005bea;
+}
+   <!-- ================= BILL PAYMENTS ================= -->
 
 <section class="section bill-section" id="bills">
 
-<h2 class="section-title">
-💳 Bill Payments
-</h2>
+    <h2 class="section-title">💳 Bill Payments</h2>
 
-<p class="section-subtitle">
-Select your service provider and open the official website
-</p>
+    <p class="section-subtitle">
+        Select your service provider and open the official website
+    </p>
 
+    <div class="bill-grid">
 
-<div class="bill-grid">
+        <!-- ELECTRICITY -->
+        <div class="bill-card">
+            <div class="icon">⚡</div>
+            <h3>Electricity Bill</h3>
+            <p>Pay electricity bills online.</p>
+            <button onclick="openBill('Electricity Bill')">
+                ⚡ View Options
+            </button>
+        </div>
 
+        <!-- MOBILE -->
+        <div class="bill-card">
+            <div class="icon">📱</div>
+            <h3>Mobile Recharge</h3>
+            <p>Recharge prepaid or pay postpaid bills.</p>
+            <button onclick="openBill('Mobile Recharge')">
+                📱 Recharge
+            </button>
+        </div>
 
-<div class="bill-card">
+        <!-- DTH -->
+        <div class="bill-card">
+            <div class="icon">📺</div>
+            <h3>DTH Recharge</h3>
+            <p>Recharge your DTH connection.</p>
+            <button onclick="openBill('DTH Recharge')">
+                📺 Recharge
+            </button>
+        </div>
 
-<div class="icon">⚡</div>
+        <!-- WATER -->
+        <div class="bill-card">
+            <div class="icon">💧</div>
+            <h3>Water Bill</h3>
+            <p>Water bill payment services.</p>
+            <button onclick="openBill('Water Bill')">
+                💧 Pay Bill
+            </button>
+        </div>
 
-<h3>Electricity Bill</h3>
+        <!-- GAS -->
+        <div class="bill-card">
+            <div class="icon">🔥</div>
+            <h3>Gas Services</h3>
+            <p>LPG and gas services.</p>
+            <button onclick="openBill('Gas Bill')">
+                🔥 View Options
+            </button>
+        </div>
 
-<p>Pay electricity bills online.</p>
+        <!-- BROADBAND -->
+        <div class="bill-card">
+            <div class="icon">🌐</div>
+            <h3>Broadband Bill</h3>
+            <p>Pay your broadband bill.</p>
+            <button onclick="openBill('Broadband Bill')">
+                🌐 Pay Bill
+            </button>
+        </div>
 
-<button onclick="openBill('Electricity Bill')">
-
-⚡ View Options
-
-</button>
-
-</div>
-
-
-<div class="bill-card">
-
-<div class="icon">📱</div>
-
-<h3>Mobile Recharge</h3>
-
-<p>Recharge prepaid or pay postpaid bills.</p>
-
-<button onclick="openBill('Mobile Recharge')">
-
-📱 Recharge
-
-</button>
-
-</div>
-
-
-<div class="bill-card">
-
-<div class="icon">📺</div>
-
-<h3>DTH Recharge</h3>
-
-<p>Recharge your DTH connection.</p>
-
-<button onclick="openBill('DTH Recharge')">
-
-📺 Recharge
-
-</button>
-
-</div>
-
-
-<div class="bill-card">
-
-<div class="icon">💧</div>
-
-<h3>Water Bill</h3>
-
-<p>Water bill payment services.</p>
-
-<button onclick="openBill('Water Bill')">
-
-💧 Pay Bill
-
-</button>
-
-</div>
-
-
-<div class="bill-card">
-
-<div class="icon">🔥</div>
-
-<h3>Gas Services</h3>
-
-<p>LPG and gas services.</p>
-
-<button onclick="openBill('Gas Bill')">
-
-🔥 View Options
-
-</button>
-
-</div>
-
-
-<div class="bill-card">
-
-<div class="icon">🌐</div>
-
-<h3>Broadband Bill</h3>
-
-<p>Pay your broadband bill.</p>
-
-<button onclick="openBill('Broadband Bill')">
-
-🌐 Pay Bill
-
-</button>
-
-</div>
-
-
-</div>
-
+    </div>
 </section>
 
+<!-- BILL MODAL -->
+<div class="modal" id="billModal">
+    <div class="modal-content">
 
-<!-- ================= ACCOUNTS ================= -->
+        <h2 id="billTitle">Bill Payment</h2>
 
-<section class="accounts-section">
+        <p>Select your service provider:</p>
 
-<h2>📊 Private Daily Accounts</h2>
+        <div id="billOptions"></div>
 
-<p>
-Manage Daily Income, Expenses, Profit, Monthly Reports, PDF and Excel Reports.
-</p>
+        <button class="close-btn" onclick="closeBill()">
+            Close
+        </button>
 
-<a
-href="accounts.html"
-target="_blank"
-class="accounts-btn">
+    </div>
+</div>
+/* BILL PAYMENTS */
 
-🔐 Open Private Accounts
+.bill-section {
+    background: white;
+}
 
-</a>
+.bill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.bill-card {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.bill-card:hover {
+    transform: translateY(-5px);
+}
+
+.bill-card h3 {
+    margin: 12px 0;
+    color: #002b7f;
+}
+
+.bill-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.bill-card button {
+    background: #16a34a;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.bill-card button:hover {
+    opacity: .9;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    overflow: auto;
+}
+
+.modal-content {
+    background: white;
+    max-width: 450px;
+    margin: 8% auto;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #002b7f;
+    margin-bottom: 15px;
+}
+
+.modal-content a {
+    display: block;
+    margin: 12px 0;
+    padding: 12px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    color: #002b7f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+   <script>
+function openBill(type) {
+
+    const modal = document.getElementById("billModal");
+    const title = document.getElementById("billTitle");
+    const options = document.getElementById("billOptions");
+
+    title.textContent = type;
+    options.innerHTML = "";
+
+    const providers = {
+        "Electricity Bill": [
+            ["APSPDCL", "https://www.apspdcl.in/"],
+            ["APEPDCL", "https://www.apeasternpower.com/"]
+        ],
+
+        "Mobile Recharge": [
+            ["Airtel", "https://www.airtel.in/"],
+            ["Jio", "https://www.jio.com/"],
+            ["Vi", "https://www.myvi.in/"],
+            ["BSNL", "https://www.bsnl.co.in/"]
+        ],
+
+        "DTH Recharge": [
+            ["Tata Play", "https://www.tataplay.com/"],
+            ["Airtel Digital TV", "https://www.airtel.in/dth"],
+            ["Dish TV", "https://www.dishtv.in/"]
+        ],
+
+        "Water Bill": [
+            ["AP Government Services", "https://apseva.ap.gov.in/"]
+        ],
+
+        "Gas Bill": [
+            ["Indane Gas", "https://cx.indianoil.in/"],
+            ["Bharat Gas", "https://my.ebharatgas.com/"],
+            ["HP Gas", "https://myhpgas.in/"]
+        ],
+
+        "Broadband Bill": [
+            ["Airtel", "https://www.airtel.in/"],
+            ["JioFiber", "https://www.jio.com/"],
+            ["BSNL", "https://www.bsnl.co.in/"]
+        ]
+    };
+
+    const list = providers[type] || [];
+
+    list.forEach(function(provider) {
+
+        const link = document.createElement("a");
+
+        link.href = provider[1];
+        link.textContent = provider[0];
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        options.appendChild(link);
+    });
+
+    modal.style.display = "block";
+}
+
+function closeBill() {
+    document.getElementById("billModal").style.display = "none";
+}
+</script>
+<!-- ================= PRIVATE ACCOUNTS ================= -->
+
+<section class="section" id="accounts">
+
+    <div class="accounts-section">
+
+        <h2>📒 Private Daily Accounts</h2>
+
+        <p>
+            Manage your daily income, expenses and account records.
+        </p>
+
+        <a href="accounts.html" class="accounts-btn">
+            Open Daily Accounts
+        </a>
+
+    </div>
 
 </section>
-
-
 <!-- ================= GOVERNMENT JOBS ================= -->
 
 <section class="section" id="jobs">
 
-<h2 class="section-title">
-💼 Government Job Links
-</h2>
+    <h2 class="section-title">💼 Government Jobs</h2>
 
-<p class="section-subtitle">
-Latest Government Recruitment Websites
-</p>
+    <p class="section-subtitle">
+        Check government job notifications and application websites.
+    </p>
 
+    <div class="jobs">
 
-<div class="jobs">
+        <div class="job-card">
+            <div class="icon">🏛️</div>
+            <h3>AP Government Jobs</h3>
+            <p>Andhra Pradesh government job notifications.</p>
+            <a href="https://ap.gov.in/" target="_blank">
+                View Jobs
+            </a>
+        </div>
 
+        <div class="job-card">
+            <div class="icon">🇮🇳</div>
+            <h3>Central Government Jobs</h3>
+            <p>Central government recruitment information.</p>
+            <a href="https://www.ncs.gov.in/" target="_blank">
+                View Jobs
+            </a>
+        </div>
 
-<div class="job-card">
+        <div class="job-card">
+            <div class="icon">🚂</div>
+            <h3>Railway Jobs</h3>
+            <p>Railway recruitment and job notifications.</p>
+            <a href="https://www.rrbcdg.gov.in/" target="_blank">
+                View Jobs
+            </a>
+        </div>
 
-<div class="icon">🏛️</div>
+        <div class="job-card">
+            <div class="icon">👮</div>
+            <h3>Police Jobs</h3>
+            <p>Police recruitment and related notifications.</p>
+            <a href="https://slprb.ap.gov.in/" target="_blank">
+                View Jobs
+            </a>
+        </div>
 
-<h3>UPSC</h3>
-
-<a href="https://upsc.gov.in/" target="_blank">
-
-Visit UPSC
-
-</a>
-
-</div>
-
-
-<div class="job-card">
-
-<div class="icon">📋</div>
-
-<h3>APPSC</h3>
-
-<a href="https://psc.ap.gov.in/" target="_blank">
-
-Visit APPSC
-
-</a>
-
-</div>
-
-
-<div class="job-card">
-
-<div class="icon">👨‍💼</div>
-
-<h3>SSC</h3>
-
-<a href="https://ssc.gov.in/" target="_blank">
-
-Visit SSC
-
-</a>
-
-</div>
-
-
-<div class="job-card">
-
-<div class="icon">🚄</div>
-
-<h3>Railway Jobs</h3>
-
-<a href="https://www.rrbcdg.gov.in/" target="_blank">
-
-Visit Railway
-
-</a>
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
-
-
-<!-- ================= ABOUT ================= -->
+<!-- ================= ABOUT US ================= -->
 
 <section class="section" id="about">
 
-<h2 class="section-title">
-ℹ️ About Us
-</h2>
+    <h2 class="section-title">ℹ️ About Us</h2>
 
+    <p class="section-subtitle">
+        Your Trusted Online Service Center
+    </p>
 
-<div class="about-box">
+    <div class="about-box">
 
-<h3>🌐 Chendrayudu Online Services</h3>
+        <h3>Chendrayudu Online Services</h3>
 
-<p>
+        <p>
+            Welcome to Chendrayudu Online Services.
+            We provide assistance with various online services,
+            government applications, document services,
+            bill payments and other digital services.
+        </p>
 
-We provide various online assistance services including document services,
-government services, bill payment assistance, job application guidance,
-printouts and other digital services.
+        <p>
+            Our goal is to make online services simple,
+            convenient and accessible to customers.
+        </p>
 
-</p>
+        <p>
+            📍 Jamal Palle, Chinthakommadinne Mandal,
+            YSR Kadapa District, Andhra Pradesh - 516003
+        </p>
 
-</div>
+    </div>
 
 </section>
-
-
-<!-- ================= CONTACT ================= -->
+<!-- ================= CONTACT US ================= -->
 
 <section class="contact-section" id="contact">
 
-<h2>📞 Contact Us</h2>
+    <h2>📞 Contact Us</h2>
 
-<p>🌐 Chendrayudu Online Services</p>
+    <p><strong>Chendrayudu Online Services</strong></p>
 
-<p>📍 YSR Kadapa District, Andhra Pradesh</p>
+    <p>📍 Jamal Palle, Chinthakommadinne, Kadapa</p>
 
-<p>🕒 Online Services Available</p>
+    <p>📱 Phone: 9390511455</p>
 
-<a
-href="https://wa.me/"
-target="_blank"
-class="contact-btn">
+    <p>✉️ Email: cherishvivaan@gmail.com</p>
 
-💬 Contact on WhatsApp
+    <a href="https://wa.me/919390511455"
+       target="_blank"
+       class="contact-btn">
+        💬 Contact on WhatsApp
+    </a>
 
-</a>
+    <br>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=Jamal+Palle+Chinthakommadinne+Kadapa"
+       target="_blank"
+       class="contact-btn">
+        📍 Get Directions
+    </a>
 
 </section>
+<!-- ================= WHATSAPP BUTTON ================= -->
 
-
+<a href="https://wa.me/919390511455"
+   class="whatsapp"
+   target="_blank"
+   aria-label="Contact on WhatsApp">
+    ☎
+</a>
 <!-- ================= FOOTER ================= -->
 
 <footer>
+    <p>
+        © 2026 Chendrayudu Online Services.
+        All Rights Reserved.
+    </p>
 
-<p>
-© 2026 Chendrayudu Online Services | All Rights Reserved
-</p>
-
+    <p>
+        Your Trusted Online Service Center
+    </p>
 </footer>
-
-
-<!-- ================= FLOATING WHATSAPP ================= -->
-
-<a
-href="https://wa.me/"
-target="_blank"
-class="whatsapp">
-
-💬
-
-</a>
-
-
-<!-- ================= BILL MODAL ================= -->
-
-<div class="modal" id="billModal">
-
-<div class="modal-content">
-
-<h2 id="billTitle">
-Bill Payment
-</h2>
-
-<div id="billOptions"></div>
-
-<button class="close-btn" onclick="closeBill()">
-
-❌ Close
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-
-function openBill(service){
-
-    const websites = {
-
-
-        "Electricity Bill":[
-
-            {
-                name:"⚡ APSPDCL",
-                url:"https://www.apspdcl.in/"
-            },
-
-            {
-                name:"⚡ APEPDCL",
-                url:"https://www.apeasternpower.com/"
-            }
-
-        ],
-
-
-        "Mobile Recharge":[
-
-            {
-                name:"📱 Jio",
-                url:"https://www.jio.com/selfcare/recharge/mobility/"
-            },
-
-            {
-                name:"📱 Airtel",
-                url:"https://www.airtel.in/recharge-online"
-            },
-
-            {
-                name:"📱 Vi",
-                url:"https://www.myvi.in/prepaid/mobile-recharge"
-            },
-
-            {
-                name:"📱 BSNL",
-                url:"https://portal2.bsnl.in/myportal/quickrecharge.do"
-            }
-
-        ],
-
-
-        "DTH Recharge":[
-
-            {
-                name:"📺 Tata Play",
-                url:"https://www.tataplay.com/"
-            },
-
-            {
-                name:"📺 Airtel Digital TV",
-                url:"https://www.airtel.in/dth-recharge"
-            },
-
-            {
-                name:"📺 Dish TV",
-                url:"https://www.dishtv.in/"
-            },
-
-            {
-                name:"📺 Sun Direct",
-                url:"https://www.sundirect.in/"
-            }
-
-        ],
-
-
-        "Water Bill":[
-
-            {
-                name:"💧 AP Government Services",
-                url:"https://www.ap.gov.in/"
-            }
-
-        ],
-
-
-        "Gas Bill":[
-
-            {
-                name:"🔥 Indian Oil",
-                url:"https://www.iocl.com/"
-            },
-
-            {
-                name:"🔥 Bharat Gas",
-                url:"https://www.ebharatgas.com/"
-            },
-
-            {
-                name:"🔥 HP Gas",
-                url:"https://myhpgas.in/"
-            }
-
-        ],
-
-
-        "Broadband Bill":[
-
-            {
-                name:"🌐 JioFiber",
-                url:"https://www.jio.com/selfcare/recharge/fiber/"
-            },
-
-            {
-                name:"🌐 Airtel Broadband",
-                url:"https://www.airtel.in/broadband"
-            },
-
-            {
-                name:"🌐 BSNL Broadband",
-                url:"https://portal2.bsnl.in/"
-            }
-
-        ]
-
-    };
-
-
-    document.getElementById("billTitle").innerText =
-    "💳 " + service;
-
-
-    const options =
-    document.getElementById("billOptions");
-
-
-    options.innerHTML = "";
-
-
-    websites[service].forEach(site => {
-
-
-        const button =
-        document.createElement("button");
-
-
-        button.innerText =
-        site.name;
-
-
-        button.style.width =
-        "100%";
-
-
-        button.style.margin =
-        "8px 0";
-
-
-        button.style.padding =
-        "13px";
-
-
-        button.style.border =
-        "none";
-
-
-        button.style.borderRadius =
-        "8px";
-
-
-        button.style.background =
-        "#002b7f";
-
-
-        button.style.color =
-        "white";
-
-
-        button.style.fontWeight =
-        "bold";
-
-
-        button.style.cursor =
-        "pointer";
-
-
-        button.onclick = function(){
-
-            window.open(
-                site.url,
-                "_blank"
-            );
-
-        };
-
-
-        options.appendChild(button);
-
-
-    });
-
-
-    document.getElementById("billModal")
-    .style.display = "block";
-
+/* ACCOUNTS */
+
+.accounts-section {
+    background: linear-gradient(135deg, #002b7f, #005bea);
+    color: white;
+    border-radius: 20px;
+    padding: 45px 25px;
+    text-align: center;
+    max-width: 1150px;
+    margin: 40px auto;
 }
 
-
-
-function closeBill(){
-
-    document.getElementById("billModal")
-    .style.display = "none";
-
+.accounts-section h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
+.accounts-section p {
+    margin-bottom: 25px;
+    font-size: 17px;
+}
 
+.accounts-btn {
+    display: inline-block;
+    background: #ffd43b;
+    color: #222;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-window.onclick = function(event){
+/* JOBS */
 
-    const modal =
-    document.getElementById("billModal");
+.jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
 
+.job-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
 
-    if(event.target === modal){
+.job-card h3 {
+    color: #002b7f;
+    margin: 12px 0;
+}
 
-        modal.style.display = "none";
+.job-card p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
 
+.job-card a {
+    display: inline-block;
+    background: #e63946;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ABOUT */
+
+.about-box {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.about-box h3 {
+    color: #002b7f;
+    margin-bottom: 15px;
+}
+
+/* CONTACT */
+
+.contact-section {
+    background: #002b7f;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    margin: 10px;
+}
+
+.contact-btn {
+    display: inline-block;
+    margin: 10px 5px;
+    background: #25D366;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.3);
+    z-index: 999;
+}
+
+/* FOOTER */
+
+footer {
+    background: #001a4d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .accounts-section {
+        margin: 20px auto;
     }
 
-};
+    .about-box {
+        padding: 20px;
+    }
 
+    .contact-btn {
+        margin: 8px 0;
+    }
+}
+   <!-- ================= NEW FEATURES ================= -->
+
+<section class="section" id="features">
+
+    <h2 class="section-title">✨ Smart Online Features</h2>
+
+    <p class="section-subtitle">
+        Useful tools for our customers
+    </p>
+
+    <!-- COST CALCULATOR -->
+    <div class="feature-card">
+
+        <h3>🧮 Service Cost Calculator</h3>
+
+        <label for="service">Select Service:</label>
+
+        <select id="service">
+            <option value="0">Select Service</option>
+            <option value="50">Printout - ₹50</option>
+            <option value="100">Online Application - ₹100</option>
+            <option value="150">Certificate Service - ₹150</option>
+            <option value="200">Other Service - ₹200</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+
+        <input type="number" id="quantity" min="1" value="1">
+
+        <button type="button" onclick="calculateCost()">
+            Calculate Cost
+        </button>
+
+        <h3 id="total">Total: ₹0</h3>
+
+        <p class="note">
+            ఇవి ఉదాహరణ ధరలు మాత్రమే. నీ నిజమైన ధరలకు మార్చుకో.
+        </p>
+
+    </div>
+
+    <!-- DARK MODE -->
+    <div class="feature-card">
+
+        <h3>🌙 Website Theme</h3>
+
+        <p>Change your website appearance.</p>
+
+        <button type="button" onclick="toggleDarkMode()">
+            🌙 Dark / Light Mode
+        </button>
+
+    </div>
+
+    <!-- FAQ -->
+    <div class="feature-card">
+
+        <h3>❓ Frequently Asked Questions</h3>
+
+        <details>
+            <summary>మీ సెంటర్ ఎక్కడ ఉంది?</summary>
+            <p>Jamal Palle, Chinthakommadinne Mandal, Kadapa.</p>
+        </details>
+
+        <details>
+            <summary>సేవల కోసం ఎలా సంప్రదించాలి?</summary>
+            <p>WhatsApp లేదా ఫోన్ ద్వారా సంప్రదించవచ్చు.</p>
+        </details>
+
+        <details>
+            <summary>ఆన్‌లైన్ సేవలు అందుబాటులో ఉన్నాయా?</summary>
+            <p>అందుబాటులో ఉన్న సేవల వివరాల కోసం మమ్మల్ని సంప్రదించండి.</p>
+        </details>
+
+        <details>
+            <summary>సేవల ధరలు ఎలా తెలుసుకోవాలి?</summary>
+            <p>ధరల వివరాల కోసం WhatsApp ద్వారా సంప్రదించండి.</p>
+        </details>
+
+    </div>
+
+    <!-- QUICK CONTACT -->
+    <div class="feature-card">
+
+        <h3>📞 Quick Contact</h3>
+
+        <a href="https://wa.me/919390511455"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-btn">
+            💬 WhatsApp Us
+        </a>
+
+        <a href="tel:+919390511455" class="contact-btn">
+            📞 Call Now
+        </a>
+
+    </div>
+
+</section>
+/* ================= NEW FEATURES CSS ================= */
+
+.feature-card {
+    background: white;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.feature-card h3 {
+    color: #002b7f;
+    margin-bottom: 15px;
+}
+
+.feature-card label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.feature-card select,
+.feature-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.feature-card button {
+    background: #0878d1;
+    color: white;
+    padding: 12px 18px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.feature-card button:hover {
+    background: #064f91;
+}
+
+.feature-card details {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.feature-card summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.feature-card details p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* DARK MODE */
+
+body.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+body.dark-mode .section {
+    background: #181818;
+}
+
+body.dark-mode .feature-card,
+body.dark-mode .service-card,
+body.dark-mode .bill-card,
+body.dark-mode .job-card,
+body.dark-mode .about-box {
+    background: #252525;
+    color: white;
+}
+
+body.dark-mode .section-title,
+body.dark-mode .feature-card h3,
+body.dark-mode .service-card h3,
+body.dark-mode .job-card h3 {
+    color: #8cc8ff;
+}
+
+body.dark-mode .section-subtitle,
+body.dark-mode .feature-card p,
+body.dark-mode .service-card p,
+body.dark-mode .job-card p {
+    color: #ddd;
+}
+   <script>
+
+/* ================= COST CALCULATOR ================= */
+
+function calculateCost() {
+
+    const price = Number(
+        document.getElementById("service").value
+    );
+
+    const quantity = Number(
+        document.getElementById("quantity").value
+    );
+
+    if (price <= 0 || quantity < 1 ||
+        !Number.isInteger(quantity)) {
+
+        alert("Please select a service and valid quantity.");
+        return;
+    }
+
+    const total = price * quantity;
+
+    document.getElementById("total").textContent =
+        "Total: ₹" + total;
+}
+
+
+/* ================= DARK MODE ================= */
+
+function toggleDarkMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+}
+
+
+/* ================= CLOSE MODAL ON OUTSIDE CLICK ================= */
+
+window.addEventListener("click", function(event) {
+
+    const modal = document.getElementById("billModal");
+
+    if (modal && event.target === modal) {
+        closeBill();
+    }
+
+});
 
 </script>
-
-
 </body>
-
 </html>
